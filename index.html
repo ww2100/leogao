@@ -81,7 +81,7 @@
         .hero img {
             width: 100%; 
             display: block; 
-            height: 65vh; /* 电脑端保持原样 */
+            height: 65vh; 
             object-fit: cover; 
             object-position: center 30%; 
         }
@@ -96,12 +96,12 @@
             background: rgba(0,0,0,0.3); 
         }
 
-        /* --- 核心修改：左下角对齐逻辑 --- */
+        /* --- 英雄区文字容器（左下角） --- */
         .hero-content {
             position: absolute;   
             left: 5%;             
             bottom: 8%;           
-            color: white; 
+            color: white; /* 这里的白色作为大标题的默认色 */
             text-align: left !important; 
             max-width: 800px; 
         }
@@ -114,11 +114,14 @@
             text-shadow: 0 2px 10px rgba(0,0,0,0.5); 
         }
 
+        /* --- 副标题：已设置为冰川灰 --- */
         .hero-content p {
+            color: #d1dce5; /* 核心修改：冰川灰 Ice Grey */
             font-size: clamp(1.1rem, 2.5vw, 1.6rem); 
             margin: 0;
             line-height: 1.4; 
             font-weight: 400;
+            text-shadow: 0 1px 5px rgba(0,0,0,0.3); /* 轻微阴影确保在亮部也清晰 */
         }
 
         /* --- 业务应用网格 --- */
@@ -142,7 +145,7 @@
             text-align: center; 
         }
 
-        /* --- 移动端（手机）适配：高度减少 10% --- */
+        /* --- 移动端（手机）适配：高度已减少 --- */
         @media (max-width: 768px) {
             .menu-toggle { display: flex; }
             .nav-links {
@@ -157,13 +160,11 @@
             }
             .nav-links.active { display: flex; }
             
-            /* 修改点：减少手机端图片高度 */
             .hero img {
                 height: auto; 
-                min-height: 310px; /* 从之前的 350px/380px 减少了约 10%-15% */
+                min-height: 310px; /* 手机端紧凑高度 */
             }
 
-            /* 手机端左下角坐标保持紧凑 */
             .hero-content {
                 left: 20px !important; 
                 bottom: 20px !important; 
