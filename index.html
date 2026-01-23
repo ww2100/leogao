@@ -10,7 +10,6 @@
             --deep-dark: #1a1a1a;
             --soft-white: #ffffff;
             --light-grey: #f4f7f9;
-            --text-gray: #4a4a4a;
             --transition: all 0.3s ease;
         }
 
@@ -22,7 +21,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* 导航栏 */
+        /* --- 导航栏 --- */
         nav {
             display: flex;
             justify-content: space-between;
@@ -43,7 +42,6 @@
             text-transform: uppercase;
         }
 
-        /* 电脑端导航 */
         .nav-links {
             display: flex;
             gap: 2.5rem;
@@ -59,44 +57,68 @@
 
         .nav-links a:hover { color: var(--brand-blue); }
 
-        /* 手机端三横杠图标 */
         .menu-toggle {
             display: none;
             flex-direction: column;
             gap: 5px;
             cursor: pointer;
-            z-index: 1001;
         }
 
         .menu-toggle span {
             width: 25px;
             height: 3px;
             background-color: var(--brand-blue);
-            transition: var(--transition);
         }
 
-        /* 英雄区 */
+        /* --- 核心修改：英雄区高度控制 --- */
         .hero {
-            height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                        url('images/hero.jpeg');
-            background-size: cover;
-            background-position: center;
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .hero img {
+            width: 100%;
+            display: block;
+            /* 电脑端优化：设置最大高度为屏幕高度的 45%，减少了约三分之一的空间 */
+            height: 45vh; 
+            object-fit: cover; /* 保证图片在高度压缩时不会变形 */
+            object-position: center 30%; /* 稍微向上偏移，确保工厂主体在画面中心 */
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        .hero-content {
             color: white;
             text-align: center;
+            padding: 0 20px;
         }
 
         .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: clamp(1.8rem, 5vw, 3.2rem); 
+            margin-bottom: 0.8rem;
             font-weight: 300;
             letter-spacing: 2px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
 
-        /* 应用领域网格 */
+        .hero-content p {
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            margin: 0;
+        }
+
+        /* --- 内容网格 --- */
         .section-title {
             text-align: center;
             padding: 4rem 0 2rem;
@@ -110,42 +132,35 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 1px;
             background: #eee;
-            border: 1px solid #eee;
         }
 
         .app-item {
             background: var(--soft-white);
-            padding: 3.5rem 2rem;
+            padding: 4rem 2rem;
             text-align: center;
-            transition: var(--transition);
         }
 
-        /* --- 手机端适配代码 (关键) --- */
+        /* --- 手机端适配：保持蝶理式的缩小效果 --- */
         @media (max-width: 768px) {
-            .menu-toggle {
-                display: flex; /* 显示三横杠 */
-            }
-
+            .menu-toggle { display: flex; }
             .nav-links {
-                display: none; /* 默认隐藏菜单 */
+                display: none;
                 flex-direction: column;
                 position: absolute;
-                top: 100%; /* 在导航栏下方弹出 */
+                top: 100%;
                 left: 0;
                 width: 100%;
                 background: white;
                 padding: 20px 0;
-                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-                gap: 1.5rem;
-                text-align: center;
+            }
+            .nav-links.active { display: flex; }
+            
+            .hero img {
+                /* 手机端图片高度，你可以根据需要调整这个值 */
+                height: auto;
+                min-height: 300px; 
             }
 
-            /* 点击图标后显示的类 */
-            .nav-links.active {
-                display: flex;
-            }
-
-            .hero-content h1 { font-size: 2rem; }
             .app-grid { grid-template-columns: 1fr 1fr; }
         }
 
@@ -162,13 +177,9 @@
 
     <nav>
         <div class="logo">SHAN YUE TEXTILE</div>
-        
         <div class="menu-toggle" id="mobile-menu">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
         </div>
-
         <div class="nav-links" id="nav-list">
             <a href="#">Products</a>
             <a href="#">Applications</a>
@@ -179,31 +190,22 @@
     </nav>
 
     <section class="hero">
-        <div class="hero-content">
-            <h1>SHAN YUE TEXTILE</h1>
-            <p>25 Years of Technical Mastery in Premium Yarn</p>
+        <img src="images/hero.jpeg" alt="Shanyue Textile Factory">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1>SHAN YUE TEXTILE</h1>
+                <p>25 Years of Technical Mastery in Premium Yarn</p>
+            </div>
         </div>
     </section>
 
     <div class="section-title">Global Applications</div>
     
     <div class="app-grid">
-        <div class="app-item">
-            <h3>Apparel</h3>
-            <p>High-end fashion and performance fibers.</p>
-        </div>
-        <div class="app-item">
-            <h3>Home & Interior</h3>
-            <p>Durability for modern living spaces.</p>
-        </div>
-        <div class="app-item">
-            <h3>Technical</h3>
-            <p>Industrial and automotive solutions.</p>
-        </div>
-        <div class="app-item">
-            <h3>Eco-Innovation</h3>
-            <p>Sustainable and recycled materials.</p>
-        </div>
+        <div class="app-item"><h3>Apparel</h3><p>High-end fashion and performance fibers.</p></div>
+        <div class="app-item"><h3>Home & Interior</h3><p>Durability for modern living spaces.</p></div>
+        <div class="app-item"><h3>Technical</h3><p>Industrial and automotive solutions.</p></div>
+        <div class="app-item"><h3>Eco-Innovation</h3><p>Sustainable and recycled materials.</p></div>
     </div>
 
     <footer>
@@ -215,18 +217,7 @@
     <script>
         const menuBtn = document.getElementById('mobile-menu');
         const navList = document.getElementById('nav-list');
-
-        menuBtn.addEventListener('click', () => {
-            navList.classList.toggle('active');
-        });
-
-        // 点击菜单项后自动关闭菜单
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navList.classList.remove('active');
-            });
-        });
+        menuBtn.addEventListener('click', () => { navList.classList.toggle('active'); });
     </script>
-
 </body>
 </html>
