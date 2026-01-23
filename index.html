@@ -6,165 +6,147 @@
     <title>Shanyue Textile | Innovative Yarn Solutions</title>
     
     <style>
-        /* --- 全局设计变量：方便一键修改全站颜色 --- */
+        /* --- 全局颜色与变量 --- */
         :root {
-            --brand-blue: #004098;  /* 山越品牌蓝 */
-            --deep-dark: #1a1a1a;   /* 文本与页脚深灰色 */
-            --soft-white: #ffffff;  /* 纯白背景 */
-            --light-grey: #f4f7f9;  /* 浅灰背景 */
-            --transition: all 0.3s ease; /* 全局平滑过渡动画时间 */
+            --brand-blue: #004098;  
+            --deep-dark: #1a1a1a;   
+            --soft-white: #ffffff;  
+            --transition: all 0.3s ease; 
         }
 
-        /* --- 基础页面样式重置 --- */
+        /* --- 基础页面设置 --- */
         body {
-            margin: 0; /* 消除浏览器默认的白边 */
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* 选用国际化无衬线字体 */
-            color: var(--deep-dark); /* 设置全局文字颜色 */
-            background-color: var(--soft-white); /* 页面主背景 */
-            -webkit-font-smoothing: antialiased; /* 让字体显示更清晰、更平滑 */
+            margin: 0; 
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+            color: var(--deep-dark); 
+            background-color: var(--soft-white); 
+            -webkit-font-smoothing: antialiased; 
         }
 
-        /* --- 导航栏样式 --- */
+        /* --- 导航栏设置 --- */
         nav {
-            display: flex; /* 开启弹性布局 */
-            justify-content: space-between; /* Logo靠左，菜单靠右 */
-            align-items: center; /* 垂直方向居中 */
-            padding: 1rem 5%; /* 设置内边距，5%确保不同宽度屏幕的边距感 */
-            background: var(--soft-white); /* 背景白色 */
-            border-bottom: 1px solid #eee; /* 底部装饰性浅色线条 */
-            position: sticky; /* 滚动时吸附在顶部 */
-            top: 0; /* 距离顶部0位置固定 */
-            z-index: 1000; /* 确保导航栏不被下方图片覆盖 */
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 1rem 5%; 
+            background: var(--soft-white); 
+            border-bottom: 1px solid #eee; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
         }
 
-        /* --- Logo样式 --- */
         .logo {
-            font-size: 1.2rem; /* 字体大小 */
-            font-weight: 800; /* 字体加粗 */
-            color: var(--brand-blue); /* 品牌蓝色 */
-            letter-spacing: 1px; /* 字符间距 */
-            text-transform: uppercase; /* 全部转为大写 */
+            font-size: 1.2rem; 
+            font-weight: 800; 
+            color: var(--brand-blue); 
+            text-transform: uppercase; 
         }
 
-        /* --- 导航链接容器 --- */
         .nav-links {
-            display: flex; /* 链接横向排列 */
-            gap: 2.5rem; /* 链接之间的间距 */
+            display: flex; 
+            gap: 2.5rem; 
         }
 
-        /* --- 导航链接单个样式 --- */
         .nav-links a {
-            text-decoration: none; /* 去除下划线 */
-            color: var(--deep-dark); /* 文字深灰色 */
-            font-size: 0.9rem; /* 字体大小 */
-            font-weight: 500; /* 字重 */
-            transition: var(--transition); /* 增加变色时的平滑感 */
+            text-decoration: none; 
+            color: var(--deep-dark); 
+            font-size: 0.9rem; 
+            transition: var(--transition); 
         }
 
-        /* --- 导航链接悬停效果 --- */
-        .nav-links a:hover { 
-            color: var(--brand-blue); /* 鼠标移上去变蓝色 */
-        }
+        .nav-links a:hover { color: var(--brand-blue); }
 
-        /* --- 手机端菜单开关按钮 (默认隐藏) --- */
         .menu-toggle {
-            display: none; /* 电脑端隐藏 */
-            flex-direction: column; /* 三根线条垂直排列 */
-            gap: 5px; /* 线间距 */
-            cursor: pointer; /* 鼠标变为手型 */
+            display: none; 
+            flex-direction: column; 
+            gap: 5px; 
+            cursor: pointer; 
         }
 
         .menu-toggle span {
-            width: 25px; /* 线宽 */
-            height: 3px; /* 线厚度 */
-            background-color: var(--brand-blue); /* 线颜色 */
+            width: 25px; 
+            height: 3px; 
+            background-color: var(--brand-blue); 
         }
 
-        /* --- 英雄区背景图容器 --- */
+        /* --- 英雄区（大图区）布局 --- */
         .hero {
-            position: relative; /* 为内部文字提供定位参考 */
-            width: 100%; /* 全宽 */
-            overflow: hidden; /* 防止内容溢出 */
-            background-color: #000; /* 图片加载前的底色 */
+            position: relative; 
+            width: 100%; 
+            overflow: hidden; 
+            background-color: #000; 
         }
 
-        /* --- 英雄区图片属性 --- */
         .hero img {
-            width: 100%; /* 图片宽度铺满 */
-            display: block; /* 消除图片下方的缝隙 */
-            height: 65vh; /* 电脑端占据屏幕高度的65% */
-            object-fit: cover; /* 保证图片不变形地铺满 */
-            object-position: center 30%; /* 调整图片显示重点 */
+            width: 100%; 
+            display: block; 
+            height: 65vh; /* 电脑端保持原样 */
+            object-fit: cover; 
+            object-position: center 30%; 
         }
 
-        /* --- 文字覆盖层 (控制整体位置) --- */
+        /* --- 遮罩层 --- */
         .hero-overlay {
-            position: absolute; /* 绝对定位，盖在图片上 */
+            position: absolute; 
             top: 0; 
             left: 0; 
             width: 100%; 
             height: 100%; 
-            background: rgba(0,0,0,0.3); /* 黑色半透明滤镜，提升白字可读性 */
-            display: flex; /* 使用Flexbox */
-            align-items: center; /* 垂直居中 */
-            justify-content: flex-start !important; /* 强制水平靠左 */
+            background: rgba(0,0,0,0.3); 
         }
 
-        /* --- 英雄区文字内容容器 --- */
+        /* --- 核心修改：左下角对齐逻辑 --- */
         .hero-content {
-            color: white; /* 所有文字白色 */
-            text-align: left !important; /* 强制所有行文字左对齐 */
-            padding: 0 8% !important; /* 左侧留出8%的边距，增加高级感 */
-            max-width: 800px; /* 限制宽度，防止文字拉得太长 */
+            position: absolute;   
+            left: 5%;             
+            bottom: 8%;           
+            color: white; 
+            text-align: left !important; 
+            max-width: 800px; 
         }
 
-        /* --- 大标题样式 (SHAN YUE TEXTILE) --- */
         .hero-content h1 {
-            font-size: clamp(1.8rem, 5vw, 3.2rem); /* 响应式字体大小 */
-            margin-bottom: 1.5rem; /* 与下方副标题保持1.5个字符的距离 */
-            font-weight: 300; /* 细体字显高级 */
-            letter-spacing: 2px; /* 拉大间距 */
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5); /* 文字发光阴影 */
+            font-size: clamp(1.8rem, 5vw, 3.2rem); 
+            margin-bottom: 0.5rem; 
+            font-weight: 300; 
+            letter-spacing: 2px; 
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5); 
         }
 
-        /* --- 副标题样式 (25年经验文字) --- */
         .hero-content p {
-            /* 增大后的响应式字号：最小1.1，首选2.5vw，最大1.6 */
             font-size: clamp(1.1rem, 2.5vw, 1.6rem); 
-            margin-left: 0;  /* 确保与大标题开头垂直对齐 */
-            line-height: 1.5; /* 增加行高，让两行字之间有呼吸感 */
-            margin-top: 60px; /* 清除默认顶部边距 */
+            margin: 0;
+            line-height: 1.4; 
+            font-weight: 400;
         }
 
-        /* --- 业务板块标题 --- */
+        /* --- 业务应用网格 --- */
         .section-title {
             text-align: center; 
             padding: 4rem 0 2rem; 
             font-size: 2rem; 
             color: var(--brand-blue); 
-            font-weight: 300; 
         }
 
-        /* --- 业务板块网格布局 --- */
         .app-grid {
-            display: grid; /* 开启网格 */
-            grid-template-columns: repeat(4, 1fr); /* 电脑端平分为四列 */
-            gap: 1px; /* 方块间的细缝 */
-            background: #eee; /* 背景灰色显示为缝隙颜色 */
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 1px; 
+            background: #eee; 
         }
 
-        /* --- 单个业务板块样式 --- */
         .app-item {
             background: var(--soft-white); 
             padding: 4rem 2rem; 
             text-align: center; 
         }
 
-        /* --- 手机端响应式适配 (小于768px宽度) --- */
+        /* --- 移动端（手机）适配：高度减少 10% --- */
         @media (max-width: 768px) {
-            .menu-toggle { display: flex; } /* 显示手机端菜单按钮 */
+            .menu-toggle { display: flex; }
             .nav-links {
-                display: none; /* 默认隐藏菜单链接 */
+                display: none; 
                 flex-direction: column; 
                 position: absolute; 
                 top: 100%; 
@@ -172,30 +154,32 @@
                 width: 100%; 
                 background: white; 
                 padding: 20px 0; 
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1); 
             }
-            .nav-links.active { display: flex; } /* 点击后显示菜单 */
+            .nav-links.active { display: flex; }
             
+            /* 修改点：减少手机端图片高度 */
             .hero img {
                 height: auto; 
-                min-height: 350px; /* 保证手机端高度足够 */
+                min-height: 310px; /* 从之前的 350px/380px 减少了约 10%-15% */
             }
 
+            /* 手机端左下角坐标保持紧凑 */
             .hero-content {
-                text-align: left !important; 
-                padding: 0 25px !important; /* 手机端左边距改小，适应屏幕 */
+                left: 20px !important; 
+                bottom: 20px !important; 
+                padding: 0 !important; 
             }
-
-            .app-grid { grid-template-columns: 1fr 1fr; } /* 手机端每排显示两个板块 */
+            
+            .app-grid { grid-template-columns: 1fr 1fr; }
         }
 
-        /* --- 页脚样式 --- */
+        /* --- 页脚设置 --- */
         footer {
             background: var(--deep-dark); 
             color: #888; 
             padding: 4rem 5%; 
-            font-size: 0.85rem; 
             text-align: center; 
+            font-size: 0.85rem; 
         }
     </style>
 </head>
@@ -203,23 +187,16 @@
 
     <nav>
         <div class="logo">SHAN YUE TEXTILE</div>
-        
         <div class="menu-toggle" id="mobile-menu">
             <span></span><span></span><span></span>
         </div>
-
         <div class="nav-links" id="nav-list">
-            <a href="#">Products</a>
-            <a href="#">Applications</a>
-            <a href="#">Sustainability</a>
-            <a href="#">Innovation</a>
-            <a href="#">Contact</a>
+            <a href="#">Products</a><a href="#">Applications</a><a href="#">Sustainability</a><a href="#">Innovation</a><a href="#">Contact</a>
         </div>
     </nav>
 
     <section class="hero">
         <img src="images/hero2.png" alt="Shanyue Textile Factory">
-        
         <div class="hero-overlay">
             <div class="hero-content">
                 <h1></h1>
@@ -246,8 +223,6 @@
     <script>
         const menuBtn = document.getElementById('mobile-menu'); 
         const navList = document.getElementById('nav-list');   
-        
-        // 点击三横杠按钮切换 active 状态
         menuBtn.addEventListener('click', () => { 
             navList.classList.toggle('active'); 
         });
