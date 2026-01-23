@@ -3,154 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shaoxing Shaoyun Textile | 25 Years of Yarn Expertise</title>
+    <title>Shaoyun Textile | Innovative Yarn Solutions</title>
     <style>
-        /* 1. 工业蓝配色方案 */
         :root {
-            --primary: #0f172a;    /* 深工业蓝 */
-            --secondary: #2563eb;  /* 科技蓝 */
-            --accent: #fbbf24;     /* 活力金 */
-            --bg: #f8fafc;         /* 浅灰蓝背景 */
-            --text: #1e293b;       /* 深灰文字 */
-            --white: #ffffff;
+            /* 东丽风格色板：深邃、专业、干净 */
+            --toray-blue: #004098; 
+            --deep-dark: #1a1a1a;
+            --soft-white: #ffffff;
+            --light-grey: #f4f7f9;
+            --text-gray: #4a4a4a;
+            --transition: all 0.3s ease;
         }
 
-        /* 2. 基础样式 */
         body {
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: var(--deep-dark);
+            background-color: var(--soft-white);
+            -webkit-font-smoothing: antialiased;
         }
 
-        header {
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 1rem 0;
-            text-align: center;
+        /* 1. 兰精式导航：侧重战略与应用 */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background: var(--soft-white);
+            border-bottom: 1px solid #eee;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        /* 3. 响应式容器 */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--toray-blue);
+            letter-spacing: -0.5px;
         }
 
-        /* 4. 英雄横幅区 */
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--deep-dark);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover { color: var(--toray-blue); }
+
+        /* 2. 东丽式英雄区：技术感与大视界 */
         .hero {
-            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), 
-                        url('https://images.unsplash.com/photo-1558350315-8aa00e8e4590?auto=format&fit=crop&w=1200&q=80');
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1600&q=80');
             background-size: cover;
             background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
-            padding: 80px 20px;
             text-align: center;
         }
 
-        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
-        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto; }
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
 
-        /* 5. 产品网格布局 (电脑端横排) */
-        .grid {
+        /* 3. 应用领域：借鉴兰精的业务分类 */
+        .section-title {
+            text-align: center;
+            padding: 4rem 0 2rem;
+            font-size: 2rem;
+            color: var(--toray-blue);
+        }
+
+        .app-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            padding: 40px 0;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: #eee; /* 细线分隔效果 */
+            border: 1px solid #eee;
         }
 
-        .card {
-            background: var(--white);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
+        .app-item {
+            background: var(--soft-white);
+            padding: 3rem 1.5rem;
+            text-align: center;
+            transition: var(--transition);
         }
 
-        .card:hover { transform: translateY(-5px); }
+        .app-item:hover { background: var(--light-grey); }
 
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 4px;
-        }
+        .app-item h3 { font-size: 1.1rem; margin-bottom: 10px; }
+        .app-item p { font-size: 0.85rem; color: var(--text-gray); }
 
-        /* 6. 手机端适配 (关键媒体查询) */
+        /* 4. 响应式适配：手机端自动调整 */
         @media (max-width: 768px) {
-            /* 手机端网格变成一列 */
-            .grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-
-            .hero {
-                padding: 40px 20px;
-            }
-
-            /* 手机端导航调整 */
-            header {
-                padding: 0.5rem 0;
-            }
+            .nav-links { display: none; } /* 手机端隐藏复杂菜单，后续可加汉堡菜单 */
+            .hero-content h1 { font-size: 2rem; }
+            .app-grid { grid-template-columns: 1fr 1fr; }
+            .hero { height: 50vh; }
         }
 
         footer {
-            background: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 40px 0;
-            margin-top: 40px;
+            background: var(--deep-dark);
+            color: #888;
+            padding: 4rem 5%;
+            font-size: 0.8rem;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <strong>Shaoxing Shaoyun Textile Co., Ltd.</strong>
+    <nav>
+        <div class="logo">SHAOYUN TEXTILE</div>
+        <div class="nav-links">
+            <a href="#">Products</a>
+            <a href="#">Applications</a>
+            <a href="#">Sustainability</a>
+            <a href="#">Innovation</a>
+            <a href="#">Investors</a>
         </div>
-    </header>
+    </nav>
 
     <section class="hero">
-        <div class="container">
-            <h1>25 Years of Technical Mastery</h1>
-            <p>Your Trusted Global Partner for Premium Yarn Solutions. Rooted in China, Serving the World.</p>
+        <div class="hero-content">
+            <h1>Materials for Tomorrow</h1>
+            <p>25 Years of Excellence in Yarn Technology</p>
         </div>
     </section>
 
-    <div class="container">
-        <h2 style="text-align: center; margin-top: 40px;">Featured Products</h2>
-        <div class="grid">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1610473068504-2f5a6df91206?auto=format&fit=crop&w=400&q=80" alt="Cotton Yarn">
-                <h3>Cotton & Blends</h3>
-                <p>High-quality raw materials for durable and soft textile production.</p>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1620799140408-edc6bd6d6333?auto=format&fit=crop&w=400&q=80" alt="Polyester Yarn">
-                <h3>Functional Polyester</h3>
-                <p>Innovative fibers with moisture-wicking and quick-dry properties.</p>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1528476513691-07e6f563d97f?auto=format&fit=crop&w=400&q=80" alt="Specialty Fiber">
-                <h3>Specialty Fibers</h3>
-                <p>Tailored solutions for industrial and high-end fashion needs.</p>
-            </div>
+    <div class="section-title">Our Applications</div>
+    
+    <div class="app-grid">
+        <div class="app-item">
+            <h3>Apparel</h3>
+            <p>High-performance fibers for fashion and functional wear.</p>
+        </div>
+        <div class="app-item">
+            <h3>Home Textile</h3>
+            <p>Superior comfort and durability for modern living spaces.</p>
+        </div>
+        <div class="app-item">
+            <h3>Technical Use</h3>
+            <p>Engineered solutions for industrial and automotive needs.</p>
+        </div>
+        <div class="app-item">
+            <h3>Sustainability</h3>
+            <p>Recycled and bio-based yarn for a greener future.</p>
         </div>
     </div>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Shaoxing Shaoyun Textile Co., Ltd. All Rights Reserved.</p>
-            <p>Contact: leogao@yarnsvc.com | Shaoxing, China</p>
-        </div>
+        <div style="color: white; margin-bottom: 20px; font-size: 1rem;">Shaoxing Shaoyun Textile Co., Ltd.</div>
+        <p>&copy; 2026. Global Supply Chain Office. Powered by Shaoyun Tech.</p>
+        <p>Email: leogao@yarnsvc.com | Address: Shaoxing, Zhejiang, China</p>
     </footer>
 
 </body>
