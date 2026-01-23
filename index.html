@@ -3,148 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shan Yue Yarn Service Group </title>
+    <title>Shaoxing Shaoyun Textile | 25 Years of Yarn Expertise</title>
     <style>
+        /* 1. 工业蓝配色方案 */
         :root {
-  --primary-color: #1a365d;    /* 深工业蓝：标题和导航 */
-  --secondary-color: #2b6cb0;  /* 亮蓝色：按钮和重点 */
-  --accent-color: #ed8936;     /* 活力橙：微小的点缀，如强调文字 */
-  --bg-light: #f7fafc;         /* 浅灰蓝背景 */
-  --text-main: #2d3748;        /* 深灰文字 */
-              }
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: var(--text); margin: 0; }
-        
-        /* Navigation */
-        header { background: #fff; padding: 1.5rem 8%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
-        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); letter-spacing: 1px; }
-        nav a { color: var(--text); margin-left: 30px; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: 0.3s; }
-        nav a:hover { color: var(--accent); }
-
-        /* Hero Section */
-        .hero { 
-            height: 75vh; 
-            background: linear-gradient(rgba(0,46,91,0.7), rgba(0,46,91,0.7)), url('https://images.unsplash.com/photo-1528851219304-47cd6ed7b42d?auto=format&fit=crop&w=1500&q=80'); 
-            background-size: cover; background-position: center; 
-            display: flex; flex-direction: column; justify-content: center; align-items: center; 
-            color: white; text-align: center; padding: 0 15%; 
+            --primary: #0f172a;    /* 深工业蓝 */
+            --secondary: #2563eb;  /* 科技蓝 */
+            --accent: #fbbf24;     /* 活力金 */
+            --bg: #f8fafc;         /* 浅灰蓝背景 */
+            --text: #1e293b;       /* 深灰文字 */
+            --white: #ffffff;
         }
-        .hero h1 { font-size: 3.5rem; margin-bottom: 1.5rem; line-height: 1.2; }
-        .hero p { font-size: 1.3rem; max-width: 800px; margin-bottom: 2rem; }
-        .btn { background: var(--accent); color: white; padding: 12px 30px; text-decoration: none; border-radius: 4px; font-weight: bold; transition: 0.3s; }
-        .btn:hover { background: #b08e48; }
 
-        /* Content Sections */
-        section { padding: 100px 10%; }
-        .section-title { text-align: center; margin-bottom: 60px; }
-        .section-title h2 { font-size: 2.2rem; color: var(--primary); margin-bottom: 10px; }
-        .section-title .underline { width: 60px; height: 3px; background: var(--accent); margin: 0 auto; }
+        /* 2. 基础样式 */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
 
-        /* Features/Advantages */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-        .card { background: var(--light-bg); padding: 40px; border-radius: 8px; transition: 0.4s; }
-        .card:hover { transform: translateY(-10px); background: #fff; box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-        .card h3 { color: var(--primary); margin-top: 0; }
+        header {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 1rem 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-        /* Products */
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .product-box { text-align: center; }
-        .product-box img { width: 100%; height: 250px; object-fit: cover; border-radius: 5px; }
+        /* 3. 响应式容器 */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-        /* Footer */
-        footer { background: #1a1a1a; color: #fff; padding: 80px 10% 40px; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 50px; }
-        .footer-info h4 { color: var(--accent); margin-bottom: 20px; }
-        .footer-bottom { border-top: 1px solid #333; padding-top: 20px; text-align: center; font-size: 0.8rem; opacity: 0.6; }
+        /* 4. 英雄横幅区 */
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), 
+                        url('https://images.unsplash.com/photo-1558350315-8aa00e8e4590?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
 
-        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto; }
+
+        /* 5. 产品网格布局 (电脑端横排) */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 40px 0;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover { transform: translateY(-5px); }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        /* 6. 手机端适配 (关键媒体查询) */
+        @media (max-width: 768px) {
+            /* 手机端网格变成一列 */
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero {
+                padding: 40px 20px;
+            }
+
+            /* 手机端导航调整 */
+            header {
+                padding: 0.5rem 0;
+            }
+        }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 40px;
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">YARNSVC GROUP</div>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#expertise">Expertise</a>
-            <a href="#products">Products</a>
-            <a href="#contact">Contact</a>
-        </nav>
+        <div class="container">
+            <strong>Shaoxing Shaoyun Textile Co., Ltd.</strong>
+        </div>
     </header>
 
     <section class="hero">
-        <h1>300 Years of Excellence in <br>Global Yarn & Fiber Sourcing</h1>
-        <p>Your strategic partner connecting the most competitive textile resources across Mainland China and Southeast Asia.</p>
-        <a href="#contact" class="btn">Inquiry Now</a>
-    </section>
-
-    <section id="about">
-        <div class="section-title">
-            <h2>Who We Are</h2>
-            <div class="underline"></div>
-        </div>
-        <div style="max-width: 900px; margin: 0 auto; text-align: center; font-size: 1.1rem; line-height: 2;">
-            Headquartered in <strong>Shaoxing, China</strong>—the global hub of textiles—<strong>Yarn Service Group</strong> has been a trusted leader for over 25 years. With our own manufacturing facilities and a robust network across Southeast Asia, we provide optimized supply chain solutions for international buyers seeking quality, cost-efficiency, and reliability.
+        <div class="container">
+            <h1>25 Years of Technical Mastery</h1>
+            <p>Your Trusted Global Partner for Premium Yarn Solutions. Rooted in China, Serving the World.</p>
         </div>
     </section>
 
-    <section id="expertise" style="background: var(--light-bg);">
-        <div class="section-title">
-            <h2>Our Core Advantages</h2>
-            <div class="underline"></div>
-        </div>
+    <div class="container">
+        <h2 style="text-align: center; margin-top: 40px;">Featured Products</h2>
         <div class="grid">
             <div class="card">
-                <h3>Own Manufacturing</h3>
-                <p>We operate direct production lines, ensuring stringent quality control and stable lead times from the source.</p>
+                <img src="https://images.unsplash.com/photo-1610473068504-2f5a6df91206?auto=format&fit=crop&w=400&q=80" alt="Cotton Yarn">
+                <h3>Cotton & Blends</h3>
+                <p>High-quality raw materials for durable and soft textile production.</p>
             </div>
             <div class="card">
-                <h3>Pan-Asian Sourcing</h3>
-                <p>Deeply rooted in China and SE Asia, we navigate complex markets to find the most competitive products for you.</p>
+                <img src="https://images.unsplash.com/photo-1620799140408-edc6bd6d6333?auto=format&fit=crop&w=400&q=80" alt="Polyester Yarn">
+                <h3>Functional Polyester</h3>
+                <p>Innovative fibers with moisture-wicking and quick-dry properties.</p>
             </div>
             <div class="card">
-                <h3>Technical Mastery</h3>
-                <p>25 years of technical expertise in fiber properties and market trends to support your product development.</p>
+                <img src="https://images.unsplash.com/photo-1528476513691-07e6f563d97f?auto=format&fit=crop&w=400&q=80" alt="Specialty Fiber">
+                <h3>Specialty Fibers</h3>
+                <p>Tailored solutions for industrial and high-end fashion needs.</p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section id="products">
-        <div class="section-title">
-            <h2>Featured Categories</h2>
-            <div class="underline"></div>
-        </div>
-        <div class="product-grid">
-            <div class="product-box">
-                <img src="https://images.unsplash.com/photo-1610473068504-2f5a6df91206?auto=format&fit=crop&w=500&q=80" alt="Yarns">
-                <h3>Premium Yarns</h3>
-                <p>Cotton, Polyester, Blends & Functional Yarns</p>
-            </div>
-            <div class="product-box">
-                <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=500&q=80" alt="Fibers">
-                <h3>Industrial Fibers</h3>
-                <p>Sustainable and high-performance fiber solutions</p>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contact">
-        <div class="footer-grid">
-            <div class="footer-info">
-                <h4>Contact Us</h4>
-                <p>Email: leogao@yarnsvc.com</p>
-                <p>Web: www.yarnsvc.com</p>
-            </div>
-            <div class="footer-info">
-                <h4>Global HQ</h4>
-                <p>Shaoxing, Zhejiang Province, China</p>
-            </div>
-            <div class="footer-info">
-                <h4>Working Hours</h4>
-                <p>Mon - Fri: 9:00 AM - 6:00 PM (GMT+8)</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            &copy; 2026 Yarn Service Group (Shaoxing Shanyue). All Rights Reserved.
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Shaoxing Shaoyun Textile Co., Ltd. All Rights Reserved.</p>
+            <p>Contact: leogao@yarnsvc.com | Shaoxing, China</p>
         </div>
     </footer>
 
