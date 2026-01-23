@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shaoyun Textile | Innovative Yarn Solutions</title>
+    <title>Shanyue Textile | Innovative Yarn Solutions</title>
     <style>
         :root {
             /* 东丽风格色板：深邃、专业、干净 */
-            --toray-blue: #004098; 
+            --brand-blue: #004098; 
             --deep-dark: #1a1a1a;
             --soft-white: #ffffff;
             --light-grey: #f4f7f9;
@@ -39,8 +39,9 @@
         .logo {
             font-size: 1.2rem;
             font-weight: 800;
-            color: var(--toray-blue);
-            letter-spacing: -0.5px;
+            color: var(--brand-blue);
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .nav-links {
@@ -56,13 +57,13 @@
             transition: var(--transition);
         }
 
-        .nav-links a:hover { color: var(--toray-blue); }
+        .nav-links a:hover { color: var(--brand-blue); }
 
         /* 2. 东丽式英雄区：技术感与大视界 */
         .hero {
             height: 70vh;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-                        url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1600&q=80');
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1558350315-8aa00e8e4590?auto=format&fit=crop&w=1600&q=80');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -76,40 +77,57 @@
             font-size: 3.5rem;
             margin-bottom: 1rem;
             font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
         }
 
         /* 3. 应用领域：借鉴兰精的业务分类 */
         .section-title {
             text-align: center;
-            padding: 4rem 0 2rem;
-            font-size: 2rem;
-            color: var(--toray-blue);
+            padding: 5rem 0 3rem;
+            font-size: 2.2rem;
+            color: var(--brand-blue);
+            font-weight: 300;
         }
 
         .app-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 1px;
-            background: #eee; /* 细线分隔效果 */
+            background: #eee;
             border: 1px solid #eee;
         }
 
         .app-item {
             background: var(--soft-white);
-            padding: 3rem 1.5rem;
+            padding: 4rem 2rem;
             text-align: center;
             transition: var(--transition);
         }
 
-        .app-item:hover { background: var(--light-grey); }
+        .app-item:hover { 
+            background: var(--light-grey);
+            transform: translateY(-2px);
+        }
 
-        .app-item h3 { font-size: 1.1rem; margin-bottom: 10px; }
-        .app-item p { font-size: 0.85rem; color: var(--text-gray); }
+        .app-item h3 { font-size: 1.1rem; margin-bottom: 15px; color: var(--brand-blue); }
+        .app-item p { font-size: 0.85rem; color: var(--text-gray); line-height: 1.6; }
 
-        /* 4. 响应式适配：手机端自动调整 */
+        /* 4. 响应式适配 */
+        @media (max-width: 1024px) {
+            .nav-links { gap: 1.5rem; }
+        }
+
         @media (max-width: 768px) {
-            .nav-links { display: none; } /* 手机端隐藏复杂菜单，后续可加汉堡菜单 */
-            .hero-content h1 { font-size: 2rem; }
+            .nav-links { display: none; } /* 移动端暂时隐藏菜单 */
+            .hero-content h1 { font-size: 2.2rem; }
+            .hero-content p { font-size: 1rem; padding: 0 20px; }
             .app-grid { grid-template-columns: 1fr 1fr; }
             .hero { height: 50vh; }
         }
@@ -117,56 +135,65 @@
         footer {
             background: var(--deep-dark);
             color: #888;
-            padding: 4rem 5%;
-            font-size: 0.8rem;
+            padding: 5rem 5%;
+            font-size: 0.85rem;
+            line-height: 2;
+        }
+
+        .footer-brand {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">SHAOYUN TEXTILE</div>
+        <div class="logo">SHAN YUE TEXTILE</div>
         <div class="nav-links">
             <a href="#">Products</a>
             <a href="#">Applications</a>
             <a href="#">Sustainability</a>
             <a href="#">Innovation</a>
-            <a href="#">Investors</a>
+            <a href="#">Contact</a>
         </div>
     </nav>
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Materials for Tomorrow</h1>
-            <p>25 Years of Excellence in Yarn Technology</p>
+            <h1>SHAN YUE TEXTILE</h1>
+            <p>25 Years of Technical Mastery in Premium Yarn Manufacturing</p>
         </div>
     </section>
 
-    <div class="section-title">Our Applications</div>
+    <div class="section-title">Global Applications</div>
     
     <div class="app-grid">
         <div class="app-item">
             <h3>Apparel</h3>
-            <p>High-performance fibers for fashion and functional wear.</p>
+            <p>Advanced fibers designed for high-end fashion and activewear performance.</p>
         </div>
         <div class="app-item">
-            <h3>Home Textile</h3>
-            <p>Superior comfort and durability for modern living spaces.</p>
+            <h3>Home & Interior</h3>
+            <p>Creating comfort and durability for modern residential and commercial spaces.</p>
         </div>
         <div class="app-item">
-            <h3>Technical Use</h3>
-            <p>Engineered solutions for industrial and automotive needs.</p>
+            <h3>Technical Textiles</h3>
+            <p>Specialized yarn solutions for automotive, industrial, and medical industries.</p>
         </div>
         <div class="app-item">
-            <h3>Sustainability</h3>
-            <p>Recycled and bio-based yarn for a greener future.</p>
+            <h3>Eco-Innovation</h3>
+            <p>Pioneering sustainable growth through recycled and bio-based materials.</p>
         </div>
     </div>
 
     <footer>
-        <div style="color: white; margin-bottom: 20px; font-size: 1rem;">Shaoxing Shaoyun Textile Co., Ltd.</div>
-        <p>&copy; 2026. Global Supply Chain Office. Powered by Shaoyun Tech.</p>
-        <p>Email: leogao@yarnsvc.com | Address: Shaoxing, Zhejiang, China</p>
+        <div class="footer-brand">Shaoxing Shanyue Textile Co., Ltd.</div>
+        <p>Expertise in Global Yarn Supply Chain since 2001.</p>
+        <p>&copy; 2026 Shanyue Textile. All Rights Reserved.</p>
+        <p>Location: Shaoxing, Zhejiang, China | Email: leogao@yarnsvc.com</p>
     </footer>
 
 </body>
