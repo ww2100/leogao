@@ -6,212 +6,229 @@
     <title>Shanyue Textile | Innovative Yarn Solutions</title>
     
     <style>
-        /* --- 全局变量 --- */
+        /* --- 全局CSS变量：方便统一修改品牌主色调 --- */
         :root {
-            --brand-blue: #004098;  
-            --deep-dark: #1a1a1a;   
-            --soft-white: #ffffff;  
-            --transition: all 0.3s ease; 
+            --brand-blue: #004098;  /* 品牌蓝色 */
+            --deep-dark: #1a1a1a;   /* 页面文字主色 */
+            --soft-white: #ffffff;  /* 纯白色背景 */
+            --transition: all 0.3s ease; /* 全局平滑过渡时间 */
         }
 
-        /* --- 基础页面设置 --- */
+        /* --- 页面基础设置 --- */
         body {
-            margin: 0; 
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
-            color: var(--deep-dark); 
-            background-color: var(--soft-white); 
-            -webkit-font-smoothing: antialiased; 
+            margin: 0; /* 消除浏览器默认页边距 */
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* 设置优先使用的字体 */
+            color: var(--deep-dark); /* 应用全局文字颜色 */
+            background-color: var(--soft-white); /* 设置背景色 */
+            -webkit-font-smoothing: antialiased; /* 在Mac和iOS上启用字体平滑渲染 */
         }
 
-        /* --- 导航栏 --- */
+        /* --- 顶部导航栏布局 --- */
         nav {
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding: 1rem 5%; 
-            background: var(--soft-white); 
-            border-bottom: 1px solid #eee; 
-            position: sticky; 
-            top: 0; 
-            z-index: 1000; 
+            display: flex; /* 启用弹性盒布局 */
+            justify-content: space-between; /* 左右两端对齐 */
+            align-items: center; /* 垂直方向居中对齐 */
+            padding: 1rem 5%; /* 上下内边距1rem，左右边距占屏幕5% */
+            background: var(--soft-white); /* 导航栏背景白色 */
+            border-bottom: 1px solid #eee; /* 底部浅灰色细边框线 */
+            position: sticky; /* 滚动时吸附在顶部 */
+            top: 0; /* 吸附在顶部的位置为0 */
+            z-index: 1000; /* 确保导航栏始终在图片上方显示 */
         }
 
+        /* --- Logo文字样式 --- */
         .logo {
-            font-size: 1.2rem; 
-            font-weight: 800; 
-            color: var(--brand-blue); 
-            text-transform: uppercase; 
+            font-size: 1.2rem; /* 字体大小 */
+            font-weight: 800; /* 字体最粗 */
+            color: var(--brand-blue); /* 品牌蓝色 */
+            text-transform: uppercase; /* 强制所有字母大写 */
         }
 
+        /* --- 导航链接容器 --- */
         .nav-links {
-            display: flex; 
-            gap: 2.5rem; 
+            display: flex; /* 链接横向排列 */
+            gap: 2.5rem; /* 链接之间的水平间距 */
         }
 
+        /* --- 单个导航链接样式 --- */
         .nav-links a {
-            text-decoration: none; 
-            color: var(--deep-dark); 
-            font-size: 0.9rem; 
-            transition: var(--transition); 
+            text-decoration: none; /* 去除默认下划线 */
+            color: var(--deep-dark); /* 文字颜色 */
+            font-size: 0.9rem; /* 字体大小 */
+            transition: var(--transition); /* 悬停时颜色过渡动画 */
         }
 
-        .nav-links a:hover { color: var(--brand-blue); }
+        /* --- 导航链接悬停效果 --- */
+        .nav-links a:hover { color: var(--brand-blue); } /* 鼠标移上去变蓝色 */
 
+        /* --- 手机版菜单开关按钮 --- */
         .menu-toggle {
-            display: none; 
-            flex-direction: column; 
-            gap: 5px; 
-            cursor: pointer; 
+            display: none; /* 电脑端默认隐藏 */
+            flex-direction: column; /* 内部线条垂直排列 */
+            gap: 5px; /* 线条之间的距离 */
+            cursor: pointer; /* 鼠标悬停变手型 */
         }
 
+        /* --- 菜单开关的线条样式 --- */
         .menu-toggle span {
-            width: 25px; 
-            height: 3px; 
-            background-color: var(--brand-blue); 
+            width: 25px; /* 线条宽度 */
+            height: 3px; /* 线条高度 */
+            background-color: var(--brand-blue); /* 线条颜色 */
         }
 
-        /* --- 英雄区 --- */
+        /* --- 英雄区（幻灯片展示区） --- */
         .hero {
-            position: relative; 
-            width: 100%; 
-            overflow: hidden; 
-            background-color: #000; 
+            position: relative; /* 设为定位基准，供内部图片和文字参考 */
+            width: 100%; /* 宽度占满全屏 */
+            height: 65vh; /* 电脑端占据屏幕高度的65% */
+            overflow: hidden; /* 超出部分（缩放动画膨胀部分）隐藏 */
+            background-color: #000; /* 背景黑底，防止加载图时闪白 */
         }
 
-        .hero img {
-            width: 100%; 
-            display: block; 
-            height: 65vh; 
-            object-fit: cover; 
-            object-position: center 30%; 
+        /* --- 幻灯片单张图片核心样式 --- */
+        .hero .slide {
+            position: absolute; /* 所有图片重叠在同一个位置 */
+            top: 0; /* 顶部对齐 */
+            left: 0; /* 左侧对齐 */
+            width: 100%; /* 图片宽度铺满 */
+            height: 100%; /* 图片高度铺满 */
+            opacity: 0; /* 默认完全透明，隐藏 */
+            object-fit: cover; /* 保证图片不变形且填满容器 */
+            object-position: center 30%; /* 图片显示中心点向上微调30% */
+            /* 核心动画：24秒一轮循环，无限重复 */
+            animation: kenburns-fade 24s infinite; 
         }
 
+        /* --- 控制图片切换的延迟时间 --- */
+        .slide:nth-child(1) { animation-delay: 0s; } /* 第一张图立即开始 */
+        .slide:nth-child(2) { animation-delay: 8s; } /* 第二张图在8秒后开始 */
+        .slide:nth-child(3) { animation-delay: 16s; } /* 第三张图在16秒后开始 */
+
+        /* --- 渐隐渐现+缩放动画定义 --- */
+        @keyframes kenburns-fade {
+            0% { opacity: 0; transform: scale(1); } /* 初始：透明，原始大小 */
+            5% { opacity: 1; } /* 渐入：5%时间节点完成进入 */
+            33% { opacity: 1; } /* 保持：在1/3的时间内保持显示 */
+            40% { opacity: 0; transform: scale(1.15); } /* 退出：渐出并放大到1.15倍 */
+            100% { opacity: 0; } /* 结束：保持透明直到下一轮 */
+        }
+
+        /* --- 文字上方的黑色滤镜遮罩 --- */
         .hero-overlay {
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            background: rgba(0,0,0,0.3); 
+            position: absolute; /* 覆盖在图片上方 */
+            top: 0; left: 0; width: 100%; height: 100%; /* 铺满整个英雄区 */
+            background: rgba(0,0,0,0.3); /* 30%黑色的半透明遮罩，提升文字清晰度 */
+            z-index: 5; /* 层级高于图片，低于文字 */
         }
 
+        /* --- 左下角文字容器 --- */
         .hero-content {
-            position: absolute;   
-            left: 5%;             
-            bottom: 8%;           
-            color: white; 
-            text-align: left !important; 
-            max-width: 800px; 
+            position: absolute; /* 绝对定位到左下角 */
+            left: 5%; /* 距离左边缘5% */
+            bottom: 8%; /* 距离底边缘8% */
+            color: white; /* 大标题颜色白色 */
+            text-align: left !important; /* 强制文字靠左对齐 */
+            max-width: 800px; /* 限制最大宽度 */
+            z-index: 10; /* 层级最高，确保文字可见 */
         }
 
+        /* --- 大标题样式 --- */
         .hero-content h1 {
-            font-size: clamp(1.8rem, 5vw, 3.2rem); 
-            margin-bottom: 0.5rem; 
-            font-weight: 300; 
-            letter-spacing: 2px; 
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5); 
+            font-size: clamp(1.8rem, 5vw, 3.2rem); /* 响应式字号 */
+            margin-bottom: 0.5rem; /* 标题与副标题间距 */
+            font-weight: 300; /* 细体字显高级 */
+            letter-spacing: 2px; /* 字符间距 */
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5); /* 文字外发光阴影 */
         }
 
+        /* --- 副标题（冰川灰文字） --- */
         .hero-content p {
-            color: #d1dce5; /* 冰川灰 */
-            font-size: clamp(1.1rem, 2.5vw, 1.6rem); 
-            margin: 0;
-            line-height: 1.4; 
-            font-weight: 400;
+            color: #d1dce5; /* 使用指定的冰川灰色 */
+            font-size: clamp(1.1rem, 2.5vw, 1.6rem); /* 响应式字号 */
+            margin: 0; /* 清除默认外边距 */
+            line-height: 1.4; /* 行高，让两行文字不拥挤 */
+            font-weight: 400; /* 标准字重 */
         }
 
         /* --- 业务网格标题 --- */
         .section-title {
-            text-align: center; 
-            padding: 4rem 0 2rem; 
-            font-size: 2rem; 
-            color: var(--brand-blue); 
+            text-align: center; /* 居中 */
+            padding: 4rem 0 2rem; /* 上下内边距 */
+            font-size: 2rem; /* 字号 */
+            color: var(--brand-blue); /* 品牌蓝 */
         }
 
-        /* --- 电脑端业务网格 --- */
+        /* --- 业务板块网格布局 --- */
         .app-grid {
-            display: grid; 
-            grid-template-columns: repeat(4, 1fr); 
-            gap: 1px; 
-            background: #eee; 
+            display: grid; /* 启用网格布局 */
+            grid-template-columns: repeat(4, 1fr); /* 电脑端：4列平分 */
+            gap: 1px; /* 格子间细缝 */
+            background: #eee; /* 细缝显示为灰色 */
         }
 
+        /* --- 单个板块内容 --- */
         .app-item {
-            background: var(--soft-white); 
-            padding: 4rem 2rem; 
-            text-align: center; 
+            background: var(--soft-white); /* 内部背景白色 */
+            padding: 4rem 2rem; /* 内部填充 */
+            text-align: center; /* 居中 */
         }
 
-        /* --- 移动端适配：高度与间距优化 --- */
+        /* --- 手机端适配逻辑 --- */
         @media (max-width: 768px) {
-            .menu-toggle { display: flex; }
+            .menu-toggle { display: flex; } /* 显示手机版菜单按钮 */
             .nav-links {
-                display: none; 
-                flex-direction: column; 
-                position: absolute; 
-                top: 100%; 
-                left: 0; 
-                width: 100%; 
-                background: white; 
-                padding: 20px 0; 
+                display: none; /* 默认隐藏导航链接 */
+                flex-direction: column; /* 链接改为垂直排列 */
+                position: absolute; /* 绝对定位在导航栏下方 */
+                top: 100%; left: 0; width: 100%; /* 铺满宽度 */
+                background: white; /* 菜单背景白色 */
+                padding: 20px 0; /* 菜单上下内边距 */
             }
-            .nav-links.active { display: flex; }
+            .nav-links.active { display: flex; } /* 点击后展开菜单 */
             
-            .hero img {
-                height: auto; 
-                min-height: 310px; 
+            /* 手机版图片高度：减小后的尺寸 */
+            .hero {
+                height: 310px; /* 固定高度，更加精炼 */
             }
 
+            /* 手机版文字位置微调 */
             .hero-content {
-                left: 20px !important; 
-                bottom: 20px !important; 
-                padding: 0 !important; 
+                left: 20px !important; /* 距离左边缘20像素 */
+                bottom: 20px !important; /* 距离底边缘20像素 */
+                padding: 0 !important; /* 取消额外内边距 */
             }
             
-            /* 手机端网格微调：让四个格子靠拢 */
+            /* 手机版网格靠拢设置 */
             .app-grid { 
-                grid-template-columns: 1fr 1fr; 
-                gap: 0.5px; /* 减小格子间的细缝 */
-                background: #ddd; /* 稍微淡化线条颜色，视觉上更靠拢 */
+                grid-template-columns: 1fr 1fr; /* 2列排列 */
+                gap: 0.5px; /* 间距减小10% */
             }
-
-            .app-item {
-                /* 减少内部上下间距，让内容看起来更紧凑（减少了约10%） */
-                padding: 3rem 1rem; 
-            }
-
-            .section-title {
-                padding: 3rem 0 1.5rem; /* 标题与网格的距离也同步缩小 */
-            }
+            .app-item { padding: 3rem 1rem; } /* 内部填充减小，使板块更靠拢 */
+            .section-title { padding: 3rem 0 1.5rem; } /* 标题间距缩小 */
         }
 
+        /* --- 页脚样式 --- */
         footer {
-            background: var(--deep-dark); 
-            color: #888; 
-            padding: 4rem 5%; 
-            text-align: center; 
+            background: var(--deep-dark); /* 深灰色背景 */
+            color: #888; /* 浅灰色文字 */
+            padding: 4rem 5%; /* 上下内边距 */
+            text-align: center; /* 文字居中 */
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">SHAN YUE TEXTILE</div>
-        <div class="menu-toggle" id="mobile-menu">
-            <span></span><span></span><span></span>
+        <div class="logo">SHAN YUE TEXTILE</div> <div class="menu-toggle" id="mobile-menu"> <span></span><span></span><span></span>
         </div>
-        <div class="nav-links" id="nav-list">
-            <a href="#">Products</a><a href="#">Applications</a><a href="#">Sustainability</a><a href="#">Innovation</a><a href="#">Contact</a>
+        <div class="nav-links" id="nav-list"> <a href="#">Products</a><a href="#">Applications</a><a href="#">Sustainability</a><a href="#">Innovation</a><a href="#">Contact</a>
         </div>
     </nav>
 
     <section class="hero">
-        <img src="images/hero2.png" alt="Shanyue Textile Factory">
-        <div class="hero-overlay">
+        <img src="images/hero2.png" alt="Innovation" class="slide"> <img src="images/hero1.png" alt="Factory" class="slide">     <img src="images/hero3.png" alt="Sustainability" class="slide"> <div class="hero-overlay">
             <div class="hero-content">
-                <h1></h1>
-                <p>25 Years of Excellence<br>in Professional Textile Services</p>
-            </div>
+                <h1></h1> <p>25 Years of Excellence<br>in Professional Textile Services</p> </div>
         </div>
     </section>
 
@@ -231,10 +248,10 @@
     </footer>
 
     <script>
-        const menuBtn = document.getElementById('mobile-menu'); 
-        const navList = document.getElementById('nav-list');   
+        const menuBtn = document.getElementById('mobile-menu'); // 获取开关按钮
+        const navList = document.getElementById('nav-list');   // 获取导航列表
         menuBtn.addEventListener('click', () => { 
-            navList.classList.toggle('active'); 
+            navList.classList.toggle('active'); // 切换显示/隐藏状态
         });
     </script>
 </body>
