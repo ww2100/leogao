@@ -6,7 +6,7 @@
     <title>Shanyue Textile | Innovative Yarn Solutions</title>
     
     <style>
-        /* --- 全局变量 --- */
+        /* --- 全局颜色与变量 --- */
         :root {
             --brand-blue: #004098;  
             --deep-dark: #1a1a1a;   
@@ -23,7 +23,7 @@
             -webkit-font-smoothing: antialiased; 
         }
 
-        /* --- 导航栏 --- */
+        /* --- 导航栏设置 --- */
         nav {
             display: flex; 
             justify-content: space-between; 
@@ -70,7 +70,7 @@
             background-color: var(--brand-blue); 
         }
 
-        /* --- 英雄区 --- */
+        /* --- 英雄区（大图区）布局 --- */
         .hero {
             position: relative; 
             width: 100%; 
@@ -86,6 +86,7 @@
             object-position: center 30%; 
         }
 
+        /* --- 遮罩层 --- */
         .hero-overlay {
             position: absolute; 
             top: 0; 
@@ -95,11 +96,12 @@
             background: rgba(0,0,0,0.3); 
         }
 
+        /* --- 英雄区文字容器（左下角） --- */
         .hero-content {
             position: absolute;   
             left: 5%;             
             bottom: 8%;           
-            color: white; 
+            color: white; /* 这里的白色作为大标题的默认色 */
             text-align: left !important; 
             max-width: 800px; 
         }
@@ -112,15 +114,17 @@
             text-shadow: 0 2px 10px rgba(0,0,0,0.5); 
         }
 
+        /* --- 副标题：已设置为冰川灰 --- */
         .hero-content p {
-            color: #d1dce5; /* 冰川灰 */
+            color: #d1dce5; /* 核心修改：冰川灰 Ice Grey */
             font-size: clamp(1.1rem, 2.5vw, 1.6rem); 
             margin: 0;
             line-height: 1.4; 
             font-weight: 400;
+            text-shadow: 0 1px 5px rgba(0,0,0,0.3); /* 轻微阴影确保在亮部也清晰 */
         }
 
-        /* --- 业务网格标题 --- */
+        /* --- 业务应用网格 --- */
         .section-title {
             text-align: center; 
             padding: 4rem 0 2rem; 
@@ -128,7 +132,6 @@
             color: var(--brand-blue); 
         }
 
-        /* --- 电脑端业务网格 --- */
         .app-grid {
             display: grid; 
             grid-template-columns: repeat(4, 1fr); 
@@ -142,7 +145,7 @@
             text-align: center; 
         }
 
-        /* --- 移动端适配：高度与间距优化 --- */
+        /* --- 移动端（手机）适配：高度已减少 --- */
         @media (max-width: 768px) {
             .menu-toggle { display: flex; }
             .nav-links {
@@ -159,7 +162,7 @@
             
             .hero img {
                 height: auto; 
-                min-height: 310px; 
+                min-height: 310px; /* 手机端紧凑高度 */
             }
 
             .hero-content {
@@ -168,28 +171,16 @@
                 padding: 0 !important; 
             }
             
-            /* 手机端网格微调：让四个格子靠拢 */
-            .app-grid { 
-                grid-template-columns: 1fr 1fr; 
-                gap: 0.5px; /* 减小格子间的细缝 */
-                background: #ddd; /* 稍微淡化线条颜色，视觉上更靠拢 */
-            }
-
-            .app-item {
-                /* 减少内部上下间距，让内容看起来更紧凑（减少了约10%） */
-                padding: 3rem 1rem; 
-            }
-
-            .section-title {
-                padding: 3rem 0 1.5rem; /* 标题与网格的距离也同步缩小 */
-            }
+            .app-grid { grid-template-columns: 1fr 1fr; }
         }
 
+        /* --- 页脚设置 --- */
         footer {
             background: var(--deep-dark); 
             color: #888; 
             padding: 4rem 5%; 
             text-align: center; 
+            font-size: 0.85rem; 
         }
     </style>
 </head>
