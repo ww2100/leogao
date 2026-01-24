@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<!-- 声明文档类型为HTML5，告诉浏览器以HTML5的标准解析该网页 -->
+<html lang="en">
+<!-- 根标签，包裹整个HTML文档的所有内容；lang="en"指定网页的默认语言为英语 -->
+<head>
+    <!-- 定义网页的字符编码格式为UTF-8，UTF-8是目前通用的字符编码，支持所有中英文及特殊字符，避免出现乱码 -->
+    <meta charset="UTF-8">
+    <!-- 移动端适配核心元标签：
+        1. width=device-width：让网页的宽度等于设备的屏幕宽度
+        2. initial-scale=1.0：让网页加载时的初始缩放比例为1:1（不放大也不缩小）
+        该标签是实现响应式网页的基础，确保在手机、平板等移动设备上正常显示 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 设置网页的标题，会显示在浏览器的标签栏上，同时利于SEO（搜索引擎优化） -->
+    <title>Shanyue Textile | Innovative Yarn Solutions</title>
+    
+    <style>
+        /* --- 全局颜色与变量 --- */
+        :root {
+            /* 定义CSS自定义变量（品牌蓝色），用于网站的主色调（如logo、hover效果等），后续修改只需改这里，全局生效 */
+            --brand-blue: #004098;  
+            /* 定义CSS自定义变量（深黑色），用于网站的正文文字、页脚背景等，保证文字可读性 */
+            --deep-dark: #1a1a1a;   
+            /* 定义CSS自定义变量（纯白色），用于网站的背景、导航栏背景等 */
+            --soft-white: #ffffff;  
+            /* 定义CSS自定义变量（过渡效果），用于统一设置所有元素的过渡动画，保证动画效果一致性 */
+            --transition: all 0.3s ease; 
+        }
+
+        /* --- 基础页面设置 --- */
+        body {
+            /* 清除body标签默认的外边距（浏览器自带的8px外边距），避免页面出现不必要的留白 */
+            margin: 0; 
+            /* 设置页面的默认字体族：优先使用Helvetica Neue，没有则用Helvetica，再没有用Arial，最后用系统默认的无衬线字体 */
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+            /* 设置页面默认的文字颜色，使用之前定义的CSS变量--deep-dark */
+            color: var(--deep-dark); 
+            /* 设置页面的背景颜色，使用之前定义的CSS变量--soft-white */
+            background-color: var(--soft-white); 
+            /* 针对webkit内核浏览器（如Chrome、Safari），优化字体渲染效果，让文字更清晰平滑 */
+            -webkit-font-smoothing: antialiased; 
+        }
+
+        /* --- 导航栏设置 --- */
+        nav {
+            /* 设置导航栏为弹性布局（Flexbox），用于快速实现子元素的水平排列和对齐 */
+            display: flex; 
+            /* 让弹性布局的子元素沿主轴（水平方向）两端对齐（logo居左，导航链接/汉堡菜单居右） */
+            justify-content: space-between; 
+            /* 让弹性布局的子元素沿交叉轴（垂直方向）居中对齐，保证导航栏内元素垂直居中 */
+            align-items: center; 
+            /* 设置导航栏的内边距：上下1rem（相对字体大小的单位），左右5%（相对父元素宽度的百分比） */
+            padding: 1rem 5%; 
+            /* 设置导航栏的背景颜色，使用CSS变量--soft-white */
+            background: var(--soft-white); 
+            /* 给导航栏底部添加1px的浅灰色实线边框，用于分隔导航栏和下方内容，增加视觉层次感 */
+            border-bottom: 1px solid #eee; 
+            /* 设置导航栏的定位方式为粘性定位（sticky），滚动页面时会在指定位置（top:0）固定在页面顶部 */
+            position: sticky; 
+            /* 配合position:sticky使用，指定导航栏滚动到页面顶部时固定下来 */
+            top: 0; 
+            /* 设置元素的z-index层级为1000，确保导航栏始终在其他内容的上方，不会被其他元素遮挡 */
+            z-index: 1000; 
+            /* --- 新增：限制导航栏最大宽度 --- */
+            max-width: 1800px; 
+            /* --- 新增：在大屏幕上水平居中 --- */
+            margin: 0 auto;
+        }
+
+        .logo {
+            /* 设置logo的字体大小为1.2rem，适配不同设备的字体缩放 */
+            font-size: 1.2rem; 
+            /* 设置logo的字体粗细为800（粗体），突出品牌名称 */
+            font-weight: 800; 
+            /* 设置logo的文字颜色，使用品牌蓝色变量--brand-blue */
+            color: var(--brand-blue); 
+            /* 将logo文字转换为全大写，提升品牌视觉的正式感和辨识度 */
+            text-transform: uppercase; 
+        }
+
+        .nav-links {
+            /* 设置导航链接容器为弹性布局，实现导航链接的水平排列 */
+            display: flex; 
+            /* 设置弹性布局子元素（导航链接）之间的间距为2.5rem，避免链接过于拥挤 */
+            gap: 2.5rem; 
+        }
+
+        .nav-links a {
+            /* 清除超链接默认的下划线样式，让导航链接更美观 */
+            text-decoration: none; 
+            /* 设置导航链接的默认文字颜色，使用--deep-dark变量 */
+            color: var(--deep-dark); 
+            /* 设置导航链接的字体大小为0.9rem，比logo稍小，突出层级 */
+            font-size: 0.9rem; 
+            /* 给导航链接添加过渡效果，使用全局定义的--transition变量，实现hover时的平滑颜色变化 */
+            transition: var(--transition); 
+        }
+
+        /* 导航链接的hover伪类：当鼠标悬浮在导航链接上时触发的样式 */
+        .nav-links a:hover { 
+            /* 鼠标悬浮时，将导航链接的颜色改为品牌蓝色--brand-blue，提供交互反馈 */
+            color: var(--brand-blue); 
+        }
+
+        .menu-toggle {
+            /* 默认隐藏汉堡菜单（仅在移动端显示），桌面端显示完整的导航链接 */
+            display: none; 
+            /* 设置汉堡菜单为弹性布局，且方向为垂直列，实现三条横线的垂直排列 */
+            flex-direction: column; 
+            /* 设置三条横线之间的间距为5px，让汉堡菜单样式更标准 */
+            gap: 5px; 
+            /* 设置鼠标指针悬浮在汉堡菜单上时变为手型，提示用户该元素可点击 */
+            cursor: pointer; 
+        }
+
+        .menu-toggle span {
+            /* 设置汉堡菜单每条横线的宽度为25px */
+            width: 25px; 
+            /* 设置汉堡菜单每条横线的高度为3px */
+            height: 3px; 
+            /* 设置汉堡菜单横线的背景颜色为品牌蓝色--brand-blue，与logo颜色保持一致 */
+            background-color: var(--brand-blue); 
+        }
+
+        /* --- 英雄区（大图区）布局 --- */
+
+        .hero {
+            /* 设置英雄区为相对定位，为其子元素（overlay、content）的绝对定位提供参考容器 */
+            position: relative; 
+            /* 设置英雄区的宽度为100%，让它在小屏幕下依然占满全屏 */
+            width: 100%; 
+            /* --- 新增：设置英雄区最大允许宽度为1800px，防止在大屏幕上过度拉伸 --- */
+            max-width: 1800px; 
+            /* --- 新增：当屏幕宽度超过1800px时，通过左右外边距自动(auto)实现容器水平居中 --- */
+            margin: 0 auto; 
+            /* 隐藏英雄区内超出容器的内容，避免图片缩放时出现滚动条 */
+            overflow: hidden; 
+            /* 设置英雄区的背景颜色为黑色，当图片加载失败或未完全显示时提供底色 */
+            background-color: #000; 
+        }
+        
+
+        .hero img {
+            /* 设置英雄区图片宽度为100%，占满英雄区容器 */
+            width: 100%; 
+            /* 将图片设置为块级元素，清除图片默认的行内元素下方留白 */
+            display: block; 
+            /* 设置图片的高度为65vh（视口高度的65%），适配不同屏幕高度，保证英雄区的视觉占比 */
+            height: 55vh; 
+            /* 设置图片的对象适配方式为cover，保证图片按比例缩放，填满整个容器，裁剪超出部分（不拉伸变形） */
+            object-fit: cover; 
+            /* 设置图片的对象定位为中心偏上30%，优先显示图片的中上部内容（通常是图片的核心区域） */
+            object-position: center 30%; 
+        }
+
+        /* --- 遮罩层 --- */
+        .hero-overlay {
+            /* 设置遮罩层为绝对定位，相对于父元素.hero进行定位 */
+            position: absolute; 
+            /* 遮罩层顶部与父元素顶部对齐 */
+            top: 0; 
+            /* 遮罩层左侧与父元素左侧对齐 */
+            left: 0; 
+            /* 遮罩层宽度占满父元素 */
+            width: 100%; 
+            /* 遮罩层高度占满父元素 */
+            height: 100%; 
+            /* 设置遮罩层为半透明黑色（rgba(0,0,0,0.3)），降低图片亮度，提升后续文字的可读性 */
+            background: rgba(0,0,0,0.3); 
+        }
+
+        /* --- 英雄区文字容器（左下角） --- */
+        .hero-content {
+            /* 设置文字容器为绝对定位，相对于父元素.hero进行定位 */
+            position: absolute;   
+            /* 文字容器左侧距离父元素左侧5% */
+            left: 5%;             
+            /* 文字容器底部距离父元素底部8% */
+            bottom: 8%;           
+            /* 设置文字颜色为白色，保证在半透明遮罩层上清晰可见 */
+            color: white; 
+            /* 强制设置文字左对齐，!important提升样式优先级，避免被其他样式覆盖 */
+            text-align: left !important; 
+            /* 设置文字容器的最大宽度为800px，避免在超大屏幕上文字过于分散，保证阅读体验 */
+            max-width: 800px; 
+        }
+
+        .hero-content h1 {
+            /* 使用clamp()函数实现响应式文字大小：
+                1. 最小值1.8rem，最大值3.2rem
+                2. 中间值5vw（视口宽度的5%），随屏幕宽度自适应缩放
+                兼顾小屏幕和大屏幕的文字显示效果 */
+            font-size: clamp(1.8rem, 5vw, 3.2rem); 
+            /* 设置h1标签的底部外边距为0.5rem，缩小与下方p标签的间距 */
+            margin-bottom: 0.5rem; 
+            /* 设置h1字体粗细为300（轻体），营造简约大气的视觉效果 */
+            font-weight: 300; 
+            /* 设置文字字母间距为2px，增加文字的舒展感，提升视觉美观度 */
+            letter-spacing: 2px; 
+            /* 给文字添加文本阴影，增强文字在背景上的层次感和可读性：
+                1. 水平偏移0，垂直偏移2px
+                2. 模糊半径10px
+                3. 阴影颜色为半透明黑色 */
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5); 
+        }
+
+        /* --- 副标题：已设置为冰川灰 --- */
+        .hero-content p {
+            /* 设置副标题文字颜色为冰川灰（#d1dce5），与主标题白色区分，提升层级感 */
+            color: #d1dce5; 
+            /* 同样使用clamp()实现响应式文字大小，适配不同屏幕 */
+            font-size: clamp(1.1rem, 2.5vw, 1.6rem); 
+            /* 清除p标签默认的外边距，精准控制与上方h1标签的间距 */
+            margin: 0;
+            /* 设置文字行高为1.4，提升多行文字的可读性 */
+            line-height: 1.4; 
+            /* 设置p标签字体粗细为400（正常体），与h1标签的轻体形成对比 */
+            font-weight: 400;
+            /* 给副标题添加轻微的文本阴影，确保在图片亮部区域也能清晰显示 */
+            text-shadow: 0 1px 5px rgba(0,0,0,0.3); 
+        }
+
+        /* --- 业务应用网格 --- */
+        .section-title {
+            /* 设置区域标题的文字居中对齐 */
+            text-align: center; 
+            /* 设置区域标题的内边距：上下4rem，左右0，与上下内容拉开间距 */
+            padding: 4rem 0 2rem; 
+            /* 设置区域标题的字体大小为2rem，突出区域主题 */
+            font-size: 2rem; 
+            /* 设置区域标题的文字颜色为品牌蓝色--brand-blue，与网站主色调保持一致 */
+            color: var(--brand-blue); 
+        }
+
+        .app-grid {
+            /* 设置业务应用区域为网格布局（Grid），方便实现整齐的卡片排列 */
+            display: grid; 
+            /* 设置网格列数：重复4列，每列宽度相等（1fr），桌面端显示4列卡片 */
+            grid-template-columns: repeat(4, 1fr); 
+            /* 设置网格项之间的间距为1px，形成细微的分隔线，提升视觉层次感 */
+            gap: 1px; 
+            /* 设置网格容器的背景颜色为浅灰色#eee，配合gap:1px，形成卡片之间的灰色分隔线 */
+            background: #eee; 
+            /* --- 新增：限制业务网格最大宽度 --- */
+            max-width: 1800px; 
+            /* --- 新增：在大屏幕上水平居中 --- */
+            margin: 0 auto;
+        }
+
+        .app-item {
+            /* 设置每个业务卡片的背景颜色为纯白色--soft-white，突出卡片内容 */
+            background: var(--soft-white); 
+            /* 设置卡片的内边距：上下4rem，左右2rem，保证卡片内文字有足够的留白 */
+            padding: 4rem 2rem; 
+            /* 设置卡片内文字居中对齐，提升视觉整齐度 */
+            text-align: center; 
+        }
+
+        /* --- 移动端（手机）适配：高度已减少 --- */
+        /* 媒体查询：当屏幕宽度小于或等于768px（手机、平板小屏）时，触发以下样式 */
+        @media (max-width: 768px) {
+            /* 移动端显示汉堡菜单 */
+            .menu-toggle { display: flex; }
+            /* 移动端默认隐藏完整的导航链接 */
+            .nav-links {
+                display: none; 
+                /* 移动端导航链接展开后，改为垂直列布局 */
+                flex-direction: column; 
+                /* 移动端导航链接展开后，设置为绝对定位，相对于父元素nav进行定位 */
+                position: absolute; 
+                /* 导航链接顶部与nav底部对齐 */
+                top: 100%; 
+                /* 导航链接左侧与nav左侧对齐 */
+                left: 0; 
+                /* 导航链接宽度占满整个屏幕 */
+                width: 100%; 
+                /* 导航链接背景颜色为白色 */
+                background: white; 
+                /* 导航链接内边距：上下20px，左右0，保证链接有足够的留白 */
+                padding: 20px 0; 
+            }
+            /* 给导航链接添加active类时的样式：显示导航链接（配合JavaScript实现点击展开/隐藏） */
+            .nav-links.active { display: flex; }
+            
+            /* 移动端英雄区图片高度改为自动，避免固定高度导致的变形 */
+            .hero img {
+                height: 30vh; 
+                /* 2. 宽度依然保持 100%，确保横向撑满手机屏幕 */
+                width: 100%;
+                /* 设置移动端英雄区图片的最小高度为310px，保证英雄区有足够的视觉占比，避免内容过短 */
+                min-height: auto; 
+                /* 4. 保持图片填充模式，确保图片在变扁后不会被拉伸变形 */
+                object-fit: cover; 
+
+                /* 5. 设置图片对齐中心，这样上下变窄时会裁切掉图片的顶部和底部，保留中间 */
+                object-position: center;
+            }
+
+            /* 移动端英雄区文字容器调整位置，适配手机屏幕 */
+            .hero-content {
+                /* 左侧距离改为20px，!important提升优先级 */
+                left: 20px !important; 
+                /* 底部距离改为20px，!important提升优先级 */
+                bottom: 20px !important; 
+                /* 清除内边距，避免多余留白 */
+                padding: 0 !important; 
+            }
+            
+            /* 移动端业务网格改为2列布局，适配手机屏幕宽度，避免卡片过窄 */
+            .app-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        /* --- 页脚设置 --- */
+        footer {
+            /* 设置页脚背景颜色为深黑色--deep-dark，与页面主体形成对比，突出页脚区域 */
+            background: var(--deep-dark); 
+            /* 设置页脚文字颜色为浅灰色#888，保证可读性的同时，不抢主体内容的风头 */
+            color: #888; 
+            /* 3. 核心修改：设置最大宽度为 1800px，确保它和主图（Hero）的限制完全一致 */
+            max-width: 1800px; 
+            /* 4. 核心修改：通过 margin: 0 auto 让这个 1800px 的黑色块在大屏幕上水平居中 */
+            margin: 0 auto; 
+            /* 5. 内边距：上下保持 4rem，左右设为 0（因为宽度已经由 max-width 锁死） */
+            padding: 4rem 0;
+            /* 设置页脚文字居中对齐，提升视觉整齐度 */
+            text-align: center; 
+            /* 设置页脚字体大小为0.85rem，比正文稍小，突出层级 */
+            font-size: 0.85rem; 
+            /* --- 新增：限制页脚最大宽度 --- */
+            max-width: 1800px; 
+            /* --- 新增：在大屏幕上水平居中 --- */
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏：包含logo、汉堡菜单、导航链接，用于实现网站的页面跳转导航 -->
+    <nav>
+        <!-- 网站logo：显示品牌名称，通常可点击返回首页（此处未添加链接，可后续补充） -->
+        <div class="logo">SHAN YUE TEXTILE</div>
+        <!-- 移动端汉堡菜单：id="mobile-menu"用于JavaScript获取元素，实现点击事件 -->
+        <div class="menu-toggle" id="mobile-menu">
+            <!-- 三条span标签：用于构成汉堡菜单的三条横线样式 -->
+            <span></span><span></span><span></span>
+        </div>
+        <!-- 导航链接容器：id="nav-list"用于JavaScript获取元素，实现展开/隐藏切换 -->
+        <div class="nav-links" id="nav-list">
+            <!-- 导航超链接：分别对应产品、应用、可持续发展、创新、联系我们页面（此处为#占位，可后续替换为真实链接） -->
+            <a href="#">Products</a><a href="#">Applications</a><a href="#">Sustainability</a><a href="#">Innovation</a><a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <!-- 英雄区：展示网站核心视觉和核心标语，提升品牌形象 -->
+    <section class="hero">
+        <!-- 英雄区背景图片：src为图片路径（本地路径，需确保images文件夹下有hero2.png），alt为图片描述（图片加载失败时显示，同时利于SEO） -->
+        <img src="images/hero2.png" alt="Shanyue Textile Factory">
+        <!-- 英雄区遮罩层：用于降低图片亮度，提升文字可读性 -->
+        <div class="hero-overlay">
+            <!-- 英雄区文字内容容器：放置主标题和副标题 -->
+            <div class="hero-content">
+                <!-- 主标题：此处为空，可后续补充核心标语（如"Innovative Yarn Solutions for a Better World"） -->
+                <h1></h1>
+                <!-- 副标题：展示企业核心积淀，传递品牌实力 -->
+                <p>25 Years of Excellence</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 业务应用区域标题：提示下方为全球应用业务内容 -->
+    <div class="section-title">Global Applications</div>
+    
+    <!-- 业务应用网格容器：展示四大核心业务方向 -->
+    <div class="app-grid">
+        <!-- 第一个业务卡片：服装领域 -->
+        <div class="app-item"><h3>Apparel</h3><p>High-end fashion and performance fibers.</p></div>
+        <!-- 第二个业务卡片：家居与内饰领域 -->
+        <div class="app-item"><h3>Home & Interior</h3><p>Durability for modern living spaces.</p></div>
+        <!-- 第三个业务卡片：工业技术领域 -->
+        <div class="app-item"><h3>Technical</h3><p>Industrial and automotive solutions.</p></div>
+        <!-- 第四个业务卡片：生态创新领域 -->
+        <div class="app-item"><h3>Eco-Innovation</h3><p>Sustainable and recycled materials.</p></div>
+    </div>
+
+    <!-- 页脚：展示企业版权信息、联系方式等，提升网站的完整性 -->
+    <footer>
+        <!-- 企业名称：设置为白色粗体，突出显示 -->
+        <div style="color:white; margin-bottom:15px; font-weight:bold;">Shaoxing Shanyue Textile Co., Ltd.</div>
+        <!-- 版权声明：声明网站版权归属，年份为2026 -->
+        <p>&copy; 2026 Shanyue Textile. All Rights Reserved.</p>
+        <!-- 企业联系邮箱：方便用户联系企业 -->
+        <p>Email: leogao@yarnsvc.com</p>
+    </footer>
+
+    <!-- JavaScript脚本：实现移动端汉堡菜单的点击展开/隐藏功能 -->
+    <script>
+        // 通过id获取汉堡菜单元素，赋值给变量menuBtn
+        const menuBtn = document.getElementById('mobile-menu'); 
+        // 通过id获取导航链接容器元素，赋值给变量navList
+        const navList = document.getElementById('nav-list');   
+        // 给汉堡菜单添加点击事件监听器，当点击汉堡菜单时，执行后续回调函数
+        menuBtn.addEventListener('click', () => { 
+            // 给导航链接容器切换active类：有active类则移除，无则添加，实现展开/隐藏的切换
+            navList.classList.toggle('active'); 
+        });
+    </script>
+</body>
+</html>

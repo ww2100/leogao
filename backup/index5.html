@@ -6,7 +6,7 @@
     <title>Shanyue Textile | Innovative Yarn Solutions</title>
     
     <style>
-        /* --- 全局变量 --- */
+        /* --- 全局颜色与变量 --- */
         :root {
             --brand-blue: #004098;  
             --deep-dark: #1a1a1a;   
@@ -23,7 +23,7 @@
             -webkit-font-smoothing: antialiased; 
         }
 
-        /* --- 导航栏 --- */
+        /* --- 导航栏设置 --- */
         nav {
             display: flex; 
             justify-content: space-between; 
@@ -34,6 +34,8 @@
             position: sticky; 
             top: 0; 
             z-index: 1000; 
+            max-width: 1800px; 
+            margin: 0 auto;
         }
 
         .logo {
@@ -55,7 +57,9 @@
             transition: var(--transition); 
         }
 
-        .nav-links a:hover { color: var(--brand-blue); }
+        .nav-links a:hover { 
+            color: var(--brand-blue); 
+        }
 
         .menu-toggle {
             display: none; 
@@ -70,22 +74,67 @@
             background-color: var(--brand-blue); 
         }
 
-        /* --- 英雄区 --- */
+        /* --- 英雄区（大图区）布局 --- */
         .hero {
             position: relative; 
             width: 100%; 
+            max-width: 1800px; 
+            margin: 0 auto; 
             overflow: hidden; 
             background-color: #000; 
         }
 
-        .hero img {
-            width: 100%; 
-            display: block; 
-            height: 65vh; 
-            object-fit: cover; 
-            object-position: center 30%; 
+        /* --- 轮播图容器 --- */
+        .slideshow-container {
+            position: relative;             
+            width: 100%;                    
+            height: 55vh;                   
+            overflow: hidden;               
         }
 
+        /* --- 移动端适配 --- */
+        @media (max-width: 768px) {
+            .slideshow-container {
+                height: 30vh !important;    
+            }
+        }
+
+        /* --- 单个幻灯片基础样式：解决回弹的终极方案 --- */
+        .slide {
+            position: absolute;             
+            top: 0;                         
+            left: 0;                        
+            width: 100%;                    
+            height: 100%;                   
+            background-size: cover;         
+            background-position: center;    
+            opacity: 0;                     
+            /* 使用 2.5s 的长过渡，让切换时的透明度变化极其丝滑，掩盖缩放比例的微小差异 */
+            transition: opacity 2.5s ease-in-out; 
+            z-index: 1;                     
+            /* 重点：动画写在 .slide 基础上，而不是 .active。 */
+            /* 作用：图片加载后动画就永远在后台运行，不随 active 切换而重置，彻底消除回弹感。 */
+            animation: zoomEffect 60s linear infinite; 
+            will-change: transform; /* 作用：调用硬件加速，优化缩放平滑度 */
+        }
+
+        /* --- 激活状态：仅仅负责透明度显现 --- */
+        .slide.active {
+            opacity: 1;                     
+            z-index: 2;                     
+        }
+
+        /* --- 重新定义动画：极慢速单向持续放大 --- */
+        @keyframes zoomEffect {
+            0% {
+                transform: scale(1);        /* 作用：起始比例 100% */
+            }
+            100% {
+                transform: scale(1.2);      /* 作用：60秒内缓慢变大到 1.2，绝不往回缩 */
+            }
+        }
+
+        /* --- 遮罩层 --- */
         .hero-overlay {
             position: absolute; 
             top: 0; 
@@ -93,8 +142,10 @@
             width: 100%; 
             height: 100%; 
             background: rgba(0,0,0,0.3); 
+            z-index: 3; /* 确保遮罩层在图片上方 */
         }
 
+        /* --- 英雄区文字容器 --- */
         .hero-content {
             position: absolute;   
             left: 5%;             
@@ -102,6 +153,7 @@
             color: white; 
             text-align: left !important; 
             max-width: 800px; 
+            z-index: 4; /* 确保文字在最顶层 */
         }
 
         .hero-content h1 {
@@ -113,14 +165,15 @@
         }
 
         .hero-content p {
-            color: #d1dce5; /* 冰川灰 */
+            color: #d1dce5; 
             font-size: clamp(1.1rem, 2.5vw, 1.6rem); 
             margin: 0;
             line-height: 1.4; 
             font-weight: 400;
+            text-shadow: 0 1px 5px rgba(0,0,0,0.3); 
         }
 
-        /* --- 业务网格标题 --- */
+        /* --- 业务应用网格 --- */
         .section-title {
             text-align: center; 
             padding: 4rem 0 2rem; 
@@ -128,12 +181,13 @@
             color: var(--brand-blue); 
         }
 
-        /* --- 电脑端业务网格 --- */
         .app-grid {
             display: grid; 
             grid-template-columns: repeat(4, 1fr); 
             gap: 1px; 
             background: #eee; 
+            max-width: 1800px; 
+            margin: 0 auto;
         }
 
         .app-item {
@@ -142,7 +196,7 @@
             text-align: center; 
         }
 
-        /* --- 移动端适配：高度与间距优化 --- */
+        /* --- 移动端（手机）适配 --- */
         @media (max-width: 768px) {
             .menu-toggle { display: flex; }
             .nav-links {
@@ -157,44 +211,28 @@
             }
             .nav-links.active { display: flex; }
             
-            .hero img {
-                height: auto; 
-                min-height: 310px; 
-            }
-
             .hero-content {
                 left: 20px !important; 
                 bottom: 20px !important; 
                 padding: 0 !important; 
             }
             
-            /* 手机端网格微调：让四个格子靠拢 */
-            .app-grid { 
-                grid-template-columns: 1fr 1fr; 
-                gap: 0.5px; /* 减小格子间的细缝 */
-                background: #ddd; /* 稍微淡化线条颜色，视觉上更靠拢 */
-            }
-
-            .app-item {
-                /* 减少内部上下间距，让内容看起来更紧凑（减少了约10%） */
-                padding: 3rem 1rem; 
-            }
-
-            .section-title {
-                padding: 3rem 0 1.5rem; /* 标题与网格的距离也同步缩小 */
-            }
+            .app-grid { grid-template-columns: 1fr 1fr; }
         }
 
+        /* --- 页脚设置 --- */
         footer {
             background: var(--deep-dark); 
             color: #888; 
-            padding: 4rem 5%; 
+            max-width: 1800px; 
+            margin: 0 auto; 
+            padding: 4rem 0;
             text-align: center; 
+            font-size: 0.85rem; 
         }
     </style>
 </head>
 <body>
-
     <nav>
         <div class="logo">SHAN YUE TEXTILE</div>
         <div class="menu-toggle" id="mobile-menu">
@@ -205,14 +243,18 @@
         </div>
     </nav>
 
-    <section class="hero">
-        <img src="images/hero2.png" alt="Shanyue Textile Factory">
-        <div class="hero-overlay">
-            <div class="hero-content">
-                <h1></h1>
-                <p>25 Years of Excellence<br>in Professional Textile Services</p>
-            </div>
-        </div>
+    <section class="hero"> 
+        <div class="slideshow-container"> 
+            <div class="slide active" style="background-image: url('images/hero1.png');"></div> 
+            <div class="slide" style="background-image: url('images/hero2.png');"></div> 
+            <div class="slide" style="background-image: url('images/hero3.png');"></div> 
+        </div> 
+        
+        <div class="hero-overlay"> 
+            <div class="hero-content"> 
+                <h1></h1> <p>25 Years of Excellence</p> 
+            </div> 
+        </div> 
     </section>
 
     <div class="section-title">Global Applications</div>
@@ -231,11 +273,35 @@
     </footer>
 
     <script>
+        /* --- 1. 获取导航菜单元素 --- */
         const menuBtn = document.getElementById('mobile-menu'); 
         const navList = document.getElementById('nav-list');   
-        menuBtn.addEventListener('click', () => { 
-            navList.classList.toggle('active'); 
+
+        /* --- 2. 导航逻辑：汉堡菜单开关 --- */
+        menuBtn.addEventListener('click', () => {              
+            navList.classList.toggle('active');                
         });
+
+        /* --- 3. 轮播核心函数 --- */
+        function startHeroSlideshow() {                        
+            const slides = document.querySelectorAll('.slide'); 
+            let currentIndex = 0; 
+
+            setInterval(() => {
+                // 移除当前图的激活类（触发 2.5s 淡出）
+                slides[currentIndex].classList.remove('active'); 
+                
+                // 计算下一张索引
+                currentIndex = (currentIndex + 1) % slides.length; 
+                
+                // 添加下一张图的激活类（触发 2.5s 淡入）
+                slides[currentIndex].classList.add('active'); 
+                
+            }, 5000); // 设定每 5 秒切换一次
+        }
+
+        /* --- 4. 启动启动点 --- */
+        window.addEventListener('load', startHeroSlideshow);   
     </script>
 </body>
 </html>
