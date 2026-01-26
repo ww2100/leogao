@@ -9,13 +9,28 @@
         body { margin: 0; font-family: 'Helvetica Neue', Arial, sans-serif; color: var(--text-dark); line-height: 1.6; }
         .sub-page-header { background: var(--brand-blue); color: white; padding: 80px 5% 40px; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .back-link { display: inline-block; color: rgba(255,255,255,0.7); text-decoration: none; margin-bottom: 20px; }
+        .back-link { display: inline-block; color: rgba(255,255,255,0.7); text-decoration: none; margin-bottom: 20px; transition: 0.3s; }
+        .back-link:hover { color: white; }
         .sub-page-header h1 { font-size: 2.5rem; margin: 0; font-weight: 300; letter-spacing: 2px; }
         .content-section { padding: 60px 0; }
+        
+        /* --- 修正后的引言样式 --- */
+        .intro-text { 
+            font-size: 1.2rem; 
+            color: var(--text-muted); 
+            max-width: 900px; 
+            margin-bottom: 40px; 
+            padding-left: 30px; 
+            padding-right: 30px; 
+            text-align: justify; 
+            text-justify: inter-character;
+            box-sizing: border-box;
+        }
+
         .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .product-card { border: 1px solid #eee; padding: 30px; background: white; transition: 0.3s; }
         .product-card:hover { border-color: var(--brand-blue); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .product-card h3 { color: var(--brand-blue); border-bottom: 2px solid #eee; padding-bottom: 15px; }
+        .product-card h3 { color: var(--brand-blue); border-bottom: 2px solid #eee; padding-bottom: 15px; margin-top: 0; }
         footer { background: var(--brand-blue); color: #b0c4de; padding: 4rem 0; text-align: center; margin-top: 60px; }
     </style>
 </head>
@@ -28,22 +43,13 @@
         </div>
     </header>
     <main class="container content-section">
-        <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 40px;">
-            原液着色技术通过在纺丝阶段加入色母，大幅减少了后道染整的耗水量与化学品排放，是真正的环保色纱。
-        </p>
+        <div class="intro-text">
+            原液着色技术通过在纺丝阶段加入色母，大幅减少了后道染整的耗水量与化学品排放，是真正的环保色纱。这种工艺不仅节能减排，还能提供更卓越的色牢度和色彩饱和度，是可持续纺织的首选。
+        </div>
         <div class="product-grid">
-            <div class="product-card">
-                <h3>Eco-Benefits</h3>
-                <ul><li>Zero Water Consumption in Dyeing</li><li>Superior Color Fastness</li><li>Reduced Carbon Footprint</li></ul>
-            </div>
-            <div class="product-card">
-                <h3>Main Products</h3>
-                <ul><li>Dope Dyed Polyester DTY</li><li>Black & Color Nylon Chip</li><li>Customized Color Masterbatch</li></ul>
-            </div>
-            <div class="product-card">
-                <h3>Applications</h3>
-                <ul><li>Home Furnishing</li><li>Sports Apparel</li><li>Sustainable Global Brands</li></ul>
-            </div>
+            <div class="product-card"><h3>Eco-Benefits</h3><ul><li>Zero Water Consumption in Dyeing</li><li>Superior Color Fastness</li><li>Reduced Carbon Footprint</li></ul></div>
+            <div class="product-card"><h3>Main Products</h3><ul><li>Dope Dyed Polyester DTY</li><li>Black & Color Nylon Chip</li><li>Customized Color Masterbatch</li></ul></div>
+            <div class="product-card"><h3>Applications</h3><ul><li>Home Furnishing</li><li>Sports Apparel</li><li>Sustainable Global Brands</li></ul></div>
         </div>
     </main>
     <footer><p>&copy; 2026 Shanyue Textile. All Rights Reserved.</p></footer>

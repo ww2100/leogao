@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spun Yarn - Shanyue Textile</title>
+    <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Spun Yarn - Shanyue Textile</title>
     <style>
-        :root { --brand-blue: #003366; --text-dark: #333; --text-muted: #666; }
-        body { margin: 0; font-family: 'Helvetica Neue', Arial, sans-serif; color: var(--text-dark); line-height: 1.6; }
-        .sub-page-header { background: var(--brand-blue); color: white; padding: 80px 5% 40px; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .back-link { display: inline-block; color: rgba(255,255,255,0.7); text-decoration: none; margin-bottom: 20px; }
-        .sub-page-header h1 { font-size: 2.5rem; margin: 0; font-weight: 300; letter-spacing: 2px; }
-        .content-section { padding: 60px 0; }
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .product-card { border: 1px solid #eee; padding: 30px; background: white; transition: 0.3s; }
-        .product-card:hover { border-color: var(--brand-blue); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .product-card h3 { color: var(--brand-blue); border-bottom: 2px solid #eee; padding-bottom: 15px; }
-        footer { background: var(--brand-blue); color: #b0c4de; padding: 4rem 0; text-align: center; margin-top: 60px; }
+        :root { --brand-blue: #003366; --text-dark: #333; --text-muted: #666; } /* 品牌颜色变量 */
+        body { margin: 0; font-family: 'Helvetica Neue', Arial, sans-serif; color: var(--text-dark); line-height: 1.6; } /* 基础样式 */
+        .sub-page-header { background: var(--brand-blue); color: white; padding: 80px 5% 40px; } /* 蓝色头部 */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; } /* 核心容器 */
+        .back-link { display: inline-block; color: rgba(255,255,255,0.7); text-decoration: none; margin-bottom: 20px; transition: 0.3s; } /* 返回链接 */
+        .back-link:hover { color: white; } /* 返回链接悬停效果 */
+        .sub-page-header h1 { font-size: 2.5rem; margin: 0; font-weight: 300; letter-spacing: 2px; } /* 大标题样式 */
+        .content-section { padding: 60px 0; } /* 内容区边距 */
+        
+        /* --- 修正后的引言样式：实现左右双向对齐 --- */
+        .intro-text { 
+            font-size: 1.2rem; 
+            color: var(--text-muted); 
+            max-width: 900px; 
+            margin-bottom: 40px; 
+            padding-left: 30px;   /* 左侧对齐卡片内部文字 */
+            padding-right: 30px;  /* 右侧对齐卡片边缘 */
+            text-align: justify;  /* 两端对齐 */
+            text-justify: inter-character; /* 优化中文间距 */
+            box-sizing: border-box; /* 防止边距撑开容器 */
+        }
+
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; } /* 网格布局 */
+        .product-card { border: 1px solid #eee; padding: 30px; background: white; transition: 0.3s; } /* 产品卡片 */
+        .product-card:hover { border-color: var(--brand-blue); box-shadow: 0 10px 20px rgba(0,0,0,0.05); } /* 卡片悬停效果 */
+        .product-card h3 { color: var(--brand-blue); border-bottom: 2px solid #eee; padding-bottom: 15px; margin-top: 0; } /* 卡片标题 */
+        footer { background: var(--brand-blue); color: #b0c4de; padding: 4rem 0; text-align: center; margin-top: 60px; } /* 页脚样式 */
     </style>
 </head>
 <body>
@@ -28,22 +41,13 @@
         </div>
     </header>
     <main class="container content-section">
-        <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 40px;">
-            我们的短纤纱线涵盖了从纯棉到各类混纺品种，适用于针织和梭织面料，为现代家居和服装提供卓越的耐用性与手感。
-        </p>
+        <div class="intro-text">
+            我们的短纤纱线涵盖了从纯棉到各类混纺品种，适用于针织和梭织面料，为现代家居和服装提供卓越的耐用性与手感。通过严格的质量管控，确保每一批次的纱线都具有极高的均匀度。
+        </div>
         <div class="product-grid">
-            <div class="product-card">
-                <h3>Cotton & Blends</h3>
-                <ul><li>100% Combed Cotton</li><li>Cotton/Polyester Blends</li><li>Cotton/Viscose Blends</li></ul>
-            </div>
-            <div class="product-card">
-                <h3>Synthetic Spun</h3>
-                <ul><li>100% Spun Polyester</li><li>Acrylic Spun Yarn</li><li>TR (Polyester/Rayon)</li></ul>
-            </div>
-            <div class="product-card">
-                <h3>Specialty Spun</h3>
-                <ul><li>Slub Yarns</li><li>Siro Spun</li><li>Melange Effect Yarns</li></ul>
-            </div>
+            <div class="product-card"><h3>Cotton & Blends</h3><ul><li>100% Combed Cotton</li><li>Cotton/Polyester Blends</li><li>Cotton/Viscose Blends</li></ul></div>
+            <div class="product-card"><h3>Synthetic Spun</h3><ul><li>100% Spun Polyester</li><li>Acrylic Spun Yarn</li><li>TR (Polyester/Rayon)</li></ul></div>
+            <div class="product-card"><h3>Specialty Spun</h3><ul><li>Slub Yarns</li><li>Siro Spun</li><li>Melange Effect Yarns</li></ul></div>
         </div>
     </main>
     <footer><p>&copy; 2026 Shanyue Textile. All Rights Reserved.</p></footer>

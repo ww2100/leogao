@@ -62,12 +62,37 @@
             padding: 60px 0;
         }
 
-        .intro-text {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            max-width: 800px;
-            margin-bottom: 40px;
-        }
+        /* --- 修改前 --- */
+/* .intro-text {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin-bottom: 40px;
+}
+*/
+
+/* --- 修改后：为了与下方卡片文字齐平 --- */
+/* --- 修改后：实现左右两端同时齐平 --- */
+.intro-text {
+    /* 1. 基础字体大小 */
+    font-size: 1.2rem; 
+    /* 2. 字体颜色 */
+    color: var(--text-muted); 
+    /* 3. 底部间距 */
+    margin-bottom: 40px; 
+    /* 4. 【对齐关键】左侧内边距保持 30px，与下方卡片文字左侧对齐 */
+    padding-left: 30px; 
+    /* 5. 【新增】右侧内边距也设为 30px，使文字不会紧贴右侧隐形边框 */
+    padding-right: 30px; 
+    /* 6. 【核心新增】设置两端对齐，让文字左右两侧都像方块边框一样整齐 */
+    text-align: justify; 
+    /* 7. 【核心新增】这行代码确保中文排版在两端对齐时不会出现巨大的间隙 */
+    text-justify: inter-character; 
+    /* 8. 限制宽度，防止长句子在大屏幕上过度拉伸 */
+    max-width: 900px; 
+    /* 9. 保证 padding 不会撑大容器 */
+    box-sizing: border-box; 
+}
 
         /* --- 产品详情网格 --- */
         .product-grid {
@@ -135,8 +160,7 @@
     </header>
 
     <main class="container content-section">
-        <div class="intro-text">
-            我们致力于全球纤维贸易，提供从天然纤维到高科技合成材料的全方位产品线。通过与全球顶级生产商的合作，确保每一根纤维都符合国际品质标准。
+        <div class="intro-text">"We are committed to global fiber trade, offering a comprehensive product line ranging from natural fibers to high-tech synthetic materials. Through partnerships with world-leading producers, we ensure that every single fiber meets international quality standards."
         </div>
 
         <div class="product-grid">
