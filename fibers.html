@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibers - Shanyue Textile | Global Material Solutions</title>
+    
+    <style>
+        /* --- 沿用主页的品牌颜色变量 --- */
+        :root {
+            --brand-blue: #003366;  /* 你选定的深蓝色 */
+            --light-gray: #f8f9fa;  /* 用于背景的浅灰色 */
+            --text-dark: #333333;   /* 正文深灰色 */
+            --text-muted: #666666;  /* 辅助说明文字颜色 */
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: #fff;
+        }
+
+        /* --- 顶部副标题区域 --- */
+        .sub-page-header {
+            background: var(--brand-blue); /* 背景设为标志性的深蓝色 */
+            color: white;                  /* 文字白色 */
+            padding: 80px 5% 40px;         /* 增加顶部间距，显得更专业大气 */
+            text-align: left;
+        }
+
+        .container {
+            max-width: 1200px;             /* 限制内容宽度，提升大屏阅读体验 */
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: rgba(255,255,255,0.7);  /* 半透明白色 */
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .back-link:hover {
+            color: white;                  /* 悬停时全白 */
+        }
+
+        .sub-page-header h1 {
+            font-size: 2.5rem;
+            margin: 0 0 10px 0;
+            font-weight: 300;              /* 轻盈的字体量级，参考 Chori 风格 */
+            letter-spacing: 2px;
+        }
+
+        /* --- 业务介绍内容区 --- */
+        .content-section {
+            padding: 60px 0;
+        }
+
+        .intro-text {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin-bottom: 40px;
+        }
+
+        /* --- 产品详情网格 --- */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 自动适配列数 */
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .product-card {
+            border: 1px solid #eee;
+            padding: 30px;
+            transition: 0.3s;
+            background: white;
+        }
+
+        .product-card:hover {
+            border-color: var(--brand-blue); /* 悬停时边框变深蓝 */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .product-card h3 {
+            color: var(--brand-blue);
+            font-size: 1.4rem;
+            margin-top: 0;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .product-card ul {
+            padding-left: 20px;
+            color: var(--text-muted);
+        }
+
+        .product-card ul li {
+            margin-bottom: 10px;
+        }
+
+        /* --- 页脚：保持与主页一致 --- */
+        footer {
+            background: var(--brand-blue);
+            color: #b0c4de;
+            padding: 4rem 0;
+            text-align: center;
+            font-size: 0.85rem;
+            margin-top: 60px;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .sub-page-header h1 { font-size: 2rem; }
+            .product-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="sub-page-header">
+        <div class="container">
+            <a href="index.html" class="back-link">← BACK TO BUSINESS SEGMENTS</a>
+            <h1>Fibers</h1>
+            <p>Leading the industry with sustainable and high-performance material solutions.</p>
+        </div>
+    </header>
+
+    <main class="container content-section">
+        <div class="intro-text">
+            我们致力于全球纤维贸易，提供从天然纤维到高科技合成材料的全方位产品线。通过与全球顶级生产商的合作，确保每一根纤维都符合国际品质标准。
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <h3>Synthetic Fibers</h3>
+                <ul>
+                    <li>Polyester (Recycled & Virgin)</li>
+                    <li>Nylon 6 / 66</li>
+                    <li>Acrylic Fibers</li>
+                    <li>Polypropylene</li>
+                </ul>
+            </div>
+
+            <div class="product-card">
+                <h3>Natural Fibers</h3>
+                <ul>
+                    <li>Organic Cotton (GOTS Certified)</li>
+                    <li>Premium Wool Blends</li>
+                    <li>Linen & Flax</li>
+                    <li>Eco-friendly Silk</li>
+                </ul>
+            </div>
+
+            <div class="product-card">
+                <h3>Functional Fibers</h3>
+                <ul>
+                    <li>Flame Retardant Materials</li>
+                    <li>Anti-bacterial Fibers</li>
+                    <li>Moisture Wicking Technology</li>
+                    <li>High Tenacity Industrial Fibers</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div style="color:white; margin-bottom:15px; font-weight:bold;">Shaoxing Shanyue Textile Co., Ltd.</div>
+            <p>&copy; 2026 Shanyue Textile. All Rights Reserved.</p>
+            <p>Email: leogao@yarnsvc.com</p>
+        </div>
+    </footer>
+
+</body>
+</html>
