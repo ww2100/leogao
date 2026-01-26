@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibers - Shanyue Textile</title>
+    
+    <style>
+        /* --- 全局变量定义 --- */
+        :root {
+            --brand-blue: #004098;  /* 品牌蓝 */
+            --text-dark: #333333;   /* 正文深色 */
+            --text-muted: #666666;  /* 辅助灰色 */
+            --nav-white: #ffffff;   /* 导航白 */
+        }
+
+        /* --- 基础样式重置 --- */
+        body {
+            margin: 0; /* 清除默认边距 */
+            font-family: 'Helvetica Neue', Arial, sans-serif; /* 选用无衬线字体 */
+            color: var(--text-dark); /* 应用文字颜色 */
+            line-height: 1.6; /* 舒适行高 */
+            background-color: #fff; /* 白色底色 */
+        }
+
+        /* --- 统一容器：控制页面最大宽度 --- */
+        .container {
+            max-width: 1200px; /* 限制内容宽度 */
+            margin: 0 auto;    /* 居中 */
+            padding: 0 20px;   /* 基础左右留白 */
+        }
+
+        /* --- 1. 顶部白色导航栏 (文字 Logo) --- */
+        .main-nav {
+            background-color: var(--nav-white); /* 导航背景白 */
+            padding: 1rem 0;                   /* 上下内边距 */
+            border-bottom: 1px solid #eee;      /* 底部细线 */
+            position: sticky;                  /* 滚动固定在顶部 */
+            top: 0; z-index: 1000;              /* 确保在最上层 */
+        }
+
+        .nav-container {
+            display: flex;                      /* 开启弹性布局 */
+            justify-content: space-between;      /* 左右对齐 */
+            align-items: center;                /* 垂直居中 */
+        }
+
+        .logo {
+            font-size: 1.2rem;                  /* Logo大小 */
+            font-weight: 800;                  /* 超粗体 */
+            color: var(--brand-blue);          /* 品牌蓝 */
+            text-transform: uppercase;          /* 全大写 */
+            text-decoration: none;              /* 无下划线 */
+            letter-spacing: 1px;               /* 字符间距 */
+        }
+
+        .nav-links {
+            display: flex; gap: 2rem;           /* 链接横向排列及间距 */
+        }
+
+        .nav-links a {
+            text-decoration: none; color: var(--text-dark); font-size: 0.9rem; font-weight: 500; transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--brand-blue); }
+
+        /* --- 2. 蓝色 Banner 区域：【对齐修正点】 --- */
+        .sub-page-header {
+            background: var(--brand-blue);      /* 深蓝背景 */
+            color: white;                       /* 白字 */
+            padding: 70px 0 50px;               /* 上下内边距 */
+            text-align: left;                   /* 左对齐 */
+        }
+
+        .header-content {
+            /* 关键：这里的 padding-left 必须和下方的引言、卡片内边距完全一致 */
+            padding-left: 30px; 
+        }
+
+        .sub-page-header h1 {
+            font-size: 2.6rem; margin: 0; font-weight: 300; letter-spacing: 2px;
+        }
+
+        .sub-page-header p {
+            margin-top: 10px; opacity: 0.9; font-size: 1.1rem;
+        }
+
+        /* --- 3. 引言文字区：【对齐修正点】 --- */
+        .intro-section {
+            padding-top: 50px;                  /* 顶部距离蓝色区域 50px */
+            padding-bottom: 40px;               /* 底部距离卡片网格 40px */
+        }
+
+        .intro-text {
+            font-size: 1.2rem;                  /* 字体大小 */
+            color: var(--text-muted);           /* 灰色文字 */
+            max-width: 900px;                   /* 限制宽度 */
+            /* 核心：padding-left 设为 30px，与 Banner 里的文字完全垂直对齐 */
+            padding-left: 30px; 
+            padding-right: 30px;                /* 右侧也留出空间 */
+            text-align: justify;                /* 两端对齐 */
+            text-justify: inter-character;      /* 优化对齐间隙 */
+            box-sizing: border-box;             /* 确保宽度包含边距 */
+        }
+
+        /* --- 4. 产品网格展示 --- */
+        .product-grid {
+            display: grid;                      /* 网格布局 */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 自动列数 */
+            gap: 30px; padding-bottom: 60px;
+        }
+
+        .product-card {
+            border: 1px solid #eee;             /* 浅色边框 */
+            padding: 30px;                      /* 卡片内边距也是 30px，实现完美对齐线 */
+            background: white; transition: 0.3s;
+        }
+
+        .product-card:hover {
+            border-color: var(--brand-blue); box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .product-card h3 {
+            color: var(--brand-blue); border-bottom: 2px solid #eee; padding-bottom: 15px; margin-top: 0;
+        }
+
+        .product-card ul { padding-left: 20px; color: var(--text-muted); }
+
+        /* --- 5. 页脚 --- */
+        footer {
+            background: #003366; color: #b0c4de; padding: 4rem 0; text-align: center;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .header-content, .intro-text { padding-left: 20px; padding-right: 20px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="main-nav">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">SHAN YUE TEXTILE</a>
+            <div class="nav-links">
+                <a href="index.html#products">Products</a>
+                <a href="index.html#applications">Applications</a>
+                <a href="index.html#sustainability">Sustainability</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="sub-page-header">
+        <div class="container">
+            <div class="header-content">
+                <h1>Fibers</h1>
+                <p>Leading the industry with sustainable and high-performance material solutions.</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="intro-section">
+            <div class="intro-text">
+                We are committed to global fiber trade, offering a comprehensive product line ranging from natural fibers to high-tech synthetic materials. Through partnerships with world-leading producers, we ensure that every single fiber meets international quality standards and supports sustainable development in the textile industry.
+            </div>
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <h3>Synthetic Fibers</h3>
+                <ul>
+                    <li>Polyester (Recycled & Virgin)</li>
+                    <li>Nylon 6 / 66</li>
+                    <li>Acrylic Fibers</li>
+                    <li>Polypropylene</li>
+                </ul>
+            </div>
+
+            <div class="product-card">
+                <h3>Natural Fibers</h3>
+                <ul>
+                    <li>Organic Cotton (GOTS)</li>
+                    <li>Premium Wool</li>
+                    <li>Linen & Flax</li>
+                    <li>Eco-Silk</li>
+                </ul>
+            </div>
+
+            <div class="product-card">
+                <h3>Functional Fibers</h3>
+                <ul>
+                    <li>Flame Retardant</li>
+                    <li>Anti-bacterial</li>
+                    <li>Moisture Wicking</li>
+                    <li>High Tenacity Industrial</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div style="color:white; margin-bottom:15px; font-weight:bold;">Shaoxing Shanyue Textile Co., Ltd.</div>
+            <p>&copy; 2026 Shanyue Textile. All Rights Reserved.</p>
+            <p>Email: leogao@yarnsvc.com</p>
+        </div>
+    </footer>
+
+</body>
+</html>
