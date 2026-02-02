@@ -301,7 +301,7 @@
             /* 114. 响应式字体大小，逻辑同<h1>，适配不同屏幕 */
             margin: 0;
             /* 115. 清除默认外边距，让文本与标题的间距仅由标题的margin-bottom控制 */
-            line-height: 1.4; 标题文字是否可以缩小一点？
+            line-height: 1.4; 
             /* 116. 设置行高为1.4，行高是文本可读性的关键，1.4的行高让多行文本不拥挤 */
             font-weight: 400;
             /* 117. 字体粗细为400（正常体重），与标题的轻量级形成对比 */
@@ -388,6 +388,21 @@
                 /* 148. 移动端文字容器底部距离改为20px，适配小屏幕 */
                 padding: 0 !important; 
                 /* 149. 清除移动端文字容器的内边距，避免多余空白 */
+            }
+            
+            .section-title {
+                font-size: 1.5rem !important;
+                /* 移动端板块标题字体大小调整为1.5rem，适配小屏幕显示 */
+            }
+            
+            .app-item h3 {
+                font-size: 1rem !important;
+                /* 移动端业务项标题字体大小调整为1.2rem */
+            }
+            
+            .app-item p {
+                font-size: 0.8rem !important;
+                /* 移动端业务项描述字体大小调整为0.9rem */
             }
             
             .app-grid { grid-template-columns: 1fr 1fr; }
