@@ -540,12 +540,22 @@
         // 187. 获取导航链接容器元素（id="nav-list"），赋值给常量navList
 
         /* --- 2. 导航逻辑：汉堡菜单开关 --- */
-        menuBtn.addEventListener('click', () => {              
+        menuBtn.addEventListener('click', (e) => {              
             // 188. 给汉堡菜单添加点击事件监听器（addEventListener），当用户点击汉堡菜单时，执行箭头函数内的逻辑
+            e.stopPropagation(); // 阻止事件冒泡，防止立即触发document的点击事件
             navList.classList.toggle('active');                
             // 189. 调用navList的classList.toggle('active')方法：
             //      - toggle表示"切换"，如果navList有.active类，则移除；如果没有，则添加
             //      - 配合CSS中的.nav-links.active样式，实现导航链接的显示/隐藏切换
+        });
+
+        /* --- 2.1 点击外部区域关闭菜单 --- */
+        document.addEventListener('click', (e) => {
+            // 当点击页面任意位置时，检查是否点击在菜单外部
+            if (!menuBtn.contains(e.target) && !navList.contains(e.target)) {
+                // 如果点击的不是菜单按钮也不是导航菜单内部，则关闭菜单
+                navList.classList.remove('active');
+            }
         });
 
         /* --- 3. 轮播核心函数 --- */

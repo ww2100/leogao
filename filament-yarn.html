@@ -296,8 +296,16 @@
     <script>
         const btn = document.getElementById('mobile-menu'); 
         const nav = document.getElementById('nav-list');
-        btn.addEventListener('click', () => { 
+        btn.addEventListener('click', (e) => { 
+            e.stopPropagation(); // 阻止事件冒泡
             nav.classList.toggle('active'); // 切换 active 类名实现下拉显示
+        });
+
+        // 点击外部区域关闭菜单
+        document.addEventListener('click', (e) => {
+            if (!btn.contains(e.target) && !nav.contains(e.target)) {
+                nav.classList.remove('active');
+            }
         });
     </script>
 
