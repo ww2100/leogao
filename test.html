@@ -40,6 +40,12 @@
             box-sizing: border-box; /* 边框包含在宽度内 */
         }
 
+        /* 既然导航栏已经自带 padding: 1rem 5%，就不再需要 .align-line 类来控制左右边距了，
+           或者我们可以让 .align-line 只负责正文区域。
+           为了避免冲突，我们在 HTML 中把导航栏的 .align-line 类去掉，完全由 .main-nav 控制。
+           下面我会修改 HTML 结构。
+        */
+
         /* --- 1. 导航栏样式 --- */
         .main-nav {
             border-bottom: 1px solid #eee; 
@@ -172,7 +178,7 @@
             .menu-toggle { display: flex; } /* 显示汉堡菜单 */
             .nav-links {
                 display: none; flex-direction: column; position: absolute;
-                top: 80px; left: 0; width: 100%; background: white;
+                top: 100%; left: 0; width: 100%; background: white;
                 padding: 20px 5%; border-bottom: 1px solid #eee; gap: 1.5rem;
             }
             .nav-links.active { display: flex; } /* 点击菜单显示 */
@@ -200,7 +206,7 @@
 
     <div class="page-wrapper">
 
-        <nav class="main-nav align-line">
+        <nav class="main-nav">
             <a href="index.html" class="logo">SHAN YUE TEXTILE</a>
             <div class="menu-toggle" id="mobile-menu">
                 <span></span><span></span><span></span>
@@ -274,6 +280,5 @@
             nav.classList.toggle('active'); // 切换 active 类名实现下拉显示
         });
     </script>
-
 </body>
 </html>
