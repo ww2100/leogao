@@ -44,6 +44,7 @@
         /* --- 1. 导航栏样式 (完全复刻 index.html) --- */
         nav.main-nav {
             display: flex; 
+            justify-content: space-between; 
             align-items: center;
             padding: 1rem 5%;       /* 核心：统一高度的关键 */
             background: var(--soft-white); 
@@ -69,7 +70,6 @@
         .nav-links {
             display: flex; 
             gap: 2.5rem;            /* 统一间距 */
-            margin-left: auto;      /* 导航链接靠右对齐 */
         }
 
         .nav-links a {
@@ -84,12 +84,7 @@
 
         /* 手机端汉堡菜单图标（默认隐藏） */
         .menu-toggle {
-            display: none; 
-            flex-direction: column; 
-            gap: 5px; 
-            cursor: pointer;
-            position: absolute;
-            right: 5%;
+            display: none; flex-direction: column; gap: 5px; cursor: pointer;
         }
         .menu-toggle span { width: 25px; height: 3px; background-color: var(--brand-blue); transition: 0.3s; }
 
