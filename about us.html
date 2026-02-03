@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>About Us - Shanyue Textile</title>
+
+	<style>
+		/* --- 品牌颜色变量定义 --- */
+		:root {
+			--brand-blue: #004098;  /* 山越标志蓝 */
+			--text-dark: #333333;   /* 主要文字颜色 */
+			--text-muted: #666666;  /* 辅助文字灰色 */
+			--soft-white: #ffffff;
+			--transition: all 0.3s ease;
+		}
+
+		/* --- 基础样式重置 --- */
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: 'Helvetica Neue', Arial, sans-serif;
+			background-color: #f5f5f5;
+		}
+
+		/* --- 【核心锁定】1800px 宽度容器 --- */
+		.page-wrapper {
+			max-width: 1800px;
+			margin: 0 auto;
+			background-color: #fff;
+			min-height: 100vh;
+			display: flex;
+			flex-direction: column;
+			box-shadow: 0 0 20px rgba(0,0,0,0.05);
+		}
+
+		/* --- 【绝对对齐基准线】统一所有板块的内边距 --- */
+		.align-line {
+			padding-left: 5%;
+			padding-right: 5%;
+			box-sizing: border-box;
+		}
+
+		/* --- 导航栏样式 --- */
+		nav.main-nav {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 1rem 5%;
+			background: var(--soft-white);
+			border-bottom: 1px solid #eee;
+			position: sticky;
+			top: 0;
+			z-index: 1000;
+			max-width: 1800px;
+			margin: 0 auto;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		.logo {
+			font-size: 1.2rem;
+			font-weight: 800;
+			color: var(--brand-blue);
+			text-transform: uppercase;
+			text-decoration: none;
+			letter-spacing: 1px;
+		}
+
+		.nav-links {
+			display: flex;
+			gap: 2.5rem;
+		}
+
+		.nav-links a {
+			text-decoration: none;
+			color: var(--text-dark);
+			font-size: 0.9rem;
+			font-weight: 500;
+			transition: var(--transition);
+		}
+
+		.nav-links a:hover { color: var(--brand-blue); }
+
+		/* 手机端汉堡菜单图标（默认隐藏） */
+		.menu-toggle {
+			display: none;
+			flex-direction: column;
+			gap: 5px;
+			cursor: pointer;
+		}
+
+		.menu-toggle span {
+			width: 25px;
+			height: 3px;
+			background-color: var(--brand-blue);
+			transition: 0.3s;
+		}
+
+		/* --- 头图区域 --- */
+		.sub-page-header {
+			background: var(--brand-blue);
+			color: white;
+			height: 15vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		.sub-page-header h1 {
+			font-size: 3rem;
+			margin: 0;
+			font-weight: 300;
+			letter-spacing: 2px;
+		}
+
+		.sub-page-header p {
+			margin-top: 15px;
+			opacity: 0.9;
+			font-size: 1.2rem;
+		}
+
+		.tagline {
+			margin-top: 18px;
+			font-size: 1rem;
+			letter-spacing: 1.5px;
+			text-transform: uppercase;
+			color: rgba(255,255,255,0.85);
+		}
+
+		/* --- 正文介绍区 --- */
+		.intro-section {
+			padding-top: 40px;
+			padding-bottom: 30px;
+		}
+
+		.intro-text {
+			font-size: 1.3rem;
+			color: var(--text-muted);
+			max-width: 1000px;
+			text-align: justify;
+			margin: 0;
+		}
+
+		.content-section {
+			margin-top: 50px;
+		}
+
+		.section-title {
+			font-size: 2rem;
+			color: var(--text-dark);
+			margin-bottom: 25px;
+			position: relative;
+			padding-left: 20px;
+		}
+
+		.section-title::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 6px;
+			width: 6px;
+			height: 70%;
+			background: var(--brand-blue);
+		}
+
+		.highlight-block {
+			border-left: 4px solid var(--brand-blue);
+			padding-left: 20px;
+			color: var(--text-muted);
+			margin-bottom: 30px;
+			line-height: 1.7;
+		}
+
+		/* --- 卡片布局 --- */
+		.card-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+			gap: 30px;
+		}
+
+		.info-card {
+			border: 1px solid #eee;
+			padding: 30px;
+			background: white;
+			transition: var(--transition);
+			display: flex;
+			flex-direction: column;
+		}
+
+		.info-card:hover {
+			border-color: #333;
+			box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+			transform: translateY(-5px);
+		}
+
+		.info-card h3 {
+			color: var(--brand-blue);
+			margin: 0 0 15px 0;
+			font-size: 1.5rem;
+		}
+
+		.info-card ul {
+			padding-left: 18px;
+			color: var(--text-muted);
+			margin: 0;
+		}
+
+		.info-card li {
+			margin-bottom: 10px;
+		}
+
+		/* --- 页脚 --- */
+		footer {
+			background: #003366;
+			color: #b0c4de;
+			padding: 5rem 0;
+			text-align: center;
+			margin-top: auto;
+		}
+
+		/* --- 响应式适配 --- */
+		@media (max-width: 992px) {
+			.menu-toggle { display: flex; }
+			.nav-links {
+				display: none;
+				flex-direction: column;
+				position: absolute;
+				top: 100%;
+				left: 0;
+				width: 100%;
+				background: white;
+				padding: 20px 5%;
+				border-bottom: 1px solid #eee;
+				gap: 0.8rem;
+			}
+
+			.nav-links.active { display: flex; }
+
+			.nav-links a {
+				font-size: 0.9rem !important;
+				padding-bottom: 1rem;
+				border-bottom: 1px solid #ddd;
+			}
+
+			.align-line {
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+
+			.sub-page-header { height: 15vh !important; text-align: center; }
+
+			.sub-page-header h1 { font-size: 1.8rem; }
+
+			.sub-page-header p { font-size: 0.95rem !important; }
+
+			.intro-text {
+				font-size: 1rem;
+				line-height: 1.7;
+				text-align: left;
+			}
+
+			.card-grid { grid-template-columns: 1fr; }
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="page-wrapper">
+
+		<!-- 导航栏结构保持与 fibres.html 一致 -->
+		<nav class="main-nav">
+			<a href="index.html" class="logo">SHAN YUE TEXTILE</a>
+			<div class="menu-toggle" id="mobile-menu">
+				<span></span><span></span><span></span>
+			</div>
+			<div class="nav-links" id="nav-list">
+				<a href="about us.html">About Us</a>
+				<a href="fibers.html">Fibres</a>
+				<a href="spun-yarn.html">Spun Yarn</a>
+				<a href="filament-yarn.html">Filament Yarn</a>
+				<a href="dope-dyed-yarn.html">Dope-dyed Yarn</a>
+			</div>
+		</nav>
+
+		<header class="sub-page-header align-line">
+			<h1>About Us</h1>
+			<span class="tagline">Trusted Asia sourcing partner</span>
+		</header>
+
+		<main class="align-line">
+			<section class="intro-section">
+				<p class="intro-text">
+					With <strong>25 years of profound heritage</strong>, Shaoxing Shanyue Textile Co., Ltd. has established itself as a premier international trading partner. We specialize in connecting global demand with the most efficient manufacturing hubs across <strong>China and Southeast Asia</strong>, ensuring stability, quality, and cost-effectiveness for every shipment.
+				</p>
+			</section>
+
+			<section class="content-section">
+				<h2 class="section-title">Core Expertise</h2>
+				<div class="card-grid">
+					<div class="info-card">
+						<h3>Proven Experience</h3>
+						<ul>
+							<li>Quarter-century of market navigation and insight.</li>
+							<li>Experienced team managing complex supply chains.</li>
+							<li>Customized solutions from sourcing to logistics.</li>
+						</ul>
+					</div>
+					<div class="info-card">
+						<h3>Regional Strategy</h3>
+						<ul>
+							<li>Diversified manufacturing bases in China and Southeast Asia.</li>
+							<li>Flexible sourcing models tailored to client priorities.</li>
+							<li>Competitive lead times supported by strong partnerships.</li>
+						</ul>
+					</div>
+					<div class="info-card">
+						<h3>Quality Assurance</h3>
+						<ul>
+							<li>Decades-honed inspection and testing standards.</li>
+							<li>Full compliance with international regulations.</li>
+							<li>Traceability and transparency for every production lot.</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<section class="content-section">
+				<h2 class="section-title">Product Portfolio</h2>
+				<div class="highlight-block">
+					Our comprehensive product lineup covers fibers, yarns, and functional innovations that empower apparel, industrial, and technical textile applications.
+				</div>
+				<div class="card-grid">
+					<div class="info-card">
+						<h3>Fibers & Yarns</h3>
+						<ul>
+							<li>Synthetic Fibers: Premium Polyester and Nylon grades.</li>
+							<li>Filament Yarns: DTY, FDY, and POY engineered for weaving and knitting.</li>
+							<li>Spun Yarns: Spun Polyester, Cotton, and diverse blended constructions.</li>
+							<li>Dope-Dyed Series: Eco-friendly colored fibers with superior fastness.</li>
+						</ul>
+					</div>
+					<div class="info-card">
+						<h3>Functional Solutions</h3>
+						<ul>
+							<li>Climate Control: Instant Cooling and Moisture-Wicking technologies.</li>
+							<li>Health & Protection: Anti-bacterial, Anti-odor, and UV-Protection lines.</li>
+							<li>Safety: Flame-Retardant fibers meeting global industrial standards.</li>
+						</ul>
+					</div>
+					<div class="info-card">
+						<h3>Partnership Advantages</h3>
+						<ul>
+							<li>Integrated supply chain management with transparent communication.</li>
+							<li>Dedicated project teams supporting product development.</li>
+							<li>Commitment to sustainability and long-term value creation.</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer>
+			<div class="align-line">
+				<div style="color:white; margin-bottom:15px; font-weight:bold;">Shaoxing Shanyue Textile Co., Ltd.</div>
+				<p>&copy; 2026 Shanyue Textile. All Rights Reserved.</p>
+				<p>Email: leogao@yarnsvc.com</p>
+			</div>
+		</footer>
+
+	</div>
+
+	<script>
+		const btn = document.getElementById('mobile-menu');
+		const nav = document.getElementById('nav-list');
+		btn.addEventListener('click', (e) => {
+			e.stopPropagation();
+			nav.classList.toggle('active');
+		});
+
+		document.addEventListener('click', (e) => {
+			if (!btn.contains(e.target) && !nav.contains(e.target)) {
+				nav.classList.remove('active');
+			}
+		});
+	</script>
+
+</body>
+</html>
