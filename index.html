@@ -26,6 +26,8 @@
             /* 9. 定义品牌蓝色变量，用于网站的核心视觉元素（logo、hover效果等），统一品牌视觉风格 */
             --deep-dark: #1a1a1a;   
             /* 10. 定义深黑色变量，用于常规文本颜色，比纯黑色#000更柔和，提升阅读体验 */
+            --text-dark: #333333;
+            --text-muted: #666666;
             --soft-white: #ffffff;  
             /* 11. 定义纯白色变量，用于背景色、导航栏等浅色区域 */
             --transition: all 0.3s ease; 
@@ -46,14 +48,32 @@
                  这样设置保证在不同设备上都能显示美观的无衬线字体，提升跨设备兼容性 */
             color: var(--deep-dark); 
             /* 16. 调用之前定义的CSS变量--deep-dark，设置页面默认文本颜色，实现样式复用 */
-            background-color: var(--soft-white); 
-            /* 17. 调用CSS变量--soft-white，设置页面默认背景色为白色 */
+            background-color: #f5f5f5; 
+            /* 17. 设置浅灰背景以衬托主体白色内容块 */
+            overflow-y: scroll;
+            /* 17.1 始终预留垂直滚动条宽度，防止页面切换时导航左右晃动 */
             -webkit-font-smoothing: antialiased; 
             /* 18. 针对Webkit内核浏览器（Chrome、Safari等）的字体抗锯齿属性，让文字边缘更平滑，提升视觉效果 */
         }
 
+        .page-wrapper {
+            max-width: 1800px;
+            margin: 0 auto;
+            background-color: var(--soft-white);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        .align-line {
+            padding-left: 5%;
+            padding-right: 5%;
+            box-sizing: border-box;
+        }
+
         /* --- 导航栏设置 --- */
-        nav {
+        nav.main-nav {
             /* 19. nav选择器：匹配导航栏标签<nav>，设置导航栏的布局和样式 */
             display: flex; 
             /* 20. 设置导航栏为Flex布局，让内部子元素（logo、菜单、汉堡按钮）可以灵活排列，是现代布局的核心方式 */
@@ -77,6 +97,8 @@
             /* 29. 限制导航栏的最大宽度为1800px，避免在超大屏幕（比如2k/4k显示器）上导航栏过度拉伸，保持布局美观 */
             margin: 0 auto;
             /* 30. 让导航栏水平居中（上下外边距0，左右自动填充），配合max-width实现大屏幕下居中对齐 */
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .logo {
@@ -423,27 +445,24 @@
         footer {
             /* 151. footer选择器：匹配页脚标签<footer>，设置页脚样式 */
             background: #003366; 
-            /* 152. 页脚背景为深黑色，与页面主体的白色形成对比，分隔页面内容和页脚 */
-            color: #888; 
-            /* 153. 页脚文本颜色为浅灰色，比深黑色背景稍亮，提升可读性，同时不显得刺眼 */
-            max-width: 1800px; 
-            /* 154. 限制页脚最大宽度为1800px，与其他板块保持一致 */
-            margin: 0 auto; 
-            /* 155. 页脚水平居中 */
-            padding: 4rem 0;
-            /* 156. 上下内边距4rem，左右0，给页脚内容足够的空间 */
+            /* 152. 页脚背景为品牌深蓝色，与页面主体的白色形成对比，分隔页面内容和页脚 */
+            color: #b0c4de; 
+            /* 153. 页脚文本颜色为柔和的浅蓝，呼应纤维页的视觉风格 */
+            padding: 5rem 0;
+            /* 154. 上下内边距5rem，拉开呼吸感 */
             text-align: center; 
-            /* 157. 页脚文字居中对齐，符合页脚的设计习惯 */
-            font-size: 0.85rem; 
-            /* 158. 页脚文字大小为0.85rem，比正文稍小，突出主次关系 */
+            /* 155. 页脚文字居中对齐，符合页脚的设计习惯 */
+            margin-top: auto;
+            /* 156. 让页脚在内容较少时依然贴底 */
         }
     </style>
 </head>
 <body>
     <!-- 159. body标签：包裹页面所有可见内容，用户在页面上看到的所有元素都放在这里 -->
-    <nav>
+    <div class="page-wrapper">
+    <nav class="main-nav">
         <!-- 160. nav标签：导航栏容器，用于包裹网站的导航链接，提升页面语义化（搜索引擎更易识别） -->
-        <div class="logo">SHAN YUE TEXTILE</div>
+        <a href="index.html" class="logo">SHAN YUE TEXTILE</a>
         <!-- 161. 企业logo文本，class="logo"对应CSS中的.logo样式，显示品牌名称 -->
         <div class="menu-toggle" id="mobile-menu">
             <!-- 162. 汉堡菜单按钮，class="menu-toggle"对应CSS中的样式，id="mobile-menu"用于JavaScript获取该元素 -->
@@ -520,14 +539,17 @@
 </div>
 
     <footer>
-        <!-- 181. footer标签：页脚容器，包裹企业版权、联系信息等内容，提升页面语义化 -->
-        <div style="color:white; margin-bottom:15px; font-weight:bold;">Shaoxing Shanyue Textile Co., Ltd.</div>
-        <!-- 182. 企业全称：内联样式设置为白色、粗体、底部外边距15px，突出企业名称 -->
-        <p>&copy; 2026 Shanyue Textile. All Rights Reserved.</p>
-        <!-- 183. 版权信息：&copy; 是版权符号（©），表示2026年Shanyue Textile保留所有权利 -->
-        <p>Email: leogao@yarnsvc.com</p>
-        <!-- 184. 联系邮箱：提供企业的联系方式，方便用户联系 -->
+        <div class="align-line">
+            <!-- 181. footer标签：页脚容器，包裹企业版权、联系信息等内容，提升页面语义化 -->
+            <div style="color:white; margin-bottom:15px; font-weight:bold;">Shaoxing Shanyue Textile Co., Ltd.</div>
+            <!-- 182. 企业全称：内联样式设置为白色、粗体、底部外边距15px，突出企业名称 -->
+            <p>&copy; 2026 Shanyue Textile. All Rights Reserved.</p>
+            <!-- 183. 版权信息：&copy; 是版权符号（©），表示2026年Shanyue Textile保留所有权利 -->
+            <p>Email: leogao@yarnsvc.com</p>
+            <!-- 184. 联系邮箱：提供企业的联系方式，方便用户联系 -->
+        </div>
     </footer>
+    </div>
 
     <script>
         /* 185. script标签：用于编写JavaScript代码，实现页面的交互功能（导航切换、轮播图自动切换） */
