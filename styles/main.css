@@ -557,5 +557,24 @@
                 }
 
                 @media (max-width: 768px) {
-                    .news-hub { margin: 3rem auto; }
+                    .news-hub {
+                        margin: 3rem auto;
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+
+                    .news-hub .blog-column {
+                        border-radius: 0;
+                        border-left: none;
+                        border-right: none;
+                        padding-left: 1.25rem;
+                        padding-right: 1.25rem;
+                    }
+
+                    .blog-card p {
+                        display: -webkit-box;
+                        -webkit-line-clamp: 4;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                    }
                 }
