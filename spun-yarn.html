@@ -135,7 +135,8 @@
             font-size: 1.3rem;      /* 电脑端采用较大字号增加高级感 */
             color: var(--text-muted); 
             max-width: 100%; 
-            text-align: left;       /* 与卡片保持同一对齐 */
+            text-align: justify;    /* 两端对齐 */
+            text-justify: inter-word;
             margin: 0;              /* W 字母对齐 F */
         }
 
@@ -231,7 +232,11 @@
             .intro-text { 
                 font-size: 0.9rem; /* 手机端设为 1.15rem 最适合阅读 */
                 line-height: 1.6;   /* 增加行间距，防止文字挤在一起 */
-                text-align: left;   /* 手机端推荐左对齐 */
+                text-align: justify;   /* 手机端两端对齐 */
+                text-justify: inter-word;
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
             }
         }
         
