@@ -25,6 +25,8 @@
         <!-- 提供 150 字以内的摘要，帮助搜索引擎与社交平台正确理解页面主题 -->
         <link rel="canonical" href="https://www.yarnsvc.com/">
         <!-- Canonical 链接指向主域名，避免出现重复内容的收录问题 -->
+        <link rel="preload" as="image" href="images/hero1.webp" type="image/webp" fetchpriority="high">
+        <!-- 预加载首屏大图，缩短 LCP -->
         <meta property="og:type" content="website">
         <meta property="og:title" content="Shaoxing Shanyue Textile | Innovative Yarn Solutions">
         <meta property="og:description" content="Shaoxing Shanyue Textile supplies knit fabric, spun yarn, filament yarn, and dope dyed yarn solutions for global apparel and home textile brands.">
@@ -246,10 +248,10 @@
             /* 73. 幻灯片宽度占满父容器 */
             height: 100%;                   
             /* 74. 幻灯片高度占满父容器 */
-            background-size: cover;         
-            /* 75. 背景图片样式：cover表示将背景图片等比例缩放，覆盖整个幻灯片容器，保证图片不拉伸，同时填满容器（可能裁剪图片边缘） */
-            background-position: center;    
-            /* 76. 背景图片定位：居中对齐，保证图片的核心内容显示在幻灯片中间 */
+            background-color: #041427;      
+            /* 75. 纯色底作为图片加载前的占位，避免首屏闪白 */
+            overflow: hidden;               
+            /* 76. 确保内部图片放大时不溢出容器 */
             opacity: 0;                     
             /* 77. 默认透明度为0（完全透明），幻灯片默认隐藏，只有激活状态才显示 */
             /* 使用 3.5s 的长过渡，让切换时的透明度变化极其丝滑，掩盖缩放比例的微小差异 */
@@ -263,6 +265,19 @@
             /* 80. 给幻灯片添加无限循环的放大动画：调用@keyframes定义的zoomEffect动画，时长60s，线性速度（匀速），无限循环 */
             will-change: transform; /* 作用：调用硬件加速，优化缩放平滑度 */
             /* 81. 告诉浏览器该元素的transform属性即将发生变化，让浏览器提前开启硬件加速，优化动画性能，避免卡顿 */
+        }
+
+        /* --- 幻灯片图片设置 --- */
+        .slide picture,
+        .slide img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .slide img {
+            object-fit: cover;
+            filter: saturate(1.05);
         }
 
         /* --- 激活状态：仅仅负责透明度显现 --- */
@@ -535,15 +550,27 @@
         <!-- 166. section标签：英雄区容器，提升页面语义化，class="hero"对应CSS中的.hero样式 -->
         <div class="slideshow-container"> 
             <!-- 167. 轮播图容器，class="slideshow-container"对应CSS中的样式，包裹所有幻灯片 -->
-            <div class="slide active" style="background-image: url('images/hero1.png');"></div> 
-            <!-- 168. 第一张幻灯片：
-                 - class="slide active"：默认处于激活状态（显示）
-                 - style="background-image: url(...)"：内联样式设置背景图片，指向本地images目录下的hero1.png
-                 - 空<div>标签：因为使用背景图片，无需内部内容，仅作为图片容器 -->
-            <div class="slide" style="background-image: url('images/hero3.png');"></div> 
-            <!-- 170. 第三张幻灯片：默认隐藏（无active类），背景图片为hero3.png -->
-            <div class="slide" style="background-image: url('images/3.jpg');"></div>
-            <!-- 新增幻灯片：使用 images/3.jpg 作为背景，自动加入轮播顺序 -->
+            <div class="slide active">
+                <picture>
+                    <source srcset="images/hero1.webp" type="image/webp">
+                    <img src="images/hero1.png" alt="High-performance yarns prepared for global shipments" loading="eager" fetchpriority="high" decoding="async">
+                </picture>
+            </div>
+            <!-- 168. 第一张幻灯片：改为 <picture> 结构，支持 WebP 与 PNG 回退 -->
+            <div class="slide">
+                <picture>
+                    <source srcset="images/hero3.webp" type="image/webp">
+                    <img src="images/hero3.png" alt="Modern spinning workshop focusing on consistent quality" loading="lazy" fetchpriority="low" decoding="async">
+                </picture>
+            </div>
+            <!-- 170. 第二张幻灯片，lazy 加载，减少首屏阻塞 -->
+            <div class="slide">
+                <picture>
+                    <source srcset="images/3.webp" type="image/webp">
+                    <img src="images/3.jpg" alt="Finished fabric rolls showcasing sustainable color programs" loading="lazy" fetchpriority="low" decoding="async">
+                </picture>
+            </div>
+            <!-- 新增 WebP 版本，后台预加载更轻量 -->
         </div> 
         
         <div class="hero-overlay"> 
