@@ -57,10 +57,8 @@
                  这样设置保证在不同设备上都能显示美观的无衬线字体，提升跨设备兼容性 */
             color: var(--deep-dark); 
             /* 16. 调用之前定义的CSS变量--deep-dark，设置页面默认文本颜色，实现样式复用 */
-            background-color: #f5f5f5; 
-            /* 17. 设置浅灰背景以衬托主体白色内容块 */
-            overflow-y: scroll;
-            /* 17.1 始终预留垂直滚动条宽度，防止页面切换时导航左右晃动 */
+            background-color: var(--soft-white);
+            /* 17. 背景色改为白色，与页面主体保持一致，避免移动端出现灰色横条 */
             -webkit-font-smoothing: antialiased; 
             /* 18. 针对Webkit内核浏览器（Chrome、Safari等）的字体抗锯齿属性，让文字边缘更平滑，提升视觉效果 */
         }
@@ -72,7 +70,11 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+        
+        /* 确保主要内容区域填充剩余空间 */
+        .page-wrapper > *:not(footer) {
+            flex-shrink: 0;
         }
 
         .align-line {
@@ -367,25 +369,31 @@
             /* 126. 定义网格的列布局：repeat(4, 1fr) 等价于 1fr 1fr 1fr 1fr
                  - fr是Grid的弹性单位，1fr表示占用剩余空间的1份
                  实现4列等宽的网格布局，响应式适配 */
-            gap: 1px; 
-            /* 127. 网格项之间的间距为1px，形成分割线的效果 */
-            background: #eee; 
-            /* 128. 网格容器背景为浅灰色，通过1px的gap，让网格项之间显示浅灰色分割线，提升层次感 */
+            gap: 0;
+            /* 127. 取消网格缝隙，避免出现浅灰横线 */
             max-width: 1800px; 
             /* 129. 限制网格最大宽度为1800px，与导航栏、英雄区保持一致 */
             margin: 0 auto;
             /* 130. 网格水平居中，与其他板块对齐 */
+            border: 1px solid #eee;
+            /* 131. 为整个网格添加细边框，保持版块结构感 */
         }
 
         .app-item {
             /* 131. .app-item类选择器：匹配单个业务项，设置业务项的样式 */
             background: var(--soft-white); 
-            /* 132. 业务项背景为白色，与网格容器的浅灰色gap形成对比，突出每个业务项 */
+            /* 132. 业务项背景为白色 */
             padding: 1rem 2rem; 
             /* 133. 内边距：上下4rem，左右2rem，给业务项内的文字足够的空间，提升美观度 */
             text-align: center; 
             /* 134. 业务项内的文字居中对齐，符合网格布局的视觉习惯 */
+            border-right: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            /* 使用细边框替代网格间隙，整体更干净 */
         }
+        .app-item:nth-child(4n) { border-right: none; }
+        .app-item:nth-last-child(-n+4) { border-bottom: none; }
+        /* 去掉每行最后一个和最后一行的边框，避免双线 */
 
         /* --- 移动端（手机）适配 --- */
         @media (max-width: 768px) {
@@ -453,6 +461,24 @@
             
             .app-grid { grid-template-columns: 1fr 1fr; }
             /* 150. 移动端网格布局改为2列等宽（repeat(2, 1fr)的简写），适配移动端竖屏，避免4列过于拥挤 */
+
+            .app-item:nth-child(2n) { border-right: none; }
+            .app-item:nth-last-child(-n+2) { border-bottom: none; }
+            /* 根据两列布局重新计算去除右/下边框的规则 */
+            
+            .app-grid {
+                margin-bottom: 0;
+                /* 移动端确保网格底部无额外边距 */
+            }
+            
+            .page-wrapper {
+                max-width: 100%;
+                /* 移动端取消最大宽度限制，让页面占满全宽 */
+                box-shadow: none;
+                /* 移动端隐藏阴影，避免出现灰色横条 */
+                min-height: 100vh;
+                /* 移动端确保页面包装器至少占满整个视口高度 */
+            }
         }
 
         /* --- 页脚设置 --- */
