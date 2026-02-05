@@ -14,13 +14,17 @@
 
             gtag('config', 'G-PDNTFLKER3');
         </script>
-    <meta charset="UTF-8">
-    <!-- 4. 定义页面的字符编码格式为UTF-8，UTF-8是目前通用的字符编码，支持所有中英文及特殊字符，避免出现乱码 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 5. 移动端适配核心元标签：
+        <meta charset="UTF-8">
+        <!-- 4. 定义页面的字符编码格式为UTF-8，UTF-8是目前通用的字符编码，支持所有中英文及特殊字符，避免出现乱码 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- 5. 移动端适配核心元标签：
          - width=device-width：让页面宽度等于设备的屏幕宽度
          - initial-scale=1.0：页面初始加载时的缩放比例为1:1（不放大不缩小）
          缺少这行，移动端会以桌面端宽度渲染，再缩放显示，导致布局混乱 -->
+        <meta name="description" content="Shaoxing Shanyue Textile supplies knit fabric, spun yarn, filament yarn, and dope dyed yarn solutions for global apparel and home textile brands.">
+        <!-- 提供 150 字以内的摘要，帮助搜索引擎与社交平台正确理解页面主题 -->
+        <link rel="canonical" href="https://www.yarnsvc.com/">
+        <!-- Canonical 链接指向主域名，避免出现重复内容的收录问题 -->
     <title>Shanyue Textile | Innovative Yarn Solutions</title>
     <!-- 6. 定义浏览器标签页的标题，显示在浏览器顶部/标签栏，同时也是搜索引擎抓取页面时的重要参考信息 -->
     
@@ -516,6 +520,7 @@
         </div>
     </nav>
 
+    <main>
     <section class="hero"> 
         <!-- 166. section标签：英雄区容器，提升页面语义化，class="hero"对应CSS中的.hero样式 -->
         <div class="slideshow-container"> 
@@ -573,7 +578,10 @@
         </div>
     </a>
 
+
 </div>
+
+    </main>
 
     <footer>
         <div class="align-line">
@@ -589,6 +597,24 @@
         </div>
     </footer>
     </div>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Shaoxing Shanyue Textile Co., Ltd.",
+        "url": "https://www.yarnsvc.com/",
+        "logo": "https://www.yarnsvc.com/images/logo.png",
+        "contactPoint": [{
+            "@type": "ContactPoint",
+            "contactType": "Sales",
+            "email": "info@yarnsvc.com",
+            "telephone": "+86 18605755007",
+            "areaServed": "Worldwide",
+            "availableLanguage": ["en", "zh"]
+        }]
+    }
+    </script>
 
     <script>
         /* 185. script标签：用于编写JavaScript代码，实现页面的交互功能（导航切换、轮播图自动切换） */
@@ -645,7 +671,7 @@
                 // 196. 给下一张索引对应的幻灯片添加.active类，该幻灯片的opacity会从0变为1（触发CSS中的2.5s过渡效果，淡入）
                 
             }, 3000); // 设定每 3 秒切换一次
-            // 197. setInterval的第二个参数：4000毫秒（即5秒），表示每隔4秒执行一次内部逻辑，控制轮播切换的速度
+            // 197. setInterval 的第二个参数：3000 毫秒（3 秒），表示每隔 3 秒执行一次内部逻辑，控制轮播切换的速度
         }
 
         /* --- 4. 启动启动点 --- */
