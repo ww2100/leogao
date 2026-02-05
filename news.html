@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PDNTFLKER3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-PDNTFLKER3');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Company news and press updates from Shaoxing Shanyue Textile, covering announcements, partnerships, and sustainability programs.">
+    <link rel="canonical" href="https://www.yarnsvc.com/news.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Company News | Shaoxing Shanyue Textile">
+    <meta property="og:description" content="Stay current on the latest announcements, production milestones, and sustainability commitments from Shanyue Textile.">
+    <meta property="og:url" content="https://www.yarnsvc.com/news.html">
+    <meta property="og:image" content="https://www.yarnsvc.com/images/hero1.png">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Company News | Shaoxing Shanyue Textile">
+    <meta name="twitter:description" content="Stay current on the latest announcements, production milestones, and sustainability commitments from Shanyue Textile.">
+    <meta name="twitter:image" content="https://www.yarnsvc.com/images/hero1.png">
+    <title>Company News - Shanyue Textile</title>
+
+    <style>
+        :root {
+            --brand-blue: #004098;
+            --text-dark: #333333;
+            --text-muted: #666666;
+            --soft-white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f5f5;
+            overflow-y: scroll;
+            color: var(--text-dark);
+        }
+
+        .page-wrapper {
+            max-width: 1800px;
+            margin: 0 auto;
+            background-color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        .align-line {
+            padding-left: 5%;
+            padding-right: 5%;
+            box-sizing: border-box;
+        }
+
+        nav.main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: var(--soft-white);
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            max-width: 1800px;
+            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--brand-blue);
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover { color: var(--brand-blue); }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--brand-blue);
+            transition: 0.3s;
+        }
+
+        .sub-page-header {
+            background: var(--brand-blue);
+            color: white;
+            height: 20vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .sub-page-header h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .sub-page-header p {
+            margin-top: 15px;
+            opacity: 0.9;
+            font-size: 1.2rem;
+        }
+
+        .intro-section {
+            padding-top: 35px;
+            padding-bottom: 25px;
+        }
+
+        .intro-text {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 960px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 6px;
+            width: 6px;
+            height: 70%;
+            background: var(--brand-blue);
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+        }
+
+        .news-card {
+            border: 1px solid #eee;
+            border-radius: 14px;
+            padding: 24px;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+            transition: var(--transition);
+        }
+
+        .news-card:hover {
+            border-color: #333;
+            box-shadow: 0 14px 35px rgba(0,0,0,0.08);
+            transform: translateY(-4px);
+        }
+
+        .news-meta {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .news-card h3 {
+            margin: 0;
+            font-size: 1.3rem;
+            color: var(--brand-blue);
+        }
+
+        .news-card p {
+            margin: 0;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        .news-card a {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--brand-blue);
+            margin-top: auto;
+        }
+
+        .highlight-block {
+            border-left: 4px solid var(--brand-blue);
+            padding-left: 20px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .media-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .media-list li {
+            border: 1px solid #e1e5ef;
+            border-radius: 12px;
+            padding: 18px;
+            background: #f8f9fc;
+        }
+
+        footer {
+            background: #003366;
+            color: #b0c4de;
+            padding: 2.5rem 0;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        @media (max-width: 992px) {
+            .menu-toggle { display: flex; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 20px 5%;
+                border-bottom: 1px solid #eee;
+                gap: 0.8rem;
+            }
+
+            .nav-links.active { display: flex; }
+
+            .nav-links a {
+                font-size: 0.9rem !important;
+                padding-bottom: 1rem;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .align-line {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .sub-page-header { height: 18vh !important; text-align: center; }
+            .sub-page-header h1 { font-size: 2rem; }
+            .sub-page-header p { font-size: 1rem; }
+            .intro-text { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <nav class="main-nav">
+            <a href="index.html" class="logo">SHAN YUE TEXTILE</a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="nav-links" id="nav-list">
+                <a href="about us.html">About Us</a>
+                <a href="knit.html">Knit Fabric</a>
+                <a href="spun-yarn.html">Spun Yarn</a>
+                <a href="filament-yarn.html">Filament Yarn</a>
+                <a href="dope-dyed-yarn.html">Dope-dyed Yarn</a>
+                <a href="news.html">Company News</a>
+            </div>
+        </nav>
+
+        <header class="sub-page-header align-line">
+            <h1>Company News</h1>
+            <p class="tagline">Visibility into every milestone we share with partners worldwide.</p>
+        </header>
+
+        <main class="align-line">
+            <section class="intro-section">
+                <p class="intro-text">
+                    Here you can review the latest announcements, factory enablement projects, and sustainability initiatives across Shaoxing Shanyue Textile. Each update is written for buyers and sourcing managers who need quick context before aligning upcoming programs.
+                </p>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">Latest Dispatches</h2>
+                <div class="news-grid">
+                    <article class="news-card">
+                        <span class="news-meta">January 30, 2026 · Operations</span>
+                        <h3>Ningbo finishing hub enters live production</h3>
+                        <p>The new partner facility brings an extra 2.4 million meters of monthly capacity for reactive and cationic dye programs, enabling dual-country redundancy for key retailers.</p>
+                        <a href="#">Read update</a>
+                    </article>
+                    <article class="news-card">
+                        <span class="news-meta">January 24, 2026 · Sustainability</span>
+                        <h3>Recycled filament line secures GRS batch approval</h3>
+                        <p>Shanyue now offers certified RPET filament from 75D to 300D with dope-dyed color matching, reducing water usage by 86% against conventional processes.</p>
+                        <a href="#">Read update</a>
+                    </article>
+                    <article class="news-card">
+                        <span class="news-meta">January 18, 2026 · Partnerships</span>
+                        <h3>Joint development lab launches in Ho Chi Minh City</h3>
+                        <p>The lab pairs our yarn engineering team with two knitting groups to fast-track prototype approval cycles for athleisure and lounge programs.</p>
+                        <a href="#">Read update</a>
+                    </article>
+                    <article class="news-card">
+                        <span class="news-meta">January 11, 2026 · Supply Chain</span>
+                        <h3>Dual-port strategy shortens US East Coast lead time</h3>
+                        <p>Weekly sailings from Ningbo and Cat Lai now synchronize with Savannah and Norfolk arrivals, cutting average door-to-door timing by 9 days.</p>
+                        <a href="#">Read update</a>
+                    </article>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">Media & Resources</h2>
+                <div class="highlight-block">
+                    For press inquiries, sustainability documentation, or custom quotes, please contact Grace (Business Manager) at <a href="mailto:grace@yarnsvc.com">grace@yarnsvc.com</a> or WhatsApp/Phone +86 18606755007.
+                </div>
+                <ul class="media-list">
+                    <li>
+                        <strong>Fact Sheet</strong><br>
+                        Updated production footprint, yarn capacity, and compliance credentials.
+                    </li>
+                    <li>
+                        <strong>Brand Assets</strong><br>
+                        Logos, executive bios, and product photography for media use.
+                    </li>
+                    <li>
+                        <strong>Sustainability Deck</strong><br>
+                        KPI progress on water, energy, and recycled inputs for FY2024-2026.
+                    </li>
+                    <li>
+                        <strong>Contact Directory</strong><br>
+                        Regional sales and technical support points across Asia and EU.
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <div class="align-line">
+                <div style="color:white; margin-bottom:15px; font-weight:bold;">Shaoxing Shanyue Textile Co., Ltd.</div>
+                <p>&copy; 2026 Shanyue Textile. All Rights Reserved.</p>
+                <p>Email: info@yarnsvc.com</p>
+            </div>
+        </footer>
+    </div>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Shaoxing Shanyue Textile Co., Ltd.",
+        "url": "https://www.yarnsvc.com/news.html",
+        "logo": "https://www.yarnsvc.com/images/logo.png",
+        "sameAs": ["https://www.yarnsvc.com/"],
+        "contactPoint": [{
+            "@type": "ContactPoint",
+            "contactType": "Press",
+            "email": "grace@yarnsvc.com",
+            "telephone": "+86 18606755007",
+            "areaServed": "Worldwide",
+            "availableLanguage": ["en", "zh"]
+        }]
+    }
+    </script>
+
+    <script>
+        const btn = document.getElementById('mobile-menu');
+        const nav = document.getElementById('nav-list');
+        if (btn && nav) {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                nav.classList.toggle('active');
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!btn.contains(e.target) && !nav.contains(e.target)) {
+                    nav.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

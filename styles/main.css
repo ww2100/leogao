@@ -481,3 +481,81 @@
             margin-top: auto;
             /* 156. 让页脚在内容较少时依然贴底 */
         }
+
+                /* --- 公司新闻板块 --- */
+                .news-hub {
+                    margin: 4rem auto;
+                }
+
+                .blog-column {
+                    background: #f7f8fb;
+                    border: 1px solid #e4e7f0;
+                    border-radius: 18px;
+                    padding: 2rem;
+                    box-shadow: 0 20px 45px rgba(0,0,0,0.05);
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.25rem;
+                }
+
+                .blog-header h3 {
+                    margin: 0;
+                    font-size: clamp(1.8rem, 2vw, 3rem);
+                    line-height: 1.15;
+                }
+
+                .blog-header h3 a {
+                    color: var(--deep-dark);
+                    text-decoration: none;
+                    display: inline-block;
+                }
+
+                .blog-header h3 a:hover {
+                    color: var(--brand-blue);
+                }
+
+                .eyebrow-label {
+                    font-size: 0.85rem;
+                    letter-spacing: 0.2em;
+                    text-transform: uppercase;
+                    color: var(--brand-blue);
+                    margin: 0 0 0.2rem 0;
+                }
+
+                .news-subtitle {
+                    margin: 0;
+                    color: var(--text-muted);
+                }
+
+                .blog-card {
+                    background: #fff;
+                    border-radius: 16px;
+                    padding: 1.2rem 1.4rem;
+                    border: 1px solid #e1e5ef;
+                    box-shadow: 0 10px 20px rgba(0,0,0,0.04);
+                }
+
+                .blog-date {
+                    margin: 0;
+                    font-size: 0.85rem;
+                    color: var(--text-muted);
+                }
+
+                .blog-card h4 {
+                    margin: 0.4rem 0;
+                }
+
+                .blog-card p {
+                    margin: 0 0 0.6rem 0;
+                    color: var(--text-muted);
+                }
+
+                .blog-link {
+                    text-decoration: none;
+                    font-weight: 600;
+                    color: var(--brand-blue);
+                }
+
+                @media (max-width: 768px) {
+                    .news-hub { margin: 3rem auto; }
+                }
