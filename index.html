@@ -1,231 +1,230 @@
 <!DOCTYPE html>
-<!-- SELECTOR PAGE: Choose between Original site and V2 Redesign -->
+<!-- 1. 声明文档类型为HTML5，告诉浏览器以HTML5标准解析页面，必须放在文档最顶部 -->
 <html lang="en">
+<!-- 2. HTML根标签，包裹整个页面的所有内容；lang="en"指定页面的默认语言为英语，利于搜索引擎优化和无障碍阅读 -->
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shanyue Textile — Select Version</title>
-    <style>
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    <!-- 3. head标签：用于存放页面的元数据（不直接显示在页面上的信息）、外部资源引用、样式定义等 -->
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-PDNTFLKER3"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background: #0d1117;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            overflow: hidden;
-        }
+            gtag('config', 'G-PDNTFLKER3');
+        </script>
+        <meta charset="UTF-8">
+        <!-- 4. 定义页面的字符编码格式为UTF-8，UTF-8是目前通用的字符编码，支持所有中英文及特殊字符，避免出现乱码 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- 5. 移动端适配核心元标签：
+         - width=device-width：让页面宽度等于设备的屏幕宽度
+         - initial-scale=1.0：页面初始加载时的缩放比例为1:1（不放大不缩小）
+         缺少这行，移动端会以桌面端宽度渲染，再缩放显示，导致布局混乱 -->
+        <meta name="description" content="Shaoxing Shanyue Textile supplies knit fabric, spun yarn, filament yarn, and dope dyed yarn solutions for global apparel and home textile brands.">
+        <!-- 提供 150 字以内的摘要，帮助搜索引擎与社交平台正确理解页面主题 -->
+        <link rel="canonical" href="https://www.yarnsvc.com/">
+        <!-- Canonical 链接指向主域名，避免出现重复内容的收录问题 -->
+        <link rel="preload" as="image" href="images/hero1.webp" type="image/webp" fetchpriority="high">
+        <!-- 预加载首屏大图，缩短 LCP -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Shaoxing Shanyue Textile | Innovative Yarn Solutions">
+        <meta property="og:description" content="Shaoxing Shanyue Textile supplies knit fabric, spun yarn, filament yarn, and dope dyed yarn solutions for global apparel and home textile brands.">
+        <meta property="og:url" content="https://www.yarnsvc.com/">
+        <meta property="og:image" content="https://www.yarnsvc.com/images/hero1.png">
+        <meta property="og:locale" content="en_US">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Shaoxing Shanyue Textile | Innovative Yarn Solutions">
+        <meta name="twitter:description" content="Shaoxing Shanyue Textile supplies knit fabric, spun yarn, filament yarn, and dope dyed yarn solutions for global apparel and home textile brands.">
+        <meta name="twitter:image" content="https://www.yarnsvc.com/images/hero1.png">
+    <title>Shanyue Textile | Innovative Yarn Solutions</title>
+    <!-- 6. 定义浏览器标签页的标题，显示在浏览器顶部/标签栏，同时也是搜索引擎抓取页面时的重要参考信息 -->
+    
+        <link rel="preload" href="styles/main.css" as="style">
+        <link rel="stylesheet" href="styles/main.css">
 
-        /* Animated background grid */
-        body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background-image:
-                linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
-            background-size: 60px 60px;
-            z-index: 0;
-        }
-
-        .container {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            max-width: 960px;
-            width: 100%;
-        }
-
-        .brand {
-            color: #fff;
-            font-size: clamp(1rem, 2.5vw, 1.25rem);
-            letter-spacing: .3em;
-            text-transform: uppercase;
-            opacity: .5;
-            margin-bottom: .75rem;
-        }
-
-        h1 {
-            color: #fff;
-            font-size: clamp(1.8rem, 5vw, 3rem);
-            font-weight: 700;
-            letter-spacing: -.01em;
-            margin-bottom: .5rem;
-            line-height: 1.15;
-        }
-
-        .subtitle {
-            color: rgba(255,255,255,.45);
-            font-size: clamp(.9rem, 2vw, 1.05rem);
-            margin-bottom: 3.5rem;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-
-        .card {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 1rem;
-            padding: 2.5rem 2rem;
-            border-radius: 16px;
-            text-decoration: none;
-            border: 1px solid transparent;
-            transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
-            overflow: hidden;
-            text-align: left;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-            border-radius: inherit;
-            transition: opacity .25s ease;
-        }
-
-        .card > * { position: relative; z-index: 1; }
-
-        /* --- Original card --- */
-        .card-original {
-            background: rgba(255,255,255,.04);
-            border-color: rgba(255,255,255,.1);
-        }
-        .card-original::before {
-            background: linear-gradient(135deg, rgba(255,255,255,.06) 0%, transparent 60%);
-        }
-        .card-original:hover {
-            transform: translateY(-4px);
-            border-color: rgba(255,255,255,.25);
-            box-shadow: 0 20px 60px rgba(0,0,0,.4);
-        }
-
-        /* --- V2 card --- */
-        .card-v2 {
-            background: linear-gradient(135deg, rgba(34,139,82,.18) 0%, rgba(16,68,40,.25) 100%);
-            border-color: rgba(52,199,89,.2);
-        }
-        .card-v2::before {
-            background: linear-gradient(135deg, rgba(52,199,89,.12) 0%, transparent 60%);
-        }
-        .card-v2:hover {
-            transform: translateY(-4px);
-            border-color: rgba(52,199,89,.5);
-            box-shadow: 0 20px 60px rgba(34,139,82,.25);
-        }
-
-        .badge {
-            display: inline-block;
-            font-size: .72rem;
-            font-weight: 700;
-            letter-spacing: .12em;
-            text-transform: uppercase;
-            padding: .3rem .7rem;
-            border-radius: 6px;
-        }
-        .badge-original {
-            background: rgba(255,255,255,.08);
-            color: rgba(255,255,255,.6);
-        }
-        .badge-v2 {
-            background: rgba(52,199,89,.18);
-            color: #34c759;
-        }
-
-        .card-icon {
-            font-size: 2.5rem;
-            line-height: 1;
-        }
-
-        .card-title {
-            font-size: clamp(1.1rem, 2.5vw, 1.45rem);
-            font-weight: 700;
-            color: #fff;
-            line-height: 1.25;
-        }
-
-        .card-desc {
-            font-size: .9rem;
-            color: rgba(255,255,255,.5);
-            line-height: 1.6;
-        }
-
-        .card-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: .4rem;
-            font-size: .88rem;
-            font-weight: 600;
-            margin-top: .5rem;
-            transition: gap .2s ease;
-        }
-        .card-original .card-cta { color: rgba(255,255,255,.6); }
-        .card-v2       .card-cta { color: #34c759; }
-
-        .card:hover .card-cta { gap: .7rem; }
-
-        .notice {
-            margin-top: 2.5rem;
-            font-size: .82rem;
-            color: rgba(255,255,255,.25);
-            letter-spacing: .03em;
-        }
-        .notice strong { color: rgba(255,255,255,.45); }
-
-        @media (max-width: 640px) {
-            .cards { grid-template-columns: 1fr; }
-            .card { padding: 2rem 1.5rem; }
-        }
-    </style>
 </head>
 <body>
-    <div class="container">
-        <p class="brand">Shaoxing Shanyue Textile Co., Ltd.</p>
-        <h1>Website Preview&nbsp;Hub</h1>
-        <p class="subtitle">Choose the version of the site you want to view.</p>
-
-        <div class="cards">
-
-            <!-- Original site -->
-            <a class="card card-original" href="original.html">
-                <span class="badge badge-original">Current / Live</span>
-                <span class="card-icon">🗂</span>
-                <span class="card-title">Original Website</span>
-                <p class="card-desc">
-                    The existing live website with its current layout, styles, and content.
-                    This version is preserved as&#8209;is for reference and rollback.
-                </p>
-                <span class="card-cta">Enter original site →</span>
-            </a>
-
-            <!-- V2 redesign -->
-            <a class="card card-v2" href="v2/index.html">
-                <span class="badge badge-v2">New Design · Draft</span>
-                <span class="card-icon">✨</span>
-                <span class="card-title">Redesigned Website (V2)</span>
-                <p class="card-desc">
-                    New homepage rebuilt with a modern textile-industry style.
-                    Same content as the original — refined layout, product showcase, and visual hierarchy.
-                </p>
-                <span class="card-cta" style="color:#34c759;">Preview new design →</span>
-            </a>
-
+    <!-- 159. body标签：包裹页面所有可见内容，用户在页面上看到的所有元素都放在这里 -->
+    <div class="page-wrapper">
+    <nav class="main-nav">
+        <!-- 160. nav标签：导航栏容器，用于包裹网站的导航链接，提升页面语义化（搜索引擎更易识别） -->
+        <a href="index.html" class="logo">SHAN YUE TEXTILE</a>
+        <!-- 161. 企业logo文本，class="logo"对应CSS中的.logo样式，显示品牌名称 -->
+        <div class="menu-toggle" id="mobile-menu">
+            <!-- 162. 汉堡菜单按钮，class="menu-toggle"对应CSS中的样式，id="mobile-menu"用于JavaScript获取该元素 -->
+            <span></span><span></span><span></span>
+            <!-- 163. 3个<span>标签，用于形成汉堡菜单的3条横线，对应CSS中的.menu-toggle span样式 -->
         </div>
+        <div class="nav-links" id="nav-list">
+            <!-- 164. 导航链接容器，class="nav-links"对应CSS中的样式，id="nav-list"用于JavaScript获取该元素，实现切换显示 -->
+            <a href="about us.html">About Us</a><a href="knit.html">Knit Fabric</a><a href="spun-yarn.html">Spun Yarn</a><a href="filament-yarn.html">Filament Yarn</a><a href="dope-dyed-yarn.html">Dope-dyed Yarn</a><a href="news.html">Company News</a>
+            <!-- 165. 一系列<a>标签：网站导航链接，href="#"是占位符（表示暂时无跳转地址），分别对应产品、应用、可持续发展、创新、联系我们等栏目 -->
+        </div>
+    </nav>
 
-        <p class="notice">
-            <strong>Note:</strong> The redesigned version is a work in progress.
-            It will not be pushed to GitHub until you confirm it's ready.
-        </p>
+    <main>
+    <section class="hero"> 
+        <!-- 166. section标签：英雄区容器，提升页面语义化，class="hero"对应CSS中的.hero样式 -->
+        <div class="slideshow-container"> 
+            <!-- 167. 轮播图容器，class="slideshow-container"对应CSS中的样式，包裹所有幻灯片 -->
+            <div class="slide active">
+                <picture>
+                    <source srcset="images/hero1.webp" type="image/webp">
+                    <img src="images/hero1.png" alt="High-performance yarns prepared for global shipments" loading="eager" fetchpriority="high" decoding="async">
+                </picture>
+            </div>
+            <!-- 168. 第一张幻灯片：改为 <picture> 结构，支持 WebP 与 PNG 回退 -->
+            <div class="slide">
+                <picture>
+                    <source srcset="images/hero3.webp" type="image/webp">
+                    <img src="images/hero3.png" alt="Modern spinning workshop focusing on consistent quality" loading="lazy" fetchpriority="low" decoding="async">
+                </picture>
+            </div>
+            <!-- 170. 第二张幻灯片，lazy 加载，减少首屏阻塞 -->
+            <div class="slide">
+                <picture>
+                    <source srcset="images/3.webp" type="image/webp">
+                    <img src="images/3.jpg" alt="Finished fabric rolls showcasing sustainable color programs" loading="lazy" fetchpriority="low" decoding="async">
+                </picture>
+            </div>
+            <!-- 新增 WebP 版本，后台预加载更轻量 -->
+        </div> 
+        
+        <div class="hero-overlay"> 
+            <!-- 171. 英雄区遮罩层，class="hero-overlay"对应CSS中的样式，覆盖在轮播图上方 -->
+            <div class="hero-content"> 
+                <!-- 172. 英雄区文字内容容器，class="hero-content"对应CSS中的样式，包裹标题和描述文本 -->
+            </div> 
+        </div> 
+    </section>
+
+    <div class="section-title">International Business</div>
+    <!-- 175. 业务板块标题，class="section-title"对应CSS中的样式，显示"全球应用" -->
+    
+    <div class="app-grid">
+    
+    <a href="knit.html" class="app-link" style="text-decoration: none; color: inherit;"> 
+        <div class="app-item">
+            <h3>Knit Fabric</h3>
+            <p>Premium knitted fabrics for fashion and performance wear.</p>
+        </div>
+    </a>
+
+    <a href="spun-yarn.html" class="app-link" style="text-decoration: none; color: inherit;">
+        <div class="app-item">
+            <h3>Spun Yarn</h3>
+            <p>Durability for modern living spaces.</p>
+        </div>
+    </a>
+
+    <a href="filament-yarn.html" class="app-link" style="text-decoration: none; color: inherit;">
+        <div class="app-item">
+            <h3>Filament Yarn</h3>
+            <p>Industrial and automotive solutions.</p>
+        </div>
+    </a>
+
+    <a href="dope-dyed-yarn.html" class="app-link" style="text-decoration: none; color: inherit;">
+        <div class="app-item">
+            <h3>Dope Dyed Yarn</h3>
+            <p>Sustainable and recycled materials.</p>
+        </div>
+    </a>
+
+
+</div>
+
+    <section class="news-hub align-line" id="company-news">
+        <div class="blog-column">
+            <div class="blog-header">
+                
+                <h3><a href="news.html">Company News</a></h3>
+                <div class="news-subtitle-spacer"></div>
+                <p class="news-subtitle">Latest updates from Shanyue Textile.</p>
+            </div>
+
+            <a class="blog-card" href="news/2026-02-06-all-cotton-spunlace-innovation.html">
+                <p class="blog-date">December 19, 2025 · Innovation</p>
+                <h4>All-cotton spunlace celebrates 20 years of progress</h4>
+                <p class="blog-summary">Winner Medical's spunlace platform shows how Chinese-built equipment now supports sustainable wipes, apparel, and medical protection pipelines worldwide.</p>
+                <span class="blog-card-cta">Read update</span>
+            </a>
+
+            <a class="blog-card" href="news/2026-01-30-ningbo-finishing-hub.html">
+                <p class="blog-date">January 30, 2026 · Operations</p>
+                <h4>Ningbo finishing hub enters live production</h4>
+                <p class="blog-summary">The new partner facility brings an extra 2.4 million meters of monthly capacity for reactive and cationic dye programs, enabling dual-country redundancy for key retailers.</p>
+                <span class="blog-card-cta">Read update</span>
+            </a>
+
+            <a class="blog-card" href="news/2026-01-24-recycled-filament-line.html">
+                <p class="blog-date">January 24, 2026 · Sustainability</p>
+                <h4>Recycled filament line secures GRS batch approval</h4>
+                <p class="blog-summary">Shanyue now offers certified RPET filament from 75D to 300D with dope-dyed color matching, reducing water usage by 86% against conventional processes.</p>
+                <span class="blog-card-cta">Read update</span>
+            </a>
+
+            <a class="blog-card" href="news/2026-01-18-joint-development-lab.html">
+                <p class="blog-date">January 18, 2026 · Partnerships</p>
+                <h4>Joint development lab launches in Ho Chi Minh City</h4>
+                <p class="blog-summary">The lab pairs our yarn engineering team with two knitting groups to fast-track prototype approval cycles for athleisure and lounge programs.</p>
+                <span class="blog-card-cta">Read update</span>
+            </a>
+            <a class="news-more-link" href="news.html">More</a>
+        </div>
+    </section>
+
+    </main>
+
+    <footer>
+        <div class="align-line">
+            <!-- 181. footer标签：页脚容器，包裹企业版权、联系信息等内容，提升页面语义化 -->
+            <div style="color:white; margin-bottom:15px; font-weight:bold;">Shaoxing Shanyue Textile Co., Ltd.</div>
+            <!-- 182. 企业全称：内联样式设置为白色、粗体、底部外边距15px，突出企业名称 -->
+            <p>&copy; 2026 Shanyue Textile. All Rights Reserved.</p>
+            <!-- 183. 版权信息：&copy; 是版权符号（©），表示2026年Shanyue Textile保留所有权利 -->
+    
+            <!-- 183.1 联系方式：包含联系人姓名及电话/WhatsApp -->
+            <p>Email: info@yarnsvc.com</p>
+            <!-- 184. 联系邮箱：提供企业的联系方式，方便用户联系 -->
+        </div>
+    </footer>
     </div>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Shaoxing Shanyue Textile Co., Ltd.",
+        "url": "https://www.yarnsvc.com/",
+        "logo": "https://www.yarnsvc.com/images/logo.png",
+        "contactPoint": [{
+            "@type": "ContactPoint",
+            "contactType": "Sales",
+            "email": "info@yarnsvc.com",
+            "telephone": "+86 18605755007",
+            "areaServed": "Worldwide",
+            "availableLanguage": ["en", "zh"]
+        }]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Shaoxing Shanyue Textile",
+        "url": "https://www.yarnsvc.com/",
+        "inLanguage": "en",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Shaoxing Shanyue Textile Co., Ltd."
+        }
+    }
+    </script>
+
+        <script src="scripts/main.js" defer></script>
+
 </body>
 </html>
