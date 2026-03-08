@@ -41,7 +41,7 @@
             margin: 0; 
             padding: 0;
             font-family: 'Helvetica Neue', Arial, sans-serif; 
-            background-color: #f5f5f5; /* 背景灰色用于在大屏下凸显主体 */
+            background-color: #ede5da; /* 背景暖米色 */
             overflow-y: scroll; /* 固定滚动条宽度，避免切换页面时导航轻微移动 */
         }
 
@@ -49,7 +49,7 @@
         .page-wrapper {
             max-width: 1800px;      /* 强制锁定最大宽度 1800 像素 */
             margin: 0 auto;         /* 整体居中 */
-            background-color: #fff; /* 主体背景纯白 */
+            background-color: #faf7f2; /* 主体背景暖白 */
             min-height: 100vh;      /* 确保内容少时也占满屏幕高度 */
             display: flex;
             flex-direction: column; /* 纵向排列，使页脚能始终在底部 */
@@ -261,6 +261,16 @@
         @media (min-width: 993px) {
             .product-grid { margin-left: -40px; } 
         }
+        /* --- Spec Table --- */
+        .spec-section { padding: 3rem 5%; background: #f5ede3; }
+        .spec-section h2 { font-size:.95rem; font-weight:600; color:#1b3a2d; margin-bottom:1.2rem; letter-spacing:.1em; text-transform:uppercase; }
+        .spec-table { width:100%; border-collapse:collapse; font-size:.9rem; }
+        .spec-table thead tr { background:#1b3a2d; }
+        .spec-table th { padding:12px 16px; color:#fff; font-weight:500; letter-spacing:.06em; text-align:left; }
+        .spec-table td { padding:11px 16px; border-bottom:1px solid #e5ddd5; color:#333; vertical-align:middle; }
+        .spec-table tbody tr:last-child td { border-bottom:none; }
+        .spec-table tbody tr:hover { background:rgba(27,58,45,.04); }
+        @media (max-width:768px) { .spec-section { padding:2rem 5%; } .spec-table th, .spec-table td { padding:9px 10px; font-size:.82rem; } }
     </style>
 </head>
 
@@ -331,6 +341,24 @@
                 </div>
             </div>
         </main>
+
+        <!-- SPEC TABLE -->
+        <section class="spec-section">
+            <h2>Product Specifications</h2>
+            <div style="overflow-x:auto;">
+                <table class="spec-table">
+                    <thead><tr><th>Count</th><th>Composition</th><th>Twist</th><th>Ply</th><th>MOQ</th></tr></thead>
+                    <tbody>
+                        <tr><td>Ne 20 / Ne 30</td><td>100% Cotton (Combed)</td><td>S / Z</td><td>Single / 2-ply</td><td>200 kg</td></tr>
+                        <tr><td>Ne 40 / Ne 50</td><td>Combed Cotton</td><td>S / Z</td><td>Single / 2-ply</td><td>200 kg</td></tr>
+                        <tr><td>Ne 32</td><td>CVC 60/40</td><td>Z</td><td>Single</td><td>300 kg</td></tr>
+                        <tr><td>Ne 30</td><td>T/C 65/35</td><td>Z</td><td>Single / 2-ply</td><td>300 kg</td></tr>
+                        <tr><td>Ne 20</td><td>Viscose 100%</td><td>Z</td><td>Single</td><td>200 kg</td></tr>
+                        <tr><td>Custom</td><td>Blended compositions available</td><td>—</td><td>—</td><td>On request</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
         <footer>
             <div class="align-line">
