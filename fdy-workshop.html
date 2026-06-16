@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PDNTFLKER3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-PDNTFLKER3');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Shanyue Textile's FDY (Fully Drawn Yarn) production workshop — advanced one-step spinning and drawing technology for high-tenacity, uniform polyester and nylon filament yarns.">
+    <link rel="canonical" href="https://www.yarnsvc.com/fdy-workshop.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="FDY Production Workshop | Shaoxing Shanyue Textile">
+    <meta property="og:description" content="Explore Shanyue Textile's FDY production workshop — advanced one-step spinning and drawing technology for high-tenacity filament yarns.">
+    <meta property="og:url" content="https://www.yarnsvc.com/fdy-workshop.html">
+    <meta property="og:image" content="https://www.yarnsvc.com/images/hero1.png">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FDY Production Workshop | Shaoxing Shanyue Textile">
+    <meta name="twitter:description" content="Explore Shanyue Textile's FDY production workshop — advanced one-step spinning and drawing technology for high-tenacity filament yarns.">
+    <meta name="twitter:image" content="https://www.yarnsvc.com/images/hero1.png">
+    <title>FDY Production Workshop — Shanyue Textile</title>
+    <link rel="stylesheet" href="styles/common.css?v=1.0">
+    <link rel="stylesheet" href="styles/product.css?v=1.0">
+    <style>
+        /* --- Workshop-specific Styles --- */
+
+        .workshop-hero {
+            background: var(--brand-blue);
+            color: white;
+            min-height: 15vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .workshop-hero::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .workshop-hero h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .workshop-hero .workshop-subtitle {
+            margin-top: 14px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            line-height: 1.5;
+        }
+
+        /* --- Section Common --- */
+        .workshop-section {
+            padding: 3rem 0;
+        }
+
+        .workshop-section + .workshop-section {
+            border-top: 1px solid #edf0f5;
+        }
+
+        .workshop-section-title {
+            font-size: 2rem;
+            color: var(--deep-dark);
+            font-weight: 700;
+            margin: 0 0 0.8rem 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .workshop-section-title::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 6px;
+            width: 6px;
+            height: 70%;
+            background: var(--brand-blue);
+        }
+
+        .workshop-section-sub {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin: 0 0 2rem 20px;
+            max-width: 750px;
+            line-height: 1.6;
+        }
+
+        /* --- Process Flow --- */
+        .process-flow {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0;
+            margin: 2rem 0;
+            align-items: stretch;
+        }
+
+        .process-step {
+            flex: 1;
+            min-width: 130px;
+            background: #fff;
+            border: 1px solid #e1e5ef;
+            padding: 1.4rem 1rem;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .process-step:first-child {
+            border-radius: 10px 0 0 10px;
+        }
+
+        .process-step:last-child {
+            border-radius: 0 10px 10px 0;
+        }
+
+        .process-step:hover {
+            background: #eef4fa;
+            border-color: rgba(0,64,152,0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            z-index: 1;
+        }
+
+        .process-step-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 10px;
+            background: #f0f4fa;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: var(--brand-blue);
+            font-weight: 700;
+        }
+
+        .process-step:hover .process-step-icon {
+            background: var(--brand-blue);
+            color: #fff;
+        }
+
+        .process-step-name {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--deep-dark);
+            margin-bottom: 4px;
+        }
+
+        .process-step-desc {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.35;
+        }
+
+        .process-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            flex-shrink: 0;
+            color: #c0c8d4;
+            font-size: 1.2rem;
+        }
+
+        /* --- Gallery Grid --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 1.5rem;
+        }
+
+        .gallery-card {
+            background: #fff;
+            border: 1px solid #e1e5ef;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+
+        .gallery-card-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            background: #f0f2f5;
+        }
+
+        .gallery-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-card:hover .gallery-card-image img {
+            transform: scale(1.04);
+        }
+
+        .gallery-card-caption {
+            padding: 0.9rem 1.2rem;
+        }
+
+        .gallery-card-caption h4 {
+            margin: 0 0 4px 0;
+            font-size: 0.95rem;
+            color: var(--deep-dark);
+        }
+
+        .gallery-card-caption p {
+            margin: 0;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* --- Stat Bar --- */
+        .stat-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 2rem 0;
+        }
+
+        .stat-item {
+            flex: 1;
+            min-width: 160px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #eef2f8 100%);
+            border: 1px solid #e1e5ef;
+            border-radius: 10px;
+            padding: 1.4rem 1.2rem;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--brand-blue);
+            line-height: 1.1;
+        }
+
+        .stat-label {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-top: 6px;
+            letter-spacing: 0.04em;
+        }
+
+        /* --- Info Ribbon --- */
+        .info-ribbon {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 2rem 0;
+        }
+
+        .info-ribbon-card {
+            background: #fff;
+            border: 1px solid #edf0f5;
+            border-radius: 12px;
+            padding: 1.6rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        .info-ribbon-card h4 {
+            margin: 0 0 12px 0;
+            color: var(--brand-blue);
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .info-ribbon-card ul {
+            margin: 0;
+            padding-left: 18px;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.7;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 992px) {
+            .workshop-hero h1 { font-size: 1.6rem; }
+            .workshop-hero .workshop-subtitle { font-size: 0.9rem; }
+            .workshop-section-title { font-size: 1.4rem; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .process-flow { flex-direction: column; }
+            .process-step:first-child { border-radius: 10px 10px 0 0; }
+            .process-step:last-child { border-radius: 0 0 10px 10px; }
+            .process-arrow { 
+                width: 100%;
+                padding: 4px 0;
+                transform: rotate(90deg);
+            }
+            .stat-value { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="index.html" class="logo">SHAN YUE TEXTILE</a>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span><span></span><span></span>
+        </div>
+        <div class="nav-links" id="nav-list">
+            <a href="about us.html">About Us</a>
+            <a href="knit.html">Knit Fabric</a>
+            <a href="spun-yarn.html">Spun Yarn</a>
+            <a href="filament-yarn.html">Filament Yarn</a>
+            <a href="dope-dyed-yarn.html">Dope-dyed Yarn</a>
+            <a href="functional-yarn.html">Functional Yarn</a>
+            <a href="cooling-yarn.html">Cooling Yarn</a>
+            <a href="news.html">Company News</a>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <header class="workshop-hero align-line">
+        <h1>FDY Production Workshop</h1>
+        <p class="workshop-subtitle">From polymer chip to finished filament — our FDY line combines melt spinning, high-speed drawing, and precision winding in a single continuous process, delivering yarns of exceptional tenacity and uniformity.</p>
+    </header>
+
+    <main class="align-line">
+
+        <!-- Introduction -->
+        <section class="workshop-section">
+            <p class="intro-text">
+                FDY (Fully Drawn Yarn) is a premium category of synthetic filament yarn produced through an integrated one-step process that merges melt spinning with full drawing and heat setting. Unlike the two-step POY-DTY route, FDY technology orients and crystallizes the polymer chains in a single pass, resulting in yarns with superior tensile strength, excellent dimensional stability, and outstanding dye uniformity. Our FDY workshop is equipped with advanced high-speed spinning lines capable of producing polyester and nylon FDY in deniers ranging from 50D to 600D, serving demanding applications in apparel, home textiles, automotive interiors, and industrial fabrics worldwide.
+            </p>
+        </section>
+
+        <!-- Production Process Flow -->
+        <section class="workshop-section">
+            <h2 class="workshop-section-title">Production Process</h2>
+            <p class="workshop-section-sub">Each spool of FDY passes through a tightly controlled sequence — every step is monitored in real time to ensure batch-to-batch consistency.</p>
+
+            <div class="process-flow">
+                <div class="process-step">
+                    <div class="process-step-icon">1</div>
+                    <div class="process-step-name">Drying & Feeding</div>
+                    <div class="process-step-desc">Polymer chips are dried to &lt;30 ppm moisture and fed into the extruder under nitrogen blanket.</div>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-step">
+                    <div class="process-step-icon">2</div>
+                    <div class="process-step-name">Melt Extrusion</div>
+                    <div class="process-step-desc">Chips are melted at 285–295 °C and pushed through a spin beam with precision metering pumps.</div>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-step">
+                    <div class="process-step-icon">3</div>
+                    <div class="process-step-name">Quench & Spin</div>
+                    <div class="process-step-desc">Filaments exit spinnerets into a cross-flow quench chamber for controlled cooling and solidification.</div>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-step">
+                    <div class="process-step-icon">4</div>
+                    <div class="process-step-name">Drawing & Setting</div>
+                    <div class="process-step-desc">Heated godet rolls stretch filaments 3–5× at precise speeds, locking in orientation.</div>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-step">
+                    <div class="process-step-icon">5</div>
+                    <div class="process-step-name">Interlacing</div>
+                    <div class="process-step-desc">Air interlacing jets apply knots for filament cohesion, tuned per customer specification.</div>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-step">
+                    <div class="process-step-icon">6</div>
+                    <div class="process-step-name">Winding</div>
+                    <div class="process-step-desc">High-speed automatic winders produce uniform packages at 3,500–5,000 m/min.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Workshop Highlights — Stat Bar -->
+        <section class="workshop-section">
+            <h2 class="workshop-section-title">Workshop at a Glance</h2>
+            <p class="workshop-section-sub">Key metrics that define our FDY production capability and quality commitment.</p>
+
+            <div class="stat-bar">
+                <div class="stat-item">
+                    <div class="stat-value">5,000<span style="font-size:1rem;"> m/min</span></div>
+                    <div class="stat-label">Max Winding Speed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">50–600<span style="font-size:1rem;"> D</span></div>
+                    <div class="stat-label">Denier Range</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">≥ 3.8<span style="font-size:1rem;"> g/d</span></div>
+                    <div class="stat-label">Tenacity (Polyester FDY)</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">24/7</div>
+                    <div class="stat-label">Continuous Operation</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Equipment & Quality -->
+        <section class="workshop-section">
+            <h2 class="workshop-section-title">Equipment & Quality Control</h2>
+            <p class="workshop-section-sub">Every machine and test protocol is chosen to eliminate variation — because our customers build their brands on consistency.</p>
+
+            <div class="info-ribbon">
+                <div class="info-ribbon-card">
+                    <h4>Spinning System</h4>
+                    <ul>
+                        <li>High-speed FDY spinning lines with closed-loop temperature control</li>
+                        <li>Precision spin pumps (&plusmn;0.5% throughput accuracy)</li>
+                        <li>Multi-zone heated godet drawing units</li>
+                        <li>Online tension monitoring at each winding position</li>
+                    </ul>
+                </div>
+                <div class="info-ribbon-card">
+                    <h4>Quality Lab</h4>
+                    <ul>
+                        <li>Denier &amp; filament count verification (ASTM D1907)</li>
+                        <li>Tensile testing — tenacity, elongation at break (ASTM D2256)</li>
+                        <li>Boiling water shrinkage (ASTM D2259)</li>
+                        <li>Oil pickup analysis by solvent extraction</li>
+                        <li>Dye-uptake uniformity (visual + spectrophotometer)</li>
+                    </ul>
+                </div>
+                <div class="info-ribbon-card">
+                    <h4>Inspection & Packing</h4>
+                    <ul>
+                        <li>100% visual inspection under standardized lighting</li>
+                        <li>Package weight verification (&plusmn;0.5% tolerance)</li>
+                        <li>Barcode traceability — lot number → bobbin position</li>
+                        <li>Export-grade packaging with moisture barrier</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Specs Table -->
+        <section class="workshop-section" style="padding-bottom:0;">
+            <h2 class="workshop-section-title">FDY Product Specifications</h2>
+            <p class="workshop-section-sub">Standard catalog items. Custom deniers, luster levels, and finishes available on request.</p>
+        </section>
+    </main>
+
+    <section class="spec-section">
+        <div style="overflow-x:auto;">
+            <table class="spec-table">
+                <thead>
+                    <tr>
+                        <th>Denier / Filament</th>
+                        <th>Polymer</th>
+                        <th>Luster</th>
+                        <th>Tenacity (g/d)</th>
+                        <th>Elongation (%)</th>
+                        <th>Interlace (pts/m)</th>
+                        <th>Package Weight</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>50D / 24F</td>
+                        <td>Polyester</td>
+                        <td>Semi Dull</td>
+                        <td>≥ 4.0</td>
+                        <td>25–35</td>
+                        <td>10–15</td>
+                        <td>4.5 kg</td>
+                    </tr>
+                    <tr>
+                        <td>75D / 36F</td>
+                        <td>Polyester</td>
+                        <td>Full Dull / Semi Dull</td>
+                        <td>≥ 3.8</td>
+                        <td>28–38</td>
+                        <td>10–15</td>
+                        <td>5.0 kg</td>
+                    </tr>
+                    <tr>
+                        <td>100D / 48F</td>
+                        <td>Polyester</td>
+                        <td>Full Dull / Semi Dull</td>
+                        <td>≥ 3.8</td>
+                        <td>28–38</td>
+                        <td>10–15</td>
+                        <td>5.0 kg</td>
+                    </tr>
+                    <tr>
+                        <td>150D / 48F</td>
+                        <td>Polyester</td>
+                        <td>Semi Dull / Bright</td>
+                        <td>≥ 3.6</td>
+                        <td>30–40</td>
+                        <td>12–18</td>
+                        <td>5.5 kg</td>
+                    </tr>
+                    <tr>
+                        <td>150D / 96F</td>
+                        <td>Polyester</td>
+                        <td>Semi Dull / Bright</td>
+                        <td>≥ 3.5</td>
+                        <td>30–42</td>
+                        <td>12–18</td>
+                        <td>5.5 kg</td>
+                    </tr>
+                    <tr>
+                        <td>300D / 96F</td>
+                        <td>Polyester</td>
+                        <td>Semi Dull</td>
+                        <td>≥ 3.4</td>
+                        <td>32–42</td>
+                        <td>10–15</td>
+                        <td>6.0 kg</td>
+                    </tr>
+                    <tr>
+                        <td>70D / 24F</td>
+                        <td>Nylon 6</td>
+                        <td>Semi Dull / Bright</td>
+                        <td>≥ 4.2</td>
+                        <td>30–40</td>
+                        <td>8–12</td>
+                        <td>4.5 kg</td>
+                    </tr>
+                    <tr>
+                        <td>210D / 70F</td>
+                        <td>Nylon 6</td>
+                        <td>Semi Dull</td>
+                        <td>≥ 4.0</td>
+                        <td>30–42</td>
+                        <td>8–12</td>
+                        <td>5.0 kg</td>
+                    </tr>
+                    <tr>
+                        <td>Custom</td>
+                        <td>PET / PA6 / PA66</td>
+                        <td>All Options</td>
+                        <td>Custom Spec</td>
+                        <td>Custom Spec</td>
+                        <td>Custom Spec</td>
+                        <td>On Request</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <main class="align-line">
+        <section class="workshop-section">
+            <h2 class="workshop-section-title">Workshop Gallery</h2>
+            <p class="workshop-section-sub">A look inside our FDY production floor — from raw material intake to finished package inspection.</p>
+
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <div class="gallery-card-image">
+                        <img src="images/1606095344892407.jpg" alt="FDY workshop production line" loading="lazy">
+                    </div>
+                    <div class="gallery-card-caption">
+                        <h4>Photo 1 — FDY Production Line</h4>
+                        <p>High-speed spinning and drawing system in operation. [Please describe what this photo shows for an accurate caption.]</p>
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <div class="gallery-card-image">
+                        <img src="images/1606095347483105.jpg" alt="FDY workshop equipment detail" loading="lazy">
+                    </div>
+                    <div class="gallery-card-caption">
+                        <h4>Photo 2 — Workshop Equipment</h4>
+                        <p>Precision winding and quality monitoring station. [Please describe what this photo shows for an accurate caption.]</p>
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <div class="gallery-card-image">
+                        <img src="images/1606095348252996.jpg" alt="FDY workshop overview" loading="lazy">
+                    </div>
+                    <div class="gallery-card-caption">
+                        <h4>Photo 3 — Workshop Overview</h4>
+                        <p>Panoramic view of the production floor. [Please describe what this photo shows for an accurate caption.]</p>
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <div class="gallery-card-image">
+                        <img src="images/1617260470109543.jpg" alt="FDY workshop quality inspection" loading="lazy">
+                    </div>
+                    <div class="gallery-card-caption">
+                        <h4>Photo 4 — Quality Inspection</h4>
+                        <p>Laboratory testing and finished package inspection. [Please describe what this photo shows for an accurate caption.]</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Applications -->
+        <section class="workshop-section">
+            <h2 class="workshop-section-title">Applications</h2>
+            <p class="workshop-section-sub">Our FDY filaments are trusted by manufacturers across these key sectors.</p>
+
+            <div class="product-grid">
+                <div class="product-card">
+                    <h3>Apparel Fabrics</h3>
+                    <ul>
+                        <li>Woven sportswear and outerwear shells</li>
+                        <li>Lining fabrics requiring smooth hand-feel</li>
+                        <li>Seamless knitting for athleisure garments</li>
+                        <li>Lace and narrow elastic trims</li>
+                    </ul>
+                </div>
+                <div class="product-card">
+                    <h3>Home Textiles</h3>
+                    <ul>
+                        <li>Sheer curtain and drapery fabrics</li>
+                        <li>Upholstery base cloths</li>
+                        <li>Mattress ticking and pillow covers</li>
+                        <li>Table linen and decorative fabrics</li>
+                    </ul>
+                </div>
+                <div class="product-card">
+                    <h3>Industrial & Automotive</h3>
+                    <ul>
+                        <li>Automotive seat fabric and headliner substrate</li>
+                        <li>Airbag fabrics (PA66 FDY)</li>
+                        <li>Conveyor belt base fabrics</li>
+                        <li>Geotextile and filtration media</li>
+                    </ul>
+                </div>
+                <div class="product-card">
+                    <h3>Sewing Threads</h3>
+                    <ul>
+                        <li>High-tenacity polyester sewing threads</li>
+                        <li>Bonded threads for leather and footwear</li>
+                        <li>Embroidery backing threads</li>
+                        <li>Core-spun thread base filaments</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="workshop-section">
+            <h2 class="workshop-section-title">Inquire About FDY Yarns</h2>
+            <p class="workshop-section-sub">Need a custom denier, specific luster, or technical consultation? Reach out to our filament yarn team.</p>
+
+            <div class="info-ribbon" style="margin-top:1rem;">
+                <div class="info-ribbon-card" style="text-align:center;">
+                    <h4 style="font-size:1.1rem;">Contact: Leo Gao</h4>
+                    <p style="margin:8px 0 4px; color: var(--text-muted);">Business Manager — Filament Yarn Division</p>
+                    <p style="margin:4px 0; font-weight:600; color: var(--brand-blue);">Phone / WhatsApp: +86 18605755007</p>
+                    <p style="margin:4px 0; color: var(--text-muted);">Email: leogao@yarnsvc.com</p>
+                    <p style="margin:4px 0; color: var(--text-muted);">General: info@yarnsvc.com</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="align-line">
+            <div style="color:white; margin-bottom:15px; font-weight:bold;">Shaoxing Shanyue Textile Co., Ltd.</div>
+            <p>&copy; 2026 Shanyue Textile. All Rights Reserved.</p>
+            <p>Email: info@yarnsvc.com</p>
+        </div>
+    </footer>
+
+</div>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Shaoxing Shanyue Textile Co., Ltd.",
+    "url": "https://www.yarnsvc.com/fdy-workshop.html",
+    "logo": "https://www.yarnsvc.com/images/logo.png",
+    "sameAs": ["https://www.yarnsvc.com/"],
+    "contactPoint": [{
+        "@type": "ContactPoint",
+        "contactType": "Sales",
+        "email": "leogao@yarnsvc.com",
+        "telephone": "+86 18605755007",
+        "areaServed": "Worldwide",
+        "availableLanguage": ["en", "zh"]
+    }]
+}
+</script>
+
+<script>
+    const btn = document.getElementById('mobile-menu');
+    const nav = document.getElementById('nav-list');
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        nav.classList.toggle('active');
+    });
+    document.addEventListener('click', (e) => {
+        if (!btn.contains(e.target) && !nav.contains(e.target)) {
+            nav.classList.remove('active');
+        }
+    });
+</script>
+
+<img src="https://track.yarnsvc.com:8443/track?source=yarnsvc.com&page=/fdy-workshop.html" style="display:none" width="1" height="1">
+</body>
+</html>
