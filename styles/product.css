@@ -1,0 +1,114 @@
+/* --- Styles for Shanyue Textile Product Pages --- */
+
+/* --- Product Cards Grid --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+    padding-bottom: 80px;
+}
+
+.product-card {
+    border: 1px solid #eee;
+    padding: 25px;
+    background: white;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    border-color: #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.product-card h3 {
+    color: var(--brand-blue);
+    margin: 0 0 20px 0;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #f8f8f8;
+    padding-bottom: 20px;
+}
+
+.product-card ul {
+    padding-left: 20px;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.product-card li {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 992px) {
+    .product-card h3 {
+        font-size: 1.3rem !important;
+    }
+}
+
+@media (min-width: 993px) {
+    .product-grid {
+        margin-left: -40px;
+    }
+}
+
+/* --- Specification Table --- */
+.spec-section {
+    padding: 3rem 5%;
+    background: #f5ede3;
+}
+
+.spec-section h2 {
+    font-size: .95rem;
+    font-weight: 600;
+    color: #1b3a2d;
+    margin-bottom: 1.2rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .9rem;
+}
+
+.spec-table thead tr {
+    background: #1b3a2d;
+}
+
+.spec-table th {
+    padding: 12px 16px;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: .06em;
+    text-align: left;
+}
+
+.spec-table td {
+    padding: 11px 16px;
+    border-bottom: 1px solid #e5ddd5;
+    color: #333;
+    vertical-align: middle;
+}
+
+.spec-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.spec-table tbody tr:hover {
+    background: rgba(27,58,45,.04);
+}
+
+@media (max-width: 768px) {
+    .spec-section {
+        padding: 2rem 5%;
+    }
+    .spec-table th, .spec-table td {
+        padding: 9px 10px;
+        font-size: .82rem;
+    }
+}
