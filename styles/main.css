@@ -371,7 +371,7 @@
 
         .app-item {
             background: #ffffff; 
-            padding: 2.2rem 1.8rem; 
+            padding: 1.8rem 1.8rem 1.4rem; 
             text-align: left; 
             border: 1px solid #edf0f5;
             border-radius: 12px;
@@ -433,7 +433,7 @@
         }
 
         .app-item-list {
-            margin: 0 0 20px 0;
+            margin: 0;
             padding-left: 0;
             list-style-type: none;
             text-align: left;
@@ -449,6 +449,10 @@
             transition: color 0.3s ease;
         }
 
+        .app-item-list li:last-child {
+            margin-bottom: 0;
+        }
+
         .app-item-list li::before {
             content: "•";
             color: var(--brand-blue);
@@ -458,16 +462,6 @@
             top: 0;
             font-size: 1.1rem;
             line-height: 1.1;
-        }
-
-        .learn-more {
-            display: inline-block;
-            font-weight: 600;
-            font-size: 0.85rem;
-            color: var(--brand-blue);
-            margin-top: auto;
-            transition: transform 0.3s ease, color 0.3s ease;
-            text-align: left;
         }
 
         /* 方案一：鼠标悬浮起伏效果 */
@@ -500,11 +494,6 @@
 
         .app-link:hover .card-divider {
             background-color: rgba(0, 64, 152, 0.1);
-        }
-
-        .app-link:hover .learn-more {
-            color: var(--brand-blue);
-            transform: translateX(4px);
         }
 
         /* --- 移动端（手机）适配 --- */
