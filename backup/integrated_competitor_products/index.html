@@ -40,8 +40,8 @@
     <title>Shanyue Textile | Innovative Yarn Solutions</title>
     <!-- 6. 定义浏览器标签页的标题，显示在浏览器顶部/标签栏，同时也是搜索引擎抓取页面时的重要参考信息 -->
     
-        <link rel="preload" href="styles/main.css?v=1.3" as="style">
-        <link rel="stylesheet" href="styles/main.css?v=1.3">
+        <link rel="preload" href="styles/main.css?v=1.4" as="style">
+        <link rel="stylesheet" href="styles/main.css?v=1.4">
 
 </head>
 <body>
@@ -99,124 +99,182 @@
         </div> 
     </section>
 
-    <header class="section-header align-line">
-        <p class="section-eyebrow">OUR PORTFOLIO</p>
-        <h2 class="section-title">International Business</h2>
-        <p class="section-desc">We deliver a comprehensive range of premium yarns and high-performance fabrics engineered for global manufacturers and safety-critical applications.</p>
-    </header>
-    
-    <div class="app-grid">
-    
-    <a href="knit.html" class="app-link"> 
-        <div class="app-item">
-            <h3>
-                <svg viewBox="0 0 24 24" class="title-icon"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                Knit Fabric
-            </h3>
-            <p class="app-item-desc">Premium knitted fabrics for fashion and performance wear.</p>
-            <div class="card-divider"></div>
-            <ul class="app-item-list">
-                <li>Cotton & Cotton Blends</li>
-                <li>Polyester & Activewear Knits</li>
-                <li>Sustainable & Recycled Fabrics</li>
-            </ul>
-        </div>
-    </a>
+    <section class="business-section">
+        <div class="align-line">
+            <header class="section-header">
+                <p class="section-eyebrow">OUR PORTFOLIO</p>
+                <h2 class="section-title">International Business</h2>
+                <p class="section-desc">We deliver a comprehensive range of premium yarns and high-performance fabrics engineered for global manufacturers and safety-critical applications.</p>
+            </header>
+            
+            <div class="app-grid">
+            
+            <a href="knit.html" class="app-link"> 
+                <div class="app-item">
+                    <span class="card-eyebrow color-blue">Active & Fashion</span>
+                    <h3>
+                        <span class="title-main">
+                            <svg viewBox="0 0 24 24" class="title-icon"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                            Knit Fabric
+                        </span>
+                        <svg class="title-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </h3>
+                    <p class="app-item-desc">Premium knitted fabrics for fashion and performance wear.</p>
+                    <div class="card-divider"></div>
+                    <ul class="app-item-list">
+                        <li>Cotton & Cotton Blends</li>
+                        <li>Polyester & Activewear Knits</li>
+                        <li>Sustainable & Recycled Fabrics</li>
+                    </ul>
+                    <div class="card-tags">
+                        <span class="tag-pill">Jersey</span>
+                        <span class="tag-pill">Interlock</span>
+                        <span class="tag-pill">Rib</span>
+                    </div>
+                </div>
+            </a>
 
-    <a href="spun-yarn.html" class="app-link">
-        <div class="app-item">
-            <h3>
-                <svg viewBox="0 0 24 24" class="title-icon">
-                    <path d="M6 3h12M6 21h12M8 3v18M16 3v18" />
-                    <path d="M8 8h8M8 12h8M8 16h8" />
-                </svg>
-                Spun Yarn
-            </h3>
-            <p class="app-item-desc">High-durability spun yarns for apparel, weaving, and home textiles.</p>
-            <div class="card-divider"></div>
-            <ul class="app-item-list">
-                <li>100% Ring Spun Cotton</li>
-                <li>Polyester/Cotton Blends (T/C & CVC)</li>
-                <li>Open-End (OE) Yarns</li>
-            </ul>
-        </div>
-    </a>
+            <a href="spun-yarn.html" class="app-link">
+                <div class="app-item">
+                    <span class="card-eyebrow color-grey">Classic & Durable</span>
+                    <h3>
+                        <span class="title-main">
+                            <svg viewBox="0 0 24 24" class="title-icon">
+                                <path d="M6 3h12M6 21h12M8 3v18M16 3v18" />
+                                <path d="M8 8h8M8 12h8M8 16h8" />
+                            </svg>
+                            Spun Yarn
+                        </span>
+                        <svg class="title-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </h3>
+                    <p class="app-item-desc">High-durability spun yarns for apparel, weaving, and home textiles.</p>
+                    <div class="card-divider"></div>
+                    <ul class="app-item-list">
+                        <li>100% Ring Spun Cotton</li>
+                        <li>Polyester/Cotton Blends (T/C & CVC)</li>
+                        <li>Open-End (OE) Yarns</li>
+                    </ul>
+                    <div class="card-tags">
+                        <span class="tag-pill">Carded</span>
+                        <span class="tag-pill">Combed</span>
+                        <span class="tag-pill">Siro</span>
+                    </div>
+                </div>
+            </a>
 
-    <a href="filament-yarn.html" class="app-link">
-        <div class="app-item">
-            <h3>
-                <svg viewBox="0 0 24 24" class="title-icon">
-                    <path d="M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10S2 17.523 2 12M12 6a6 6 0 0 1 6 6c0 3.314-2.686 6-6 6S6 15.314 6 12"/>
-                </svg>
-                Filament Yarn
-            </h3>
-            <p class="app-item-desc">High-tenacity filaments engineered for industrial, apparel, and automotive applications.</p>
-            <div class="card-divider"></div>
-            <ul class="app-item-list">
-                <li>Polyester DTY & FDY Filaments</li>
-                <li>Nylon 6 & 66 DTY & FDY Yarns</li>
-                <li>High-Tenacity Industrial Yarns</li>
-            </ul>
-        </div>
-    </a>
+            <a href="filament-yarn.html" class="app-link">
+                <div class="app-item">
+                    <span class="card-eyebrow color-steel">Industrial Grade</span>
+                    <h3>
+                        <span class="title-main">
+                            <svg viewBox="0 0 24 24" class="title-icon">
+                                <path d="M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10S2 17.523 2 12M12 6a6 6 0 0 1 6 6c0 3.314-2.686 6-6 6S6 15.314 6 12"/>
+                            </svg>
+                            Filament Yarn
+                        </span>
+                        <svg class="title-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </h3>
+                    <p class="app-item-desc">High-tenacity filaments engineered for industrial, apparel, and automotive applications.</p>
+                    <div class="card-divider"></div>
+                    <ul class="app-item-list">
+                        <li>Polyester DTY & FDY Filaments</li>
+                        <li>Nylon 6 & 66 DTY & FDY Yarns</li>
+                        <li>High-Tenacity Industrial Yarns</li>
+                    </ul>
+                    <div class="card-tags">
+                        <span class="tag-pill">DTY</span>
+                        <span class="tag-pill">FDY</span>
+                        <span class="tag-pill">POY</span>
+                    </div>
+                </div>
+            </a>
 
-    <a href="dope-dyed-yarn.html" class="app-link">
-        <div class="app-item">
-            <h3>
-                <svg viewBox="0 0 24 24" class="title-icon">
-                    <path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-11-7-11S5 10.7 5 15a7 7 0 0 0 7 7z"/>
-                </svg>
-                Dope Dyed Yarn
-            </h3>
-            <p class="app-item-desc">Eco-friendly color-spun yarns utilizing waterless dope dyeing technologies.</p>
-            <div class="card-divider"></div>
-            <ul class="app-item-list">
-                <li>Dope-dyed Polyester Yarns</li>
-                <li>Dope-dyed Nylon Filaments</li>
-                <li>Custom Color Matching (60+ colors)</li>
-            </ul>
-        </div>
-    </a>
+            <a href="dope-dyed-yarn.html" class="app-link">
+                <div class="app-item">
+                    <span class="card-eyebrow color-green">Eco-Friendly</span>
+                    <h3>
+                        <span class="title-main">
+                            <svg viewBox="0 0 24 24" class="title-icon">
+                                <path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-11-7-11S5 10.7 5 15a7 7 0 0 0 7 7z"/>
+                            </svg>
+                            Dope Dyed Yarn
+                        </span>
+                        <svg class="title-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </h3>
+                    <p class="app-item-desc">Eco-friendly color-spun yarns utilizing waterless dope dyeing technologies.</p>
+                    <div class="card-divider"></div>
+                    <ul class="app-item-list">
+                        <li>Dope-dyed Polyester Yarns</li>
+                        <li>Dope-dyed Nylon Filaments</li>
+                        <li>Custom Color Matching (60+ colors)</li>
+                    </ul>
+                    <div class="card-tags">
+                        <span class="tag-pill">Waterless</span>
+                        <span class="tag-pill">High Fastness</span>
+                        <span class="tag-pill">Custom Shades</span>
+                    </div>
+                </div>
+            </a>
 
-    <a href="functional-yarn.html" class="app-link">
-        <div class="app-item">
-            <h3>
-                <svg viewBox="0 0 24 24" class="title-icon">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                    <path d="M12 8v8M9 11h6"/>
-                </svg>
-                Functional Yarn
-            </h3>
-            <p class="app-item-desc">Specialty high-tech yarns engineered for antistatic, thermal bonding, and safety wear.</p>
-            <div class="card-divider"></div>
-            <ul class="app-item-list">
-                <li>ESD Conductive & Antistatic Yarns</li>
-                <li>Low-Melting Hot-Melt Yarns</li>
-                <li>Sheath-Core Composites & Flame-Retardant PPS</li>
-            </ul>
-        </div>
-    </a>
+            <a href="functional-yarn.html" class="app-link">
+                <div class="app-item">
+                    <span class="card-eyebrow color-amber">Safety & Tech</span>
+                    <h3>
+                        <span class="title-main">
+                            <svg viewBox="0 0 24 24" class="title-icon">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M12 8v8M9 11h6"/>
+                            </svg>
+                            Functional Yarn
+                        </span>
+                        <svg class="title-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </h3>
+                    <p class="app-item-desc">Specialty high-tech yarns engineered for antistatic, thermal bonding, and safety wear.</p>
+                    <div class="card-divider"></div>
+                    <ul class="app-item-list">
+                        <li>ESD Conductive & Antistatic Yarns</li>
+                        <li>Low-Melting Hot-Melt Yarns</li>
+                        <li>Sheath-Core Composites & Flame-Retardant PPS</li>
+                    </ul>
+                    <div class="card-tags">
+                        <span class="tag-pill">ESD</span>
+                        <span class="tag-pill">Flame-Retardant</span>
+                        <span class="tag-pill">Low-Melt</span>
+                    </div>
+                </div>
+            </a>
 
-    <a href="cooling-yarn.html" class="app-link">
-        <div class="app-item">
-            <h3>
-                <svg viewBox="0 0 24 24" class="title-icon">
-                    <path d="M12 2v20M17 5L7 19M19 17L5 7M2 12h20"/>
-                    <path d="M12 5l3 3M12 19l-3-3M17 8l1 3M7 16l-1-3M19 12l-3-3M5 12l3 3"/>
-                </svg>
-                Cooling Yarn
-            </h3>
-            <p class="app-item-desc">Advanced polyethylene (PE) yarns delivering instant contact cooling comfort.</p>
-            <div class="card-divider"></div>
-            <ul class="app-item-list">
-                <li>100% PE Cooling Filaments</li>
-                <li>PE/PA Bi-component Yarns</li>
-                <li>GRS Recycled & PHMB Antibacterial Cooling Yarns</li>
-            </ul>
-        </div>
-    </a>
+            <a href="cooling-yarn.html" class="app-link">
+                <div class="app-item">
+                    <span class="card-eyebrow color-teal">Contact Cooling</span>
+                    <h3>
+                        <span class="title-main">
+                            <svg viewBox="0 0 24 24" class="title-icon">
+                                <path d="M12 2v20M17 5L7 19M19 17L5 7M2 12h20"/>
+                                <path d="M12 5l3 3M12 19l-3-3M17 8l1 3M7 16l-1-3M19 12l-3-3M5 12l3 3"/>
+                            </svg>
+                            Cooling Yarn
+                        </span>
+                        <svg class="title-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </h3>
+                    <p class="app-item-desc">Advanced polyethylene (PE) yarns delivering instant contact cooling comfort.</p>
+                    <div class="card-divider"></div>
+                    <ul class="app-item-list">
+                        <li>100% PE Cooling Filaments</li>
+                        <li>PE/PA Bi-component Yarns</li>
+                        <li>GRS Recycled & PHMB Antibacterial Cooling Yarns</li>
+                    </ul>
+                    <div class="card-tags">
+                        <span class="tag-pill">PE</span>
+                        <span class="tag-pill">Q-max</span>
+                        <span class="tag-pill">Antibacterial</span>
+                    </div>
+                </div>
+            </a>
 
-</div>
+            </div>
+        </div>
+    </section>
 
     <section class="news-hub align-line" id="company-news">
         <div class="blog-column">

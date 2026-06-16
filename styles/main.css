@@ -335,9 +335,17 @@
         }
 
         /* --- 业务应用网格 --- */
+        /* --- Business Portfolio Section --- */
+        .business-section {
+            background-color: #f5f7fa;
+            padding: 5rem 0;
+            border-top: 1px solid #edf0f5;
+            border-bottom: 1px solid #edf0f5;
+        }
+
         .section-header {
             text-align: center; 
-            margin: 4rem auto 2.2rem;
+            margin: 0 auto 3rem;
             max-width: 800px;
             box-sizing: border-box;
         }
@@ -379,19 +387,11 @@
         }
 
         .app-grid {
-            /* 124. .app-grid类选择器：匹配业务网格容器，包裹6个业务项 */
             display: grid; 
-            /* 125. 设置为Grid布局，Grid是二维布局（行+列），适合实现网格状布局，比Flex更便捷 */
             grid-template-columns: repeat(3, 1fr); 
-            /* 126. 定义网格的列布局：repeat(3, 1fr) 等价于 1fr 1fr 1fr
-                 - fr是Grid的弹性单位，1fr表示占用剩余空间的1份
-                 实现3列等宽的网格布局，响应式适配 */
             gap: 25px;
-            /* 127. 设置网格缝隙，显示背景色作为相框间隔 */
             max-width: 1800px; 
-            /* 129. 限制网格最大宽度为1800px，与导航栏、英雄区保持一致 */
             margin: 0 auto;
-            /* 130. 网格水平居中，与其他板块对齐 */
         }
 
         .app-link {
@@ -413,7 +413,25 @@
             width: 100%;
             height: 100%;
             box-sizing: border-box;
+            position: relative;
         }
+
+        .card-eyebrow {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+
+        .card-eyebrow.color-blue { color: var(--brand-blue); }
+        .card-eyebrow.color-grey { color: #5c6b73; }
+        .card-eyebrow.color-steel { color: #4682b4; }
+        .card-eyebrow.color-green { color: #2e7d32; }
+        .card-eyebrow.color-amber { color: #d84315; }
+        .card-eyebrow.color-teal { color: #00796b; }
 
         .app-item h3 {
             margin: 0 0 12px 0;
@@ -422,6 +440,13 @@
             font-weight: 600;
             transition: color 0.3s ease;
             text-align: left;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .app-item h3 .title-main {
             display: flex;
             align-items: center;
             gap: 10px;
@@ -436,6 +461,20 @@
             stroke-linecap: round;
             stroke-linejoin: round;
             transition: stroke 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .app-item h3 svg.title-arrow {
+            width: 16px;
+            height: 16px;
+            fill: none;
+            stroke: var(--brand-blue);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             flex-shrink: 0;
         }
 
@@ -487,24 +526,47 @@
             line-height: 1.1;
         }
 
-        /* 方案一：鼠标悬浮起伏效果 */
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 15px;
+        }
+
+        .tag-pill {
+            font-size: 0.72rem;
+            color: #666;
+            background-color: #f1f3f7;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Hover States */
         .app-link:hover .app-item {
             transform: translateY(-8px);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
             border-color: rgba(0, 64, 152, 0.25);
-            background-color: #eef4fa; /* 冰川淡蓝灰 */
+            background-color: #eef4fa;
         }
 
         .app-link:hover .app-item h3 {
-            color: #1a1a1a !important; /* 保持深黑色高对比度文字 */
+            color: #1a1a1a !important;
         }
 
         .app-link:hover .app-item h3 svg.title-icon {
-            stroke: #1a1a1a; /* 图标与文本颜色同步变为深色 */
+            stroke: #1a1a1a;
+        }
+
+        .app-link:hover .app-item h3 svg.title-arrow {
+            opacity: 1;
+            transform: translateX(0);
+            stroke: #1a1a1a;
         }
 
         .app-link:hover .app-item-desc {
-            color: #333333 !important; /* 略微加深描述文字颜色，保证高对比度 */
+            color: #333333 !important;
         }
 
         .app-link:hover .app-item-list li {
@@ -513,6 +575,15 @@
 
         .app-link:hover .card-divider {
             background-color: rgba(0, 64, 152, 0.1);
+        }
+
+        .app-link:hover .tag-pill {
+            background-color: #ffffff;
+            color: var(--brand-blue);
+        }
+
+        .app-link:hover .card-eyebrow {
+            color: #1a1a1a !important;
         }
 
         /* --- 移动端（手机）适配 --- */
@@ -609,6 +680,15 @@
                 /* 移动端隐藏阴影，避免出现灰色横条 */
                 min-height: 100vh;
                 /* 移动端确保页面包装器至少占满整个视口高度 */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .app-grid {
+                grid-template-columns: 1fr;
+            }
+            .business-section {
+                padding: 3rem 0;
             }
         }
 
