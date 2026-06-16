@@ -371,7 +371,7 @@
             border: 1px solid #edf0f5;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
         }
 
         .app-item h3 {
@@ -383,10 +383,11 @@
             transform: translateY(-8px);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
             border-color: rgba(0, 64, 152, 0.25);
+            background-color: #eef4fa; /* 冰川淡蓝灰 */
         }
 
         .app-link:hover .app-item h3 {
-            color: var(--brand-blue) !important;
+            color: #1a1a1a !important; /* 保持深黑色高对比度文字 */
         }
 
         /* --- 移动端（手机）适配 --- */
