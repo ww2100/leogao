@@ -386,7 +386,7 @@
         }
 
         .app-link:hover .app-item h3 {
-            color: var(--brand-blue);
+            color: var(--brand-blue) !important;
         }
 
         /* --- 移动端（手机）适配 --- */
