@@ -335,16 +335,47 @@
         }
 
         /* --- 业务应用网格 --- */
-        .section-title {
-            /* 119. .section-title类选择器：匹配业务板块的标题，设置标题样式 */
+        .section-header {
             text-align: center; 
-            /* 120. 文字居中对齐，作为板块标题，符合视觉习惯 */
-            padding: 2rem 0 0.2rem; 
-            /* 121. 内边距：上下4rem，左右0；底部2rem，与下方网格保持适当间距 */
-            font-size: 2rem; 
-            /* 122. 字体大小为2rem，突出板块标题 */
-            color: var(--brand-blue); 
-            /* 123. 颜色为品牌蓝色，与logo保持视觉统一，强化品牌风格 */
+            margin: 4rem auto 2.2rem;
+            max-width: 800px;
+            box-sizing: border-box;
+        }
+
+        .section-eyebrow {
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--brand-blue);
+            margin: 0 0 0.4rem 0;
+            font-weight: 700;
+        }
+
+        .section-title {
+            font-size: 2.1rem;
+            color: var(--deep-dark);
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.25;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: var(--brand-blue);
+            margin: 0.8rem auto 0;
+            border-radius: 2px;
+        }
+
+        .section-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            line-height: 1.5;
+            margin: 1rem auto 0;
         }
 
         .app-grid {
@@ -533,9 +564,18 @@
                 /* 149. 清除移动端文字容器的内边距，避免多余空白 */
             }
             
+            .section-header {
+                margin: 2.5rem auto 1.8rem !important;
+            }
+
             .section-title {
-                font-size: 1.5rem !important;
-                /* 移动端板块标题字体大小调整为1.5rem，适配小屏幕显示 */
+                font-size: 1.6rem !important;
+            }
+
+            .section-desc {
+                font-size: 0.85rem !important;
+                margin: 0.8rem auto 0 !important;
+                padding: 0 10px;
             }
             
             .app-item h3 {
