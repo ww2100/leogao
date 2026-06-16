@@ -355,28 +355,39 @@
             /* 126. 定义网格的列布局：repeat(3, 1fr) 等价于 1fr 1fr 1fr
                  - fr是Grid的弹性单位，1fr表示占用剩余空间的1份
                  实现3列等宽的网格布局，响应式适配 */
-            gap: 0;
-            /* 127. 取消网格缝隙，避免出现浅灰横线 */
+            gap: 25px;
+            /* 127. 设置网格缝隙，显示背景色作为相框间隔 */
             max-width: 1800px; 
             /* 129. 限制网格最大宽度为1800px，与导航栏、英雄区保持一致 */
             margin: 0 auto;
             /* 130. 网格水平居中，与其他板块对齐 */
-            border: 1px solid #eee;
-            /* 131. 为整个网格添加细边框，保持版块结构感 */
         }
 
         .app-item {
             /* 131. .app-item类选择器：匹配单个业务项，设置业务项的样式 */
-            background: var(--soft-white); 
-            padding: 1rem 2rem; 
+            background: #ffffff; 
+            padding: 2.5rem 2rem; 
             text-align: center; 
-            border-right: 1px solid #eee;
-            border-bottom: 1px solid #eee;
-            /* 使用细边框替代网格间隙，整体更干净 */
+            border: 1px solid #edf0f5;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease, border-color 0.3s ease;
         }
-        .app-item:nth-child(3n) { border-right: none; }
-        .app-item:nth-last-child(-n+3) { border-bottom: none; }
-        /* 去掉每行最后一个和最后一行的边框，避免双线 */
+
+        .app-item h3 {
+            transition: color 0.3s ease;
+        }
+
+        /* 方案一：鼠标悬浮起伏效果 */
+        .app-link:hover .app-item {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+            border-color: rgba(0, 64, 152, 0.25);
+        }
+
+        .app-link:hover .app-item h3 {
+            color: var(--brand-blue);
+        }
 
         /* --- 移动端（手机）适配 --- */
         @media (max-width: 768px) {
@@ -442,12 +453,10 @@
                 /* 移动端业务项描述字体大小调整为0.9rem */
             }
             
-            .app-grid { grid-template-columns: 1fr 1fr; }
-            /* 150. 移动端网格布局改为2列等宽（repeat(2, 1fr)的简写），适配移动端竖屏，避免4列过于拥挤 */
-
-            .app-item:nth-child(2n) { border-right: none; }
-            .app-item:nth-last-child(-n+2) { border-bottom: none; }
-            /* 根据两列布局重新计算去除右/下边框的规则 */
+            .app-grid { 
+                grid-template-columns: 1fr 1fr; 
+                gap: 15px;
+            }
             
             .app-grid {
                 margin-bottom: 0;
