@@ -390,6 +390,10 @@
             color: #1a1a1a !important; /* 保持深黑色高对比度文字 */
         }
 
+        .app-link:hover .app-item p {
+            color: #333333 !important; /* 略微加深描述文字颜色，保证高对比度 */
+        }
+
         /* --- 移动端（手机）适配 --- */
         @media (max-width: 768px) {
             /* 135. 媒体查询：屏幕宽度≤768px时，执行移动端样式覆盖 */
