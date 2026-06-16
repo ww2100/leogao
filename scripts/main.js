@@ -26,4 +26,54 @@ function startHeroSlideshow() {
     }, 3000);
 }
 
-window.addEventListener('load', startHeroSlideshow);
+function startFactorySlideshow() {
+    const carousel = document.getElementById('factory-carousel');
+    if (!carousel) return;
+
+    const slides = carousel.querySelectorAll('.showcase-slide');
+    if (slides.length < 2) return;
+
+    let current = 0;
+    let timer;
+
+    function goTo(index) {
+        // Remove active from all slides and all dots
+        slides.forEach((s) => {
+            s.classList.remove('active');
+        });
+        // Add active to the target slide
+        slides[index].classList.add('active');
+        // Sync all carousel-dots groups
+        carousel.querySelectorAll('.carousel-dots .dot').forEach((dot) => {
+            const slideIndex = parseInt(dot.getAttribute('data-slide'), 10);
+            dot.classList.toggle('active', slideIndex === index);
+        });
+        current = index;
+    }
+
+    function next() {
+        goTo((current + 1) % slides.length);
+    }
+
+    function startTimer() {
+        clearInterval(timer);
+        timer = setInterval(next, 4000);
+    }
+
+    // Bind dot clicks
+    carousel.querySelectorAll('.carousel-dots .dot').forEach((dot) => {
+        dot.addEventListener('click', () => {
+            const target = parseInt(dot.getAttribute('data-slide'), 10);
+            goTo(target);
+            startTimer(); // restart auto-rotate from this slide
+        });
+    });
+
+    startTimer();
+}
+
+window.addEventListener('load', () => {
+    startHeroSlideshow();
+    startFactorySlideshow();
+});
+
