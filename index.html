@@ -65,9 +65,8 @@
             .hero-content p{color:#d1dce5;font-size:clamp(1.1rem,2.5vw,1.6rem);margin:0;line-height:1.4;font-weight:400;text-shadow:0 1px 5px rgba(0,0,0,0.3)}
             @media(max-width:768px){.slideshow-container{height:30vh!important}.menu-toggle{display:flex}.nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;width:100%;background:white;padding:20px 5%;border-bottom:1px solid #eee;gap:0.8rem}.nav-links.active{display:flex}.hero-content{left:20px!important;bottom:20px!important;padding:0!important}}
         </style>
-        <!-- Full stylesheet loaded async (non-blocking) -->
-        <link rel="preload" href="styles/main.css?v=1.7" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="styles/main.css?v=1.7"></noscript>
+        <!-- Full stylesheet — small enough (4KB) to load normally without meaningful blocking -->
+        <link rel="stylesheet" href="styles/main.css?v=1.8">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
