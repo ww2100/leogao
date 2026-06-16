@@ -58,7 +58,7 @@
         </div>
         <div class="nav-links" id="nav-list">
             <!-- 164. 导航链接容器，class="nav-links"对应CSS中的样式，id="nav-list"用于JavaScript获取该元素，实现切换显示 -->
-            <a href="about us.html">About Us</a><a href="knit.html">Knit Fabric</a><a href="spun-yarn.html">Spun Yarn</a><a href="filament-yarn.html">Filament Yarn</a><a href="dope-dyed-yarn.html">Dope-dyed Yarn</a><a href="functional-yarn.html">Functional Yarn</a><a href="cooling-yarn.html">Cooling Yarn</a><a href="news.html">Company News</a>
+            <a href="about us.html">About Us</a><a href="knit.html">Knit Fabric</a><a href="spun-yarn.html">Spun Yarn</a><a href="filament-yarn.html">Filament Yarn</a><a href="dope-dyed-yarn.html">Dope-dyed Yarn</a><a href="functional-yarn.html">Functional Yarn</a><a href="cooling-yarn.html">Cooling Yarn</a><a href="#factory-tour">Factory Tour</a>
             <!-- 165. 一系列<a>标签：网站导航链接，href="#"是占位符（表示暂时无跳转地址），分别对应产品、应用、可持续发展、创新、联系我们等栏目 -->
         </div>
     </nav>
@@ -276,43 +276,70 @@
         </div>
     </section>
 
-    <section class="news-hub align-line" id="company-news">
-        <div class="blog-column">
-            <div class="blog-header">
-                
-                <h3><a href="news.html">Company News</a></h3>
-                <div class="news-subtitle-spacer"></div>
-                <p class="news-subtitle">Latest updates from Shanyue Textile.</p>
+    <section class="factory-showcase align-line" id="factory-tour">
+        <div class="showcase-container">
+            <header class="showcase-header">
+                <h2>Factory Showcase</h2>
+                <a href="../../fdy-workshop.html" class="tour-btn">Tour Facility</a>
+            </header>
+            
+            <div class="showcase-grid">
+                <!-- Left Column: Large Featured Factory Item -->
+                <div class="showcase-featured">
+                    <div class="featured-img-wrap">
+                        <img src="images/1617260470109543.jpg" alt="Automated Overhead Monorail System">
+                    </div>
+                    <div class="featured-content">
+                        <p class="featured-category">Smart Material Transport</p>
+                        <h3>Overhead Automated Monorail Carrier System</h3>
+                        <p class="featured-desc">
+                            Our manufacturing facility is equipped with state-of-the-art intelligent overhead monorails. This system seamlessly transports newly produced yarn rolls from the spinning floor directly to the packaging unit, minimizing manual contact and ensuring maximum product purity and logistics efficiency.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Column: 3 Stacked Factory Items with thumbnails -->
+                <div class="showcase-list">
+                    <!-- Item 1 -->
+                    <div class="showcase-item">
+                        <div class="item-img-wrap">
+                            <img src="images/1606095344892407.jpg" alt="High-Speed Automatic Winding Line">
+                        </div>
+                        <div class="item-content">
+                            <p class="item-category">Spinning & Winding Workshop</p>
+                            <h4>High-Speed Automatic Winding Line</h4>
+                            <p class="item-desc">High-precision automated winding machines ensure uniform yarn tension and flawless cone packages.</p>
+                            <a href="#contact-line" class="item-link">Explore Machinery &rarr;</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="showcase-item">
+                        <div class="item-img-wrap">
+                            <img src="images/1606095348252996.jpg" alt="Robotic Arm Palletizing & Packaging">
+                        </div>
+                        <div class="item-content">
+                            <p class="item-category">Automated Packaging Workshop</p>
+                            <h4>Robotic Arm Palletizing & Packaging</h4>
+                            <p class="item-desc">Heavy-duty industrial robotic arms handle automatic wrapping and palletizing for consistent, damage-free export packaging.</p>
+                            <a href="#contact-line" class="item-link">Explore Robotics &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="showcase-item">
+                        <div class="item-img-wrap">
+                            <img src="images/1606095347483105.jpg" alt="ASRS Automatic Racking System">
+                        </div>
+                        <div class="item-content">
+                            <p class="item-category">Intelligent Warehouse & Logistics</p>
+                            <h4>ASRS Automatic Racking & Retrieval System</h4>
+                            <p class="item-desc">Computerized storage tracks and automated warehousing crane systems enable real-time inventory tracking and rapid shipping logistics.</p>
+                            <a href="#contact-line" class="item-link">Explore Logistics &rarr;</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <a class="blog-card" href="news/2026-02-06-all-cotton-spunlace-innovation.html">
-                <p class="blog-date">December 19, 2025 · Innovation</p>
-                <h4>All-cotton spunlace celebrates 20 years of progress</h4>
-                <p class="blog-summary">Winner Medical's spunlace platform shows how Chinese-built equipment now supports sustainable wipes, apparel, and medical protection pipelines worldwide.</p>
-                <span class="blog-card-cta">Read update</span>
-            </a>
-
-            <a class="blog-card" href="news/2026-01-30-ningbo-finishing-hub.html">
-                <p class="blog-date">January 30, 2026 · Operations</p>
-                <h4>Ningbo finishing hub enters live production</h4>
-                <p class="blog-summary">The new partner facility brings an extra 2.4 million meters of monthly capacity for reactive and cationic dye programs, enabling dual-country redundancy for key retailers.</p>
-                <span class="blog-card-cta">Read update</span>
-            </a>
-
-            <a class="blog-card" href="news/2026-01-24-recycled-filament-line.html">
-                <p class="blog-date">January 24, 2026 · Sustainability</p>
-                <h4>Recycled filament line secures GRS batch approval</h4>
-                <p class="blog-summary">Shanyue now offers certified RPET filament from 75D to 300D with dope-dyed color matching, reducing water usage by 86% against conventional processes.</p>
-                <span class="blog-card-cta">Read update</span>
-            </a>
-
-            <a class="blog-card" href="news/2026-01-18-joint-development-lab.html">
-                <p class="blog-date">January 18, 2026 · Partnerships</p>
-                <h4>Joint development lab launches in Ho Chi Minh City</h4>
-                <p class="blog-summary">The lab pairs our yarn engineering team with two knitting groups to fast-track prototype approval cycles for athleisure and lounge programs.</p>
-                <span class="blog-card-cta">Read update</span>
-            </a>
-            <a class="news-more-link" href="news.html">More</a>
         </div>
     </section>
 
