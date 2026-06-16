@@ -338,14 +338,14 @@
         /* --- Business Portfolio Section --- */
         .business-section {
             background-color: #f5f7fa;
-            padding: 5rem 0;
+            padding: 1.2rem 0;
             border-top: 1px solid #edf0f5;
             border-bottom: 1px solid #edf0f5;
         }
 
         .section-header {
             text-align: center; 
-            margin: 0 auto 3rem;
+            margin: 0 auto 1.2rem;
             max-width: 800px;
             box-sizing: border-box;
         }
@@ -636,7 +636,7 @@
             }
             
             .section-header {
-                margin: 2.5rem auto 1.8rem !important;
+                margin: 0 auto 1rem !important;
             }
 
             .section-title {
@@ -688,7 +688,7 @@
                 grid-template-columns: 1fr;
             }
             .business-section {
-                padding: 3rem 0;
+                padding: 1rem 0;
             }
         }
 
