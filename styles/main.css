@@ -384,36 +384,28 @@
             box-sizing: border-box;
         }
 
-        .card-icon-wrapper {
-            width: 44px;
-            height: 44px;
-            border-radius: 8px;
-            background: rgba(0, 64, 152, 0.05); /* 浅品牌蓝 */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 15px;
-            transition: background-color 0.3s ease;
-        }
-
-        .card-icon-wrapper svg {
-            width: 22px;
-            height: 22px;
-            fill: none;
-            stroke: var(--brand-blue);
-            stroke-width: 1.5;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            transition: stroke 0.3s ease;
-        }
-
         .app-item h3 {
-            margin: 0 0 8px 0;
+            margin: 0 0 12px 0;
             color: var(--brand-blue);
             font-size: 1.35rem;
             font-weight: 600;
             transition: color 0.3s ease;
             text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .app-item h3 svg.title-icon {
+            width: 22px;
+            height: 22px;
+            fill: none;
+            stroke: var(--brand-blue);
+            stroke-width: 1.75;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: stroke 0.3s ease;
+            flex-shrink: 0;
         }
 
         .app-item-desc {
@@ -472,16 +464,12 @@
             background-color: #eef4fa; /* 冰川淡蓝灰 */
         }
 
-        .app-link:hover .card-icon-wrapper {
-            background-color: var(--brand-blue);
-        }
-
-        .app-link:hover .card-icon-wrapper svg {
-            stroke: #ffffff;
-        }
-
         .app-link:hover .app-item h3 {
             color: #1a1a1a !important; /* 保持深黑色高对比度文字 */
+        }
+
+        .app-link:hover .app-item h3 svg.title-icon {
+            stroke: #1a1a1a; /* 图标与文本颜色同步变为深色 */
         }
 
         .app-link:hover .app-item-desc {
