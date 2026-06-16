@@ -3,6 +3,7 @@
 /* --- Brand Colors & Variables --- */
 :root {
     --brand-blue: #004098;
+    --deep-dark: #1a1a1a;
     --text-dark: #333333;
     --text-muted: #666666;
     --soft-white: #ffffff;
@@ -13,15 +14,17 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #ede5da;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: var(--deep-dark);
+    background-color: #f5f7fa;
     overflow-y: scroll;
+    -webkit-font-smoothing: antialiased;
 }
 
 .page-wrapper {
     max-width: 1800px;
     margin: 0 auto;
-    background-color: #faf7f2;
+    background-color: var(--soft-white);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
