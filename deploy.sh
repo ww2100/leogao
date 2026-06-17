@@ -6,6 +6,9 @@
 
 cd "$(dirname "$0")"
 
+echo "🔍 正在自动更新站点地图 sitemap.xml..."
+python3 scripts/generate_sitemap.py
+
 echo ""
 echo "📦 正在收集改动..."
 git add -A

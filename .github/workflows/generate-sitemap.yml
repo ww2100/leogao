@@ -1,0 +1,32 @@
+name: Generate Sitemap
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '**/*.html'
+      - 'scripts/generate_sitemap.py'
+
+jobs:
+  sitemap:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # 赋予写入权限以允许提交 sitemap.xml
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Generate Sitemap
+        run: python scripts/generate_sitemap.py
+
+      - name: Commit & Push Changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Auto-regenerate sitemap.xml [skip ci]"
+          file_pattern: 'sitemap.xml'

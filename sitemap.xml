@@ -37,12 +37,12 @@
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.yarnsvc.com/spun-yarn.html</loc>
+    <loc>https://www.yarnsvc.com/news.html</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.yarnsvc.com/news.html</loc>
-    <priority>0.70</priority>
+    <loc>https://www.yarnsvc.com/spun-yarn.html</loc>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.yarnsvc.com/news/2026-01-11-dual-port-strategy.html</loc>
