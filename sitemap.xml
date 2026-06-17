@@ -2,26 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.yarnsvc.com/</loc>
+    <priority>1.00</priority>
   </url>
   <url>
     <loc>https://www.yarnsvc.com/about%20us.html</loc>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.yarnsvc.com/fibers.html</loc>
-  </url>
-  <url>
-    <loc>https://www.yarnsvc.com/filament-yarn.html</loc>
-  </url>
-  <url>
-    <loc>https://www.yarnsvc.com/index.html</loc>
-  </url>
-  <url>
-    <loc>https://www.yarnsvc.com/knit.html</loc>
-  </url>
-  <url>
-    <loc>https://www.yarnsvc.com/spun-yarn.html</loc>
+    <loc>https://www.yarnsvc.com/cooling-yarn.html</loc>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.yarnsvc.com/dope-dyed-yarn.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.yarnsvc.com/fdy-workshop.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.yarnsvc.com/fibers.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.yarnsvc.com/filament-yarn.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.yarnsvc.com/functional-yarn.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.yarnsvc.com/knit.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.yarnsvc.com/spun-yarn.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.yarnsvc.com/news.html</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.yarnsvc.com/news/2026-01-11-dual-port-strategy.html</loc>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://www.yarnsvc.com/news/2026-01-18-joint-development-lab.html</loc>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://www.yarnsvc.com/news/2026-01-24-recycled-filament-line.html</loc>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://www.yarnsvc.com/news/2026-01-30-ningbo-finishing-hub.html</loc>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://www.yarnsvc.com/news/2026-02-06-all-cotton-spunlace-innovation.html</loc>
+    <priority>0.60</priority>
   </url>
 </urlset>
