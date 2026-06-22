@@ -56,32 +56,31 @@
 
         <header class="sub-page-header align-line">
 			<svg class="header-network-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;" viewBox="0 0 1200 220" preserveAspectRatio="xMinYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<!-- Parallel filament lines (Full Width) -->
-				<line x1="-50" y1="50" x2="1250" y2="50" stroke="#f6f0db" stroke-opacity="0.15" stroke-width="1.5"/>
-				<line x1="-50" y1="100" x2="1250" y2="100" stroke="#f6f0db" stroke-opacity="0.22" stroke-width="1.5"/>
-				<line x1="-50" y1="150" x2="1250" y2="150" stroke="#f6f0db" stroke-opacity="0.15" stroke-width="1.5"/>
-				<line x1="-50" y1="75" x2="1250" y2="125" stroke="#f6f0db" stroke-opacity="0.10" stroke-width="1.2"/>
-				<line x1="-50" y1="145" x2="1250" y2="95" stroke="#f6f0db" stroke-opacity="0.10" stroke-width="1.2"/>
+				<!-- Parallel filament wavy flow lines (Full Width) -->
+				<path d="M -50 60 Q 250 120 550 60 T 1150 60 T 1250 60" stroke="#f6f0db" stroke-opacity="0.15" stroke-width="1.5"/>
+				<path d="M -50 100 Q 250 160 550 100 T 1150 100 T 1250 100" stroke="#f6f0db" stroke-opacity="0.22" stroke-width="1.5"/>
+				<path d="M -50 140 Q 250 200 550 140 T 1150 140 T 1250 140" stroke="#f6f0db" stroke-opacity="0.15" stroke-width="1.5"/>
+				<path d="M -50 85 Q 250 135 550 85 T 1150 85 T 1250 85" stroke="#f6f0db" stroke-opacity="0.10" stroke-width="1.2"/>
 				<!-- Ellipses (Left & Right) -->
 				<ellipse cx="140" cy="110" rx="360" ry="130" stroke="#f6f0db" stroke-opacity="0.18" stroke-width="1.2" transform="rotate(-5 140 110)"/>
 				<ellipse cx="140" cy="110" rx="300" ry="90" stroke="#f6f0db" stroke-opacity="0.20" stroke-width="1.2" transform="rotate(25 140 110)"/>
 				<ellipse cx="1020" cy="110" rx="280" ry="100" stroke="#f6f0db" stroke-opacity="0.15" stroke-width="1.2" transform="rotate(-15 1020 110)"/>
-				<!-- Left Network Cluster -->
-				<line x1="60" y1="100" x2="140" y2="50" stroke="#f6f0db" stroke-opacity="0.30" stroke-width="1.5"/>
-				<line x1="140" y1="50" x2="220" y2="100" stroke="#f6f0db" stroke-opacity="0.30" stroke-width="1.5"/>
-				<line x1="220" y1="100" x2="300" y2="150" stroke="#f6f0db" stroke-opacity="0.30" stroke-width="1.5"/>
-				<line x1="300" y1="150" x2="200" y2="150" stroke="#f6f0db" stroke-opacity="0.30" stroke-width="1.5"/>
-				<line x1="200" y1="150" x2="110" y2="150" stroke="#f6f0db" stroke-opacity="0.30" stroke-width="1.5"/>
-				<line x1="110" y1="150" x2="60" y2="100" stroke="#f6f0db" stroke-opacity="0.30" stroke-width="1.5"/>
-				<!-- Long filament bridges -->
-				<line x1="220" y1="100" x2="780" y2="100" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.5"/>
-				<line x1="300" y1="150" x2="880" y2="150" stroke="#f6f0db" stroke-opacity="0.20" stroke-width="1.2"/>
-				<line x1="140" y1="50" x2="720" y2="50" stroke="#f6f0db" stroke-opacity="0.20" stroke-width="1.2"/>
-				<!-- Right Network Cluster -->
-				<line x1="720" y1="50" x2="780" y2="100" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
-				<line x1="780" y1="100" x2="880" y2="150" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
-				<line x1="880" y1="150" x2="980" y2="100" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
-				<line x1="980" y1="100" x2="1100" y2="50" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
+				<!-- Left Network Cluster (Curved paths) -->
+				<path d="M 60 100 Q 90 65 140 50" stroke="#f6f0db" stroke-opacity="0.30" stroke-width="1.5"/>
+				<path d="M 140 50 Q 190 65 220 100" stroke="#f6f0db" stroke-opacity="0.30" stroke-width="1.5"/>
+				<path d="M 220 100 Q 250 135 300 150" stroke="#f6f0db" stroke-opacity="0.30" stroke-width="1.5"/>
+				<path d="M 300 150 Q 250 160 200 150" stroke="#f6f0db" stroke-opacity="0.30" stroke-width="1.5"/>
+				<path d="M 200 150 Q 150 160 110 150" stroke="#f6f0db" stroke-opacity="0.30" stroke-width="1.5"/>
+				<path d="M 110 150 Q 80 135 60 100" stroke="#f6f0db" stroke-opacity="0.30" stroke-width="1.5"/>
+				<!-- Long filament curved bridges -->
+				<path d="M 220 100 Q 500 70 780 100" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.5"/>
+				<path d="M 300 150 Q 590 120 880 150" stroke="#f6f0db" stroke-opacity="0.20" stroke-width="1.2"/>
+				<path d="M 140 50 Q 430 30 720 50" stroke="#f6f0db" stroke-opacity="0.20" stroke-width="1.2"/>
+				<!-- Right Network Cluster (Curved paths) -->
+				<path d="M 720 50 Q 750 70 780 100" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
+				<path d="M 780 100 Q 830 130 880 150" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
+				<path d="M 880 150 Q 930 120 980 100" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
+				<path d="M 980 100 Q 1040 70 1100 50" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
 				<!-- Dots (Left) -->
 				<circle cx="60" cy="100" r="5.5" fill="#f6f0db" fill-opacity="0.85"/>
 				<circle cx="140" cy="50" r="4.5" fill="#f6f0db" fill-opacity="0.8"/>

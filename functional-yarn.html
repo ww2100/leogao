@@ -57,19 +57,20 @@
         <header class="sub-page-header align-line">
 			<svg class="header-network-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;" viewBox="0 0 1200 220" preserveAspectRatio="xMinYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<!-- Hexagonal Grid / Mesh Structure (Left) -->
-				<path d="M 50 40 L 120 20 L 190 40 L 190 90 L 120 110 L 50 90 Z" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
-				<path d="M 190 40 L 260 20 L 330 40 L 330 90 L 260 110 L 190 90" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
-				<path d="M 120 110 L 190 130 L 260 110" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
-				<path d="M 190 130 L 190 180 L 120 200" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
-				<path d="M 120 200 L 50 180 L 50 130 L 120 110" stroke="#f6f0db" stroke-opacity="0.20" stroke-width="1.2"/>
-				<!-- Hexagonal Grid / Mesh Structure (Right) -->
-				<path d="M 850 40 L 920 20 L 990 40 L 990 90 L 920 110 L 850 90 Z" stroke="#f6f0db" stroke-opacity="0.22" stroke-width="1.2"/>
-				<path d="M 990 40 L 1060 20 L 1130 40 L 1130 90 L 1060 110 L 990 90" stroke="#f6f0db" stroke-opacity="0.22" stroke-width="1.2"/>
-				<path d="M 920 110 L 990 130 L 1060 110" stroke="#f6f0db" stroke-opacity="0.22" stroke-width="1.2"/>
-				<!-- Connecting bridges -->
-				<line x1="330" y1="40" x2="850" y2="40" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
-				<line x1="260" y1="110" x2="920" y2="110" stroke="#f6f0db" stroke-opacity="0.20" stroke-width="1.2" stroke-dasharray="3,3"/>
-				<line x1="190" y1="180" x2="850" y2="90" stroke="#f6f0db" stroke-opacity="0.20" stroke-width="1.2"/>
+				<!-- Rounded Cellular Mesh Structure (Left) -->
+				<path d="M 50 40 Q 85 25 120 20 Q 155 25 190 40 Q 195 65 190 90 Q 155 105 120 110 Q 85 105 50 90 Q 45 65 50 40 Z" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
+				<path d="M 190 40 Q 225 25 260 20 Q 295 25 330 40 Q 335 65 330 90 Q 295 105 260 110 Q 225 105 190 90" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
+				<path d="M 120 110 Q 155 125 190 130 Q 225 125 260 110" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
+				<path d="M 190 130 Q 195 155 190 180 Q 155 195 120 200" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
+				<path d="M 120 200 Q 85 195 50 180 Q 45 155 50 130 Q 85 120 120 110" stroke="#f6f0db" stroke-opacity="0.20" stroke-width="1.2"/>
+				<!-- Rounded Cellular Mesh Structure (Right) -->
+				<path d="M 850 40 Q 885 25 920 20 Q 955 25 990 40 Q 995 65 990 90 Q 955 105 920 110 Q 885 105 850 90 Q 845 65 850 40 Z" stroke="#f6f0db" stroke-opacity="0.22" stroke-width="1.2"/>
+				<path d="M 990 40 Q 1025 25 1060 20 Q 1095 25 1130 40 Q 1135 65 1130 90 Q 1095 105 1060 110 Q 1025 105 990 90" stroke="#f6f0db" stroke-opacity="0.22" stroke-width="1.2"/>
+				<path d="M 920 110 Q 955 125 990 130 Q 1025 125 1060 110" stroke="#f6f0db" stroke-opacity="0.22" stroke-width="1.2"/>
+				<!-- Curved connecting bridges -->
+				<path d="M 330 40 Q 590 10 850 40" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
+				<path d="M 260 110 Q 590 140 920 110" stroke="#f6f0db" stroke-opacity="0.20" stroke-width="1.2" stroke-dasharray="3,3"/>
+				<path d="M 190 180 Q 520 160 850 90" stroke="#f6f0db" stroke-opacity="0.20" stroke-width="1.2"/>
 				<!-- Background rings -->
 				<ellipse cx="160" cy="110" rx="350" ry="120" stroke="#f6f0db" stroke-opacity="0.12" stroke-width="1.2" transform="rotate(30 160 110)"/>
 				<ellipse cx="1000" cy="110" rx="280" ry="100" stroke="#f6f0db" stroke-opacity="0.10" stroke-width="1.2" transform="rotate(-30 1000 110)"/>
