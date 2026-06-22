@@ -56,29 +56,48 @@
 
         <header class="sub-page-header align-line">
 			<svg class="header-network-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;" viewBox="0 0 1200 220" preserveAspectRatio="xMinYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<!-- Hexagonal Grid / Mesh Structure -->
-				<path d="M 50 40 L 120 20 L 190 40 L 190 90 L 120 110 L 50 90 Z" stroke="#f6f0db" stroke-opacity="0.18" stroke-width="1.2"/>
-				<path d="M 190 40 L 260 20 L 330 40 L 330 90 L 260 110 L 190 90" stroke="#f6f0db" stroke-opacity="0.18" stroke-width="1.2"/>
-				<path d="M 120 110 L 190 130 L 260 110" stroke="#f6f0db" stroke-opacity="0.18" stroke-width="1.2"/>
-				<path d="M 190 130 L 190 180 L 120 200" stroke="#f6f0db" stroke-opacity="0.18" stroke-width="1.2"/>
-				<path d="M 120 200 L 50 180 L 50 130 L 120 110" stroke="#f6f0db" stroke-opacity="0.12" stroke-width="1.2"/>
+				<!-- Hexagonal Grid / Mesh Structure (Left) -->
+				<path d="M 50 40 L 120 20 L 190 40 L 190 90 L 120 110 L 50 90 Z" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
+				<path d="M 190 40 L 260 20 L 330 40 L 330 90 L 260 110 L 190 90" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
+				<path d="M 120 110 L 190 130 L 260 110" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
+				<path d="M 190 130 L 190 180 L 120 200" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
+				<path d="M 120 200 L 50 180 L 50 130 L 120 110" stroke="#f6f0db" stroke-opacity="0.20" stroke-width="1.2"/>
+				<!-- Hexagonal Grid / Mesh Structure (Right) -->
+				<path d="M 850 40 L 920 20 L 990 40 L 990 90 L 920 110 L 850 90 Z" stroke="#f6f0db" stroke-opacity="0.22" stroke-width="1.2"/>
+				<path d="M 990 40 L 1060 20 L 1130 40 L 1130 90 L 1060 110 L 990 90" stroke="#f6f0db" stroke-opacity="0.22" stroke-width="1.2"/>
+				<path d="M 920 110 L 990 130 L 1060 110" stroke="#f6f0db" stroke-opacity="0.22" stroke-width="1.2"/>
+				<!-- Connecting bridges -->
+				<line x1="330" y1="40" x2="850" y2="40" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
+				<line x1="260" y1="110" x2="920" y2="110" stroke="#f6f0db" stroke-opacity="0.20" stroke-width="1.2" stroke-dasharray="3,3"/>
+				<line x1="190" y1="180" x2="850" y2="90" stroke="#f6f0db" stroke-opacity="0.20" stroke-width="1.2"/>
 				<!-- Background rings -->
-				<ellipse cx="160" cy="110" rx="350" ry="120" stroke="#f6f0db" stroke-opacity="0.08" stroke-width="1.2" transform="rotate(30 160 110)"/>
-				<ellipse cx="160" cy="110" rx="270" ry="170" stroke="#f6f0db" stroke-opacity="0.06" stroke-width="1.2" transform="rotate(-45 160 110)"/>
-				<!-- Dots on vertices -->
-				<circle cx="50" cy="40" r="3.5" fill="#f6f0db" fill-opacity="0.6"/>
-				<circle cx="120" cy="20" r="3.5" fill="#f6f0db" fill-opacity="0.6"/>
-				<circle cx="190" cy="40" r="4.5" fill="#f6f0db" fill-opacity="0.7"/>
-				<circle cx="190" cy="90" r="4.5" fill="#f6f0db" fill-opacity="0.7"/>
-				<circle cx="120" cy="110" r="5" fill="#f6f0db" fill-opacity="0.7"/>
-				<circle cx="50" cy="90" r="3.5" fill="#f6f0db" fill-opacity="0.6"/>
-				<circle cx="260" cy="20" r="3.5" fill="#f6f0db" fill-opacity="0.5"/>
-				<circle cx="330" cy="40" r="3.5" fill="#f6f0db" fill-opacity="0.5"/>
-				<circle cx="330" cy="90" r="3.5" fill="#f6f0db" fill-opacity="0.5"/>
-				<circle cx="260" cy="110" r="4.5" fill="#f6f0db" fill-opacity="0.6"/>
-				<circle cx="190" cy="130" r="5" fill="#f6f0db" fill-opacity="0.7"/>
-				<circle cx="190" cy="180" r="4" fill="#f6f0db" fill-opacity="0.6"/>
-				<circle cx="120" cy="200" r="4.5" fill="#f6f0db" fill-opacity="0.6"/>
+				<ellipse cx="160" cy="110" rx="350" ry="120" stroke="#f6f0db" stroke-opacity="0.12" stroke-width="1.2" transform="rotate(30 160 110)"/>
+				<ellipse cx="1000" cy="110" rx="280" ry="100" stroke="#f6f0db" stroke-opacity="0.10" stroke-width="1.2" transform="rotate(-30 1000 110)"/>
+				<!-- Dots on vertices (Left) -->
+				<circle cx="50" cy="40" r="4.5" fill="#f6f0db" fill-opacity="0.8"/>
+				<circle cx="120" cy="20" r="4.5" fill="#f6f0db" fill-opacity="0.8"/>
+				<circle cx="190" cy="40" r="5.5" fill="#f6f0db" fill-opacity="0.85"/>
+				<circle cx="190" cy="90" r="5.5" fill="#f6f0db" fill-opacity="0.85"/>
+				<circle cx="120" cy="110" r="6" fill="#f6f0db" fill-opacity="0.85"/>
+				<circle cx="50" cy="90" r="4.5" fill="#f6f0db" fill-opacity="0.8"/>
+				<circle cx="260" cy="20" r="4" fill="#f6f0db" fill-opacity="0.75"/>
+				<circle cx="330" cy="40" r="4" fill="#f6f0db" fill-opacity="0.75"/>
+				<circle cx="330" cy="90" r="4" fill="#f6f0db" fill-opacity="0.75"/>
+				<circle cx="260" cy="110" r="5.5" fill="#f6f0db" fill-opacity="0.85"/>
+				<circle cx="190" cy="130" r="6" fill="#f6f0db" fill-opacity="0.85"/>
+				<circle cx="190" cy="180" r="5" fill="#f6f0db" fill-opacity="0.8"/>
+				<circle cx="120" cy="200" r="5.5" fill="#f6f0db" fill-opacity="0.8"/>
+				<!-- Dots on vertices (Right) -->
+				<circle cx="850" cy="40" r="4" fill="#f6f0db" fill-opacity="0.75"/>
+				<circle cx="920" cy="20" r="4" fill="#f6f0db" fill-opacity="0.75"/>
+				<circle cx="990" cy="40" r="5" fill="#f6f0db" fill-opacity="0.8"/>
+				<circle cx="990" cy="90" r="5" fill="#f6f0db" fill-opacity="0.8"/>
+				<circle cx="920" cy="110" r="5.5" fill="#f6f0db" fill-opacity="0.8"/>
+				<circle cx="850" cy="90" r="4" fill="#f6f0db" fill-opacity="0.75"/>
+				<circle cx="1060" cy="20" r="3.5" fill="#f6f0db" fill-opacity="0.7"/>
+				<circle cx="1130" cy="40" r="3.5" fill="#f6f0db" fill-opacity="0.7"/>
+				<circle cx="1130" cy="90" r="3.5" fill="#f6f0db" fill-opacity="0.7"/>
+				<circle cx="1060" cy="110" r="4.5" fill="#f6f0db" fill-opacity="0.75"/>
 			</svg>
             <h1>High-Tech Functional Yarn</h1>
             <p>Advanced antistatic, thermal bonding, composite, and protective fiber solutions.</p>
