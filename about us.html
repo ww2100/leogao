@@ -57,54 +57,22 @@
 
 		<header class="sub-page-header align-line">
 			<svg class="header-network-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;" viewBox="0 0 1200 220" preserveAspectRatio="xMinYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<!-- Left Globe representation -->
-				<ellipse cx="200" cy="110" rx="350" ry="120" stroke="#f6f0db" stroke-opacity="0.18" stroke-width="1.2" transform="rotate(15 200 110)"/>
-				<ellipse cx="200" cy="110" rx="320" ry="80" stroke="#f6f0db" stroke-opacity="0.22" stroke-width="1.2" transform="rotate(-10 200 110)"/>
-				<ellipse cx="200" cy="110" rx="280" ry="180" stroke="#f6f0db" stroke-opacity="0.15" stroke-width="1.2" transform="rotate(45 200 110)"/>
-				<!-- Right Globe representation -->
-				<ellipse cx="1000" cy="110" rx="300" ry="110" stroke="#f6f0db" stroke-opacity="0.12" stroke-width="1.2" transform="rotate(-20 1000 110)"/>
-				<ellipse cx="1000" cy="110" rx="260" ry="70" stroke="#f6f0db" stroke-opacity="0.15" stroke-width="1.2" transform="rotate(15 1000 110)"/>
-				<!-- Longitude lines -->
-				<path d="M -150 110 Q 200 0 550 110" stroke="#f6f0db" stroke-opacity="0.18" stroke-width="1.2"/>
-				<path d="M -150 110 Q 200 220 550 110" stroke="#f6f0db" stroke-opacity="0.18" stroke-width="1.2"/>
-				<path d="M 650 110 Q 1000 10 1350 110" stroke="#f6f0db" stroke-opacity="0.12" stroke-width="1.2"/>
-				<!-- Left Network Cluster (Curved) -->
-				<path d="M 50 40 Q 115 15 180 20" stroke="#f6f0db" stroke-opacity="0.30" stroke-width="1.5"/>
-				<path d="M 180 20 Q 240 40 280 80" stroke="#f6f0db" stroke-opacity="0.30" stroke-width="1.5"/>
-				<path d="M 280 80 Q 260 120 210 150" stroke="#f6f0db" stroke-opacity="0.30" stroke-width="1.5"/>
-				<path d="M 210 150 Q 150 150 90 130" stroke="#f6f0db" stroke-opacity="0.30" stroke-width="1.5"/>
-				<path d="M 90 130 Q 60 85 50 40" stroke="#f6f0db" stroke-opacity="0.30" stroke-width="1.5"/>
-				<path d="M 210 150 Q 260 170 310 190" stroke="#f6f0db" stroke-opacity="0.30" stroke-width="1.5"/>
-				<path d="M 280 80 Q 350 70 420 60" stroke="#f6f0db" stroke-opacity="0.30" stroke-width="1.5"/>
-				<path d="M 310 190 Q 235 195 160 200" stroke="#f6f0db" stroke-opacity="0.30" stroke-width="1.5"/>
-				<!-- Cross-connect long lines (bridging the middle with curves) -->
-				<path d="M 420 60 Q 590 90 760 120" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2" stroke-dasharray="4,4"/>
-				<path d="M 280 80 Q 540 120 800 50" stroke="#f6f0db" stroke-opacity="0.20" stroke-width="1.2"/>
-				<path d="M 310 190 Q 615 110 920 150" stroke="#f6f0db" stroke-opacity="0.20" stroke-width="1.2"/>
-				<!-- Right Network Cluster (Curved) -->
-				<path d="M 760 120 Q 770 80 800 50" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
-				<path d="M 800 50 Q 875 35 950 30" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
-				<path d="M 950 30 Q 1005 50 1050 80" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
-				<path d="M 1050 80 Q 1000 120 920 150" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
-				<path d="M 920 150 Q 840 145 760 120" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
-				<path d="M 920 150 Q 1020 155 1120 160" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
-				<path d="M 1050 80 Q 1085 120 1120 160" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
-				<!-- Sourcing node dots (Left) -->
-				<circle cx="50" cy="40" r="4" fill="#f6f0db" fill-opacity="0.8"/>
-				<circle cx="180" cy="20" r="5.5" fill="#f6f0db" fill-opacity="0.85"/>
-				<circle cx="280" cy="80" r="5.5" fill="#f6f0db" fill-opacity="0.85"/>
-				<circle cx="90" cy="130" r="4" fill="#f6f0db" fill-opacity="0.8"/>
-				<circle cx="210" cy="150" r="7" fill="#f6f0db" fill-opacity="0.9"/>
-				<circle cx="310" cy="190" r="5.5" fill="#f6f0db" fill-opacity="0.85"/>
-				<circle cx="420" cy="60" r="4.5" fill="#f6f0db" fill-opacity="0.8"/>
-				<circle cx="160" cy="200" r="4" fill="#f6f0db" fill-opacity="0.8"/>
-				<!-- Sourcing node dots (Right) -->
-				<circle cx="760" cy="120" r="4" fill="#f6f0db" fill-opacity="0.7"/>
-				<circle cx="800" cy="50" r="4.5" fill="#f6f0db" fill-opacity="0.75"/>
-				<circle cx="950" cy="30" r="4" fill="#f6f0db" fill-opacity="0.7"/>
-				<circle cx="1050" cy="80" r="5.5" fill="#f6f0db" fill-opacity="0.8"/>
-				<circle cx="920" cy="150" r="6" fill="#f6f0db" fill-opacity="0.8"/>
-				<circle cx="1120" cy="160" r="4.5" fill="#f6f0db" fill-opacity="0.75"/>
+				<!-- Global Orbit Ellipses (Spaced across full width) -->
+				<ellipse cx="250" cy="110" rx="350" ry="120" stroke="#f6f0db" stroke-opacity="0.18" stroke-width="1.2" transform="rotate(15 250 110)"/>
+				<ellipse cx="250" cy="110" rx="300" ry="80" stroke="#f6f0db" stroke-opacity="0.22" stroke-width="1.2" transform="rotate(-10 250 110)"/>
+				<ellipse cx="600" cy="110" rx="380" ry="130" stroke="#f6f0db" stroke-opacity="0.15" stroke-width="1.2" transform="rotate(-10 600 110)"/>
+				<ellipse cx="950" cy="110" rx="350" ry="120" stroke="#f6f0db" stroke-opacity="0.18" stroke-width="1.2" transform="rotate(25 950 110)"/>
+				<ellipse cx="950" cy="110" rx="280" ry="80" stroke="#f6f0db" stroke-opacity="0.15" stroke-width="1.2" transform="rotate(-15 950 110)"/>
+				<!-- Intersecting Longitude/Latitude wave flows (Full Width) -->
+				<path d="M -100 50 Q 200 -20 500 110 T 1100 240 T 1300 110" stroke="#f6f0db" stroke-opacity="0.18" stroke-width="1.2"/>
+				<path d="M -100 170 Q 200 240 500 110 T 1100 -20 T 1300 110" stroke="#f6f0db" stroke-opacity="0.18" stroke-width="1.2"/>
+				<path d="M -100 110 Q 300 20 600 110 T 1300 110" stroke="#f6f0db" stroke-opacity="0.15" stroke-width="1.2"/>
+				<path d="M -100 110 Q 300 200 600 110 T 1300 110" stroke="#f6f0db" stroke-opacity="0.15" stroke-width="1.2"/>
+				<!-- Intersecting wireframe curves crossing the waves (Creating polygon meshes, no dots) -->
+				<path d="M 100 40 Q 200 120 300 200 T 500 40 T 700 200 T 900 40 T 1100 200" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
+				<path d="M 100 180 Q 200 100 300 20 T 500 180 T 700 20 T 900 180 T 1100 20" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
+				<path d="M 50 110 Q 300 150 550 30 T 1050 190 T 1250 110" stroke="#f6f0db" stroke-opacity="0.20" stroke-width="1.2" stroke-dasharray="3,3"/>
+				<path d="M 150 200 Q 400 60 700 180 T 1250 50" stroke="#f6f0db" stroke-opacity="0.15" stroke-width="1.2"/>
 			</svg>
 			<h1>About Us</h1>
 			<p class="tagline">Trusted Asia sourcing partner</p>

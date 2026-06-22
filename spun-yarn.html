@@ -58,41 +58,19 @@
 
         <header class="sub-page-header align-line">
 			<svg class="header-network-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;" viewBox="0 0 1200 220" preserveAspectRatio="xMinYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<!-- Concentric spun rings showing twisting (Left & Right) -->
-				<ellipse cx="180" cy="110" rx="340" ry="110" stroke="#f6f0db" stroke-opacity="0.18" stroke-width="1.2" transform="rotate(-15 180 110)"/>
-				<ellipse cx="180" cy="110" rx="290" ry="70" stroke="#f6f0db" stroke-opacity="0.22" stroke-width="1.2" transform="rotate(20 180 110)"/>
-				<ellipse cx="980" cy="110" rx="300" ry="90" stroke="#f6f0db" stroke-opacity="0.15" stroke-width="1.2" transform="rotate(10 980 110)"/>
-				<!-- Wavy twisted paths mimicking yarn threads (Full Width) -->
-				<path d="M -100 80 Q 200 180 500 80 T 1100 80" stroke="#f6f0db" stroke-opacity="0.18" stroke-width="1.5"/>
-				<path d="M -100 140 Q 200 40 500 140 T 1100 140" stroke="#f6f0db" stroke-opacity="0.15" stroke-width="1.2"/>
-				<!-- Left Network Cluster (Curved paths) -->
-				<path d="M 70 120 Q 100 70 150 50" stroke="#f6f0db" stroke-opacity="0.30" stroke-width="1.5"/>
-				<path d="M 150 50 Q 200 70 250 110" stroke="#f6f0db" stroke-opacity="0.30" stroke-width="1.5"/>
-				<path d="M 250 110 Q 300 65 350 40" stroke="#f6f0db" stroke-opacity="0.30" stroke-width="1.5"/>
-				<path d="M 250 110 Q 210 150 190 170" stroke="#f6f0db" stroke-opacity="0.30" stroke-width="1.5"/>
-				<path d="M 190 170 Q 130 175 90 150" stroke="#f6f0db" stroke-opacity="0.30" stroke-width="1.5"/>
-				<path d="M 90 150 Q 75 130 70 120" stroke="#f6f0db" stroke-opacity="0.20" stroke-width="1.2"/>
-				<!-- Crossing long connectors (Curved) -->
-				<path d="M 350 40 Q 550 100 750 120" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
-				<path d="M 250 110 Q 545 130 840 60" stroke="#f6f0db" stroke-opacity="0.20" stroke-width="1.2" stroke-dasharray="4,4"/>
-				<!-- Right Network Cluster (Curved paths) -->
-				<path d="M 750 120 Q 790 85 840 60" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
-				<path d="M 840 60 Q 900 105 960 130" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
-				<path d="M 960 130 Q 1020 80 1080 50" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
-				<path d="M 1080 50 Q 1100 90 1130 120" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
-				<!-- Left Dots -->
-				<circle cx="70" cy="120" r="4" fill="#f6f0db" fill-opacity="0.8"/>
-				<circle cx="150" cy="50" r="5.5" fill="#f6f0db" fill-opacity="0.85"/>
-				<circle cx="250" cy="110" r="6" fill="#f6f0db" fill-opacity="0.85"/>
-				<circle cx="350" cy="40" r="4.5" fill="#f6f0db" fill-opacity="0.8"/>
-				<circle cx="190" cy="170" r="5" fill="#f6f0db" fill-opacity="0.8"/>
-				<circle cx="90" cy="150" r="4" fill="#f6f0db" fill-opacity="0.8"/>
-				<!-- Right Dots -->
-				<circle cx="750" cy="120" r="4" fill="#f6f0db" fill-opacity="0.75"/>
-				<circle cx="840" cy="60" r="5" fill="#f6f0db" fill-opacity="0.8"/>
-				<circle cx="960" cy="130" r="5.5" fill="#f6f0db" fill-opacity="0.8"/>
-				<circle cx="1080" cy="50" r="4.5" fill="#f6f0db" fill-opacity="0.75"/>
-				<circle cx="1130" cy="120" r="4" fill="#f6f0db" fill-opacity="0.75"/>
+				<!-- Helical twisted yarn paths running full width -->
+				<path d="M -50 70 Q 100 170 250 70 T 550 70 T 850 70 T 1150 70 T 1250 70" stroke="#f6f0db" stroke-opacity="0.18" stroke-width="1.5"/>
+				<path d="M -50 150 Q 100 50 250 150 T 550 150 T 850 150 T 1150 150 T 1250 150" stroke="#f6f0db" stroke-opacity="0.15" stroke-width="1.2"/>
+				<path d="M -50 110 C 150 200, 300 20, 450 110 S 750 20, 900 110 S 1200 200, 1250 110" stroke="#f6f0db" stroke-opacity="0.15" stroke-width="1.5"/>
+				<path d="M -50 110 C 150 20, 300 200, 450 110 S 750 200, 900 110 S 1200 20, 1250 110" stroke="#f6f0db" stroke-opacity="0.12" stroke-width="1.2"/>
+				<!-- Concentric spun rings/ellipses spaced across full width -->
+				<ellipse cx="200" cy="110" rx="280" ry="90" stroke="#f6f0db" stroke-opacity="0.18" stroke-width="1.2" transform="rotate(10 200 110)"/>
+				<ellipse cx="500" cy="110" rx="260" ry="80" stroke="#f6f0db" stroke-opacity="0.15" stroke-width="1.2" transform="rotate(-15 500 110)"/>
+				<ellipse cx="800" cy="110" rx="280" ry="90" stroke="#f6f0db" stroke-opacity="0.18" stroke-width="1.2" transform="rotate(20 800 110)"/>
+				<ellipse cx="1100" cy="110" rx="250" ry="75" stroke="#f6f0db" stroke-opacity="0.15" stroke-width="1.2" transform="rotate(-10 1100 110)"/>
+				<!-- Intersecting connecting loop strands -->
+				<path d="M 50 150 Q 200 50 350 150 T 650 150 T 950 150 T 1250 150" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.2"/>
+				<path d="M 50 70 Q 200 170 350 70 T 650 70 T 950 70 T 1250 70" stroke="#f6f0db" stroke-opacity="0.20" stroke-width="1.2" stroke-dasharray="4,4"/>
 			</svg>
             <h1>Spun Yarn</h1>
             <p>High-quality spun yarns for knitting, weaving, and home textiles.</p>
