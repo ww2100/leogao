@@ -17,6 +17,8 @@
     display: flex;
     flex-direction: column;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
 
 .product-card:hover {
@@ -33,6 +35,9 @@
     font-weight: 600;
     border-bottom: 1px solid #edf0f5;
     padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .product-card ul {
@@ -126,3 +131,41 @@
         font-size: .82rem;
     }
 }
+
+/* --- Card Icon --- */
+.card-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    opacity: 0.8;
+}
+
+/* --- Card Accent Colors --- */
+.product-card.accent-blue { --card-accent: #004098; }
+.product-card.accent-purple { --card-accent: #7B4FBF; }
+.product-card.accent-green { --card-accent: #1B8A4E; }
+.product-card.accent-amber { --card-accent: #C47A20; }
+
+.product-card[class*="accent-"] h3 {
+    color: var(--card-accent);
+}
+
+.product-card[class*="accent-"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--card-accent);
+    transition: height 0.3s ease;
+}
+
+.product-card[class*="accent-"]:hover::before {
+    height: 5px;
+}
+
+.product-card.accent-blue:hover { border-color: rgba(0, 64, 152, 0.25); background-color: #eef3fa; }
+.product-card.accent-purple:hover { border-color: rgba(123, 79, 191, 0.25); background-color: #f3eef8; }
+.product-card.accent-green:hover { border-color: rgba(27, 138, 78, 0.25); background-color: #eef7f1; }
+.product-card.accent-amber:hover { border-color: rgba(196, 122, 32, 0.25); background-color: #faf3ea; }

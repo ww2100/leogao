@@ -98,12 +98,25 @@ nav.main-nav {
 
 /* --- Banner Header --- */
 .sub-page-header {
-    background: var(--brand-blue);
+    background: linear-gradient(135deg, #002b66 0%, #004098 50%, #0058b8 100%);
     color: white;
-    height: 15vh;
+    height: 18vh;
+    min-height: 160px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.sub-page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 15% 50%, rgba(255,255,255,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse at 85% 30%, rgba(255,255,255,0.05) 0%, transparent 40%);
+    pointer-events: none;
 }
 
 .sub-page-header h1 {
@@ -111,12 +124,27 @@ nav.main-nav {
     margin: 0;
     font-weight: 300;
     letter-spacing: 2px;
+    position: relative;
+    z-index: 1;
+}
+
+.sub-page-header h1::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.4);
+    margin-top: 14px;
+    border-radius: 1px;
 }
 
 .sub-page-header p {
-    margin-top: 15px;
-    opacity: 0.9;
-    font-size: 1.2rem;
+    margin-top: 12px;
+    opacity: 0.85;
+    font-size: 1.15rem;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.5px;
 }
 
 .tagline {
@@ -204,8 +232,9 @@ footer {
     
     .align-line { padding-left: 20px; padding-right: 20px; }
     
-    .sub-page-header { height: 15vh !important; text-align: center !important; }
+    .sub-page-header { height: auto !important; min-height: 120px !important; text-align: center !important; padding-top: 24px !important; padding-bottom: 24px !important; }
     .sub-page-header h1 { font-size: 1.6rem; }
+    .sub-page-header h1::after { margin-left: auto; margin-right: auto; }
     .sub-page-header p { font-size: 0.9rem !important; }
     
     .intro-text { 
