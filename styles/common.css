@@ -107,7 +107,6 @@ nav.main-nav {
     justify-content: center;
     position: relative;
     overflow: hidden;
-    padding-bottom: 30px;
 }
 
 .header-network-bg {
@@ -133,15 +132,7 @@ nav.main-nav {
 }
 
 .sub-page-header::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 30px;
-    background: var(--soft-white);
-    border-radius: 100% 100% 0 0;
-    z-index: 2;
+    display: none;
 }
 
 .sub-page-header h1 {
@@ -258,8 +249,8 @@ footer {
     
     .align-line { padding-left: 20px; padding-right: 20px; }
     
-    .sub-page-header { height: auto !important; min-height: 140px !important; text-align: center !important; padding-top: 28px !important; padding-bottom: 40px !important; }
-    .sub-page-header::after { height: 20px; }
+    .sub-page-header { height: auto !important; min-height: 140px !important; text-align: center !important; padding-top: 28px !important; padding-bottom: 28px !important; }
+    .sub-page-header::after { display: none; }
     .sub-page-header h1 { font-size: 1.6rem; }
     .sub-page-header h1::after { margin-left: auto; margin-right: auto; }
     .sub-page-header p { font-size: 0.9rem !important; }
