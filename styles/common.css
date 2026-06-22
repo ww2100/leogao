@@ -98,15 +98,16 @@ nav.main-nav {
 
 /* --- Banner Header --- */
 .sub-page-header {
-    background: linear-gradient(135deg, #002b66 0%, #004098 50%, #0058b8 100%);
+    background: linear-gradient(135deg, #002060 0%, #003a8c 40%, #0058b8 100%);
     color: white;
-    height: 18vh;
-    min-height: 160px;
+    height: 22vh;
+    min-height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
     overflow: hidden;
+    padding-bottom: 30px;
 }
 
 .sub-page-header::before {
@@ -115,25 +116,40 @@ nav.main-nav {
     inset: 0;
     background:
         radial-gradient(ellipse at 15% 50%, rgba(255,255,255,0.07) 0%, transparent 60%),
-        radial-gradient(ellipse at 85% 30%, rgba(255,255,255,0.05) 0%, transparent 40%);
+        radial-gradient(ellipse at 85% 30%, rgba(255,255,255,0.05) 0%, transparent 40%),
+        repeating-linear-gradient(45deg, transparent, transparent 29px, rgba(255,255,255,0.025) 29px, rgba(255,255,255,0.025) 30px),
+        repeating-linear-gradient(-45deg, transparent, transparent 29px, rgba(255,255,255,0.025) 29px, rgba(255,255,255,0.025) 30px);
     pointer-events: none;
+}
+
+.sub-page-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: var(--soft-white);
+    border-radius: 100% 100% 0 0;
+    z-index: 2;
 }
 
 .sub-page-header h1 {
     font-size: 3rem;
     margin: 0;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 2px;
     position: relative;
     z-index: 1;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .sub-page-header h1::after {
     content: '';
     display: block;
-    width: 50px;
+    width: 60px;
     height: 2px;
-    background: rgba(255, 255, 255, 0.4);
+    background: linear-gradient(90deg, rgba(255,255,255,0.5), transparent);
     margin-top: 14px;
     border-radius: 1px;
 }
@@ -232,7 +248,8 @@ footer {
     
     .align-line { padding-left: 20px; padding-right: 20px; }
     
-    .sub-page-header { height: auto !important; min-height: 120px !important; text-align: center !important; padding-top: 24px !important; padding-bottom: 24px !important; }
+    .sub-page-header { height: auto !important; min-height: 140px !important; text-align: center !important; padding-top: 28px !important; padding-bottom: 40px !important; }
+    .sub-page-header::after { height: 20px; }
     .sub-page-header h1 { font-size: 1.6rem; }
     .sub-page-header h1::after { margin-left: auto; margin-right: auto; }
     .sub-page-header p { font-size: 0.9rem !important; }
