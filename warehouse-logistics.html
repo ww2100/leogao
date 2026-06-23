@@ -14,46 +14,9 @@
     <meta name="description" content="Explore Shanyue Textile's Intelligent Warehouse & Logistics — featuring ASRS automated storage, real-time tracking, and swift global dispatch.">
     <link rel="canonical" href="https://www.yarnsvc.com/warehouse-logistics.html">
     <title>Intelligent Warehouse & Logistics — Shanyue Textile</title>
-    <link rel="stylesheet" href="styles/common.css?v=2.0">
+    <link rel="stylesheet" href="styles/common.css?v=2.1">
     <link rel="stylesheet" href="styles/product.css?v=1.1">
     <style>
-        .workshop-hero {
-            background: var(--brand-blue);
-            color: white;
-            min-height: 15vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .workshop-hero::after {
-            content: "";
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .workshop-hero h1 {
-            font-size: 3rem;
-            margin: 0;
-            font-weight: 300;
-            letter-spacing: 2px;
-        }
-
-        .workshop-hero .workshop-subtitle {
-            margin-top: 14px;
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 700px;
-            line-height: 1.5;
-        }
-
         .workshop-section {
             padding: 3rem 0;
         }
@@ -86,6 +49,69 @@
             color: var(--text-muted);
             margin: 0 0 2rem 20px;
         }
+
+        /* --- Gallery Styles (Centered, Wide Aspect-Ratio) --- */
+        .gallery-container {
+            max-width: 900px;
+            margin: 2rem auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .gallery-card {
+            background: #fff;
+            border: 1px solid #e1e5ef;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+
+        .gallery-card-image {
+            width: 100%;
+            aspect-ratio: 1000/474; /* Matches wide landscape image proportions */
+            overflow: hidden;
+            background: #f0f2f5;
+        }
+
+        .gallery-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-card:hover .gallery-card-image img {
+            transform: scale(1.03);
+        }
+
+        .gallery-card-caption {
+            padding: 25px;
+            text-align: center;
+            border-top: 1px solid #f0f2f5;
+        }
+
+        .gallery-card-caption h4 {
+            font-size: 1.3rem;
+            color: var(--deep-dark);
+            margin: 0 0 10px 0;
+            font-weight: 600;
+        }
+
+        .gallery-card-caption p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
@@ -114,11 +140,23 @@
         </div>
     </nav>
 
-    <header class="workshop-hero">
-        <div class="align-line">
-            <h1>Intelligent Warehouse & Logistics</h1>
-            <p class="workshop-subtitle">Fully automated storage and retrieval crane systems (ASRS) optimize inventory tracking and ensure rapid shipping dispatch.</p>
-        </div>
+    <header class="sub-page-header align-line">
+        <svg class="header-network-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;" viewBox="0 0 1200 220" preserveAspectRatio="xMinYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M -50 40 Q 250 120 550 40 T 1150 40 T 1250 40" stroke="#f6f0db" stroke-opacity="0.15" stroke-width="1.5"/>
+            <path d="M -50 70 Q 250 150 550 70 T 1150 70 T 1250 70" stroke="#f6f0db" stroke-opacity="0.18" stroke-width="1.2"/>
+            <path d="M -50 100 Q 250 180 550 100 T 1150 100 T 1250 100" stroke="#f6f0db" stroke-opacity="0.22" stroke-width="1.5"/>
+            <path d="M -50 130 Q 250 210 550 130 T 1150 130 T 1250 130" stroke="#f6f0db" stroke-opacity="0.15" stroke-width="1.2"/>
+            <path d="M -50 160 Q 250 240 550 160 T 1150 160 T 1250 160" stroke="#f6f0db" stroke-opacity="0.15" stroke-width="1.5"/>
+            <path d="M -50 180 Q 250 100 550 180 T 1150 180 T 1250 180" stroke="#f6f0db" stroke-opacity="0.20" stroke-width="1.5"/>
+            <path d="M -50 140 Q 250 60 550 140 T 1150 140 T 1250 140" stroke="#f6f0db" stroke-opacity="0.15" stroke-width="1.2"/>
+            <path d="M -50 100 Q 250 20 550 100 T 1150 100 T 1250 100" stroke="#f6f0db" stroke-opacity="0.12" stroke-width="1.2"/>
+            <ellipse cx="300" cy="110" rx="350" ry="110" stroke="#f6f0db" stroke-opacity="0.15" stroke-width="1.2" transform="rotate(-5 300 110)"/>
+            <ellipse cx="900" cy="110" rx="350" ry="110" stroke="#f6f0db" stroke-opacity="0.15" stroke-width="1.2" transform="rotate(10 900 110)"/>
+            <path d="M 50 200 Q 300 50 600 150 T 1150 20" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.5"/>
+            <path d="M 50 20 Q 350 180 700 80 T 1150 200" stroke="#f6f0db" stroke-opacity="0.25" stroke-width="1.5"/>
+        </svg>
+        <h1>Intelligent Warehouse & Logistics</h1>
+        <p>Fully automated ASRS and retrieval systems for real-time inventory management.</p>
     </header>
 
     <main class="align-line">
@@ -131,15 +169,15 @@
         <!-- Gallery / Visual Block -->
         <section class="workshop-section">
             <h2 class="workshop-section-title">Warehouse Showcase</h2>
-            <p class="workshop-section-sub">A glance at our computerized storage systems and spacious warehousing capacity.</p>
-            <div class="gallery-grid">
+            <p class="workshop-section-sub">Detailed visual references for our computerized storage systems and distribution warehousing capacity.</p>
+            <div class="gallery-container">
                 <div class="gallery-card">
                     <div class="gallery-card-image">
                         <img src="images/1606095347483105.jpg" alt="ASRS Automated Storage & Retrieval System" loading="lazy">
                     </div>
                     <div class="gallery-card-caption">
                         <h4>ASRS Automated Storage & Retrieval System</h4>
-                        <p>High-density racking systems and computerized stackers maximize storage space and speed.</p>
+                        <p>This shows the interior of our vertical ASRS (Automated Storage & Retrieval System) warehouse. Steel high-rise storage racks rise up to 24 meters, drastically saving floor footprint. In this layout, computerized stacker cranes travel along ground rails and overhead guides, quickly picking up or placing pallets in their designated positions using dynamic coordinate control linked to the warehouse database.</p>
                     </div>
                 </div>
                 <div class="gallery-card">
@@ -148,7 +186,7 @@
                     </div>
                     <div class="gallery-card-caption">
                         <h4>Spacious & Organized Product Warehousing</h4>
-                        <p>Standardized packaging pallets arranged on sturdy racks facilitate efficient bulk shipping.</p>
+                        <p>A panoramic view of our bulk product distribution warehouse. Packed yarn spools, sealed inside moisture-proof export cartons, are systematically palletized, stretch-wrapped, and stored on heavy-duty racks. The spacious layout leaves wide driveways for electric forklifts to quickly access storage rows, facilitating rapid loading and shipping logistics to global hubs.</p>
                     </div>
                 </div>
             </div>
