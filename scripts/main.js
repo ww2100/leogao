@@ -105,7 +105,7 @@ function initDropdowns() {
     });
 }
 
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     startHeroSlideshow();
     startFactorySlideshow();
     initDropdowns();
