@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S·Y·TEXTILE Logo Layout Options Demo</title>
+    <style>
+        :root {
+            --brand-blue: #004098;
+            --deep-dark: #1a1a1a;
+            --text-dark: #333333;
+            --text-muted: #666666;
+            --bg-light: #f8fafc;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: var(--deep-dark);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--brand-blue);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        /* Demo Card Styling */
+        .demo-card {
+            background: white;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .demo-header {
+            background: #f1f5f9;
+            padding: 12px 20px;
+            font-weight: 600;
+            color: var(--text-dark);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .badge {
+            background: var(--brand-blue);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+
+        .demo-body {
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: white;
+            min-height: 100px;
+        }
+
+        .demo-desc {
+            padding: 15px 20px;
+            background: #fafafa;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* --- LOGO LAYOUT CLASSES --- */
+
+        /* Option 1: Enlarged Horizontal Layout */
+        .logo-opt1 {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.35rem; /* Larger text */
+            font-weight: 800;
+            color: var(--brand-blue);
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+        .logo-opt1 .logo-icon {
+            width: 42px; /* Substantially larger icon (42px) */
+            height: 42px;
+            background-image: url('images/sy-textile-logo-icon-only.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        /* Option 2: Stacked Brand & Subtitle Layout */
+        .logo-opt2 {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+        }
+        .logo-opt2 .logo-icon {
+            width: 48px; /* Large Icon */
+            height: 48px;
+            background-image: url('images/sy-textile-logo-icon-only.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .logo-opt2 .logo-text-group {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .logo-opt2 .main-title {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--brand-blue);
+            line-height: 1.1;
+            letter-spacing: 0.5px;
+        }
+        .logo-opt2 .sub-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 3.5px;
+            margin-top: 4px;
+        }
+
+        /* Option 3: Vertical Centered Layout */
+        .logo-opt3 {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .logo-opt3 .logo-icon {
+            width: 52px; /* Very large icon for detail */
+            height: 52px;
+            background-image: url('images/sy-textile-logo-icon-only.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .logo-opt3 .logo-text {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--brand-blue);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Option 4: Structured Divider Layout */
+        .logo-opt4 {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-opt4 .logo-icon {
+            width: 36px;
+            height: 36px;
+            background-image: url('images/sy-textile-logo-icon-only.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .logo-opt4 .divider {
+            width: 1px;
+            height: 28px;
+            background-color: #cbd5e1;
+            margin: 0 14px;
+        }
+        .logo-opt4 .logo-text {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--brand-blue);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* Option 5: Premium Clean Overlay Layout (Dark Blue Background) */
+        .dark-box {
+            background-color: #002254;
+            padding: 40px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+        }
+        .logo-opt5 {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        .logo-opt5 .logo-icon {
+            width: 40px;
+            height: 40px;
+            background-image: url('images/sy-textile-logo-icon-only.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+        .logo-opt5 .logo-text {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: white; /* Clean white text on dark blue background */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>S·Y·TEXTILE Logo Layout Options</h1>
+        <div class="subtitle">Open this page locally in your browser to view the live rendering of 5 layout concepts.</div>
+
+        <!-- Option 1 -->
+        <div class="demo-card">
+            <div class="demo-header">
+                <span>Option 1: Enlarged Horizontal Layout</span>
+                <span class="badge">Enlarged</span>
+            </div>
+            <div class="demo-body">
+                <a href="#" class="logo-opt1">
+                    <span class="logo-icon"></span>
+                    SHAN YUE TEXTILE
+                </a>
+            </div>
+            <div class="demo-desc">
+                <strong>Features:</strong> Keeps the layout horizontal, but scales up the icon from 28px to <strong>42px</strong>. This makes the yarn ball lines and leaf texture in the icon much more distinct and clear, while matching the uppercase text height.
+            </div>
+        </div>
+
+        <!-- Option 2 -->
+        <div class="demo-card">
+            <div class="demo-header">
+                <span>Option 2: Stacked Brand & Subtitle Layout</span>
+                <span class="badge">Recommended</span>
+            </div>
+            <div class="demo-body">
+                <a href="#" class="logo-opt2">
+                    <span class="logo-icon"></span>
+                    <div class="logo-text-group">
+                        <span class="main-title">SHAN YUE</span>
+                        <span class="sub-title">TEXTILE</span>
+                    </div>
+                </a>
+            </div>
+            <div class="demo-desc">
+                <strong>Features:</strong> Uses a larger <strong>48px</strong> icon on the left. The text is structured vertically: "SHAN YUE" is bold and large on top, and "TEXTILE" acts as a subtitle underneath with wide tracking (letter-spacing). Extremely premium and modern.
+            </div>
+        </div>
+
+        <!-- Option 3 -->
+        <div class="demo-card">
+            <div class="demo-header">
+                <span>Option 3: Vertical Centered Layout</span>
+                <span class="badge">Editorial</span>
+            </div>
+            <div class="demo-body">
+                <a href="#" class="logo-opt3">
+                    <span class="logo-icon"></span>
+                    <span class="logo-text">SHAN YUE TEXTILE</span>
+                </a>
+            </div>
+            <div class="demo-desc">
+                <strong>Features:</strong> A classic vertical layout commonly used by luxury fashion and artisanal brands. The icon is placed centered on top at <strong>52px</strong>, with the brand name centered underneath it. Very balanced and clean.
+            </div>
+        </div>
+
+        <!-- Option 4 -->
+        <div class="demo-card">
+            <div class="demo-header">
+                <span>Option 4: Segmented Divider Layout</span>
+                <span class="badge">Structured</span>
+            </div>
+            <div class="demo-body">
+                <a href="#" class="logo-opt4">
+                    <span class="logo-icon"></span>
+                    <div class="divider"></div>
+                    <span class="logo-text">SHAN YUE TEXTILE</span>
+                </a>
+            </div>
+            <div class="demo-desc">
+                <strong>Features:</strong> Features a 36px icon separated from the text by a thin vertical divider line. This adds structured whitespace and visual separation, making the icon look more like an independent logo emblem.
+            </div>
+        </div>
+
+        <!-- Option 5 -->
+        <div class="demo-card">
+            <div class="demo-header">
+                <span>Option 5: High Contrast (White Text on Brand Blue)</span>
+                <span class="badge">Contrast</span>
+            </div>
+            <div class="demo-body">
+                <div class="dark-box">
+                    <a href="#" class="logo-opt5">
+                        <span class="logo-icon"></span>
+                        <span class="logo-text">SHAN YUE TEXTILE</span>
+                    </a>
+                </div>
+            </div>
+            <div class="demo-desc">
+                <strong>Features:</strong> Placing the logo on a dark blue background (the brand's primary color) with high-contrast white text. This makes the colorful green and bronze icon pop out and feel much more striking and premium.
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

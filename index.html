@@ -46,7 +46,7 @@
             body{margin:0;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;color:var(--deep-dark);background-color:var(--soft-white);-webkit-font-smoothing:antialiased}
             .page-wrapper{max-width:1800px;margin:0 auto;background-color:var(--soft-white);min-height:100vh;display:flex;flex-direction:column}
             nav.main-nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 5%;background:var(--soft-white);border-bottom:1px solid #eee;position:sticky;top:0;z-index:1000;max-width:1800px;margin:0 auto;width:100%;box-sizing:border-box}
-            .logo{font-size:1.2rem;font-weight:800;color:var(--brand-blue);text-transform:uppercase;text-decoration:none;letter-spacing:1px}
+            .logo{display:inline-flex;align-items:center;font-family:"Futura-Bold",Futura,"Trebuchet MS",Arial,sans-serif;font-size:1.35rem;font-weight:800;color:var(--brand-blue);text-transform:uppercase;text-decoration:none;letter-spacing:0.5px}.logo-shan,.logo-yue{font-weight:800;color:var(--brand-blue)}.logo-icon{display:inline-block;width:32px;height:32px;background-image:url('images/sy-textile-logo-icon-only.png');background-size:contain;background-repeat:no-repeat;background-position:center;margin:0 8px;flex-shrink:0}.logo-textile{font-family:"Futura-Medium",Futura,"Trebuchet MS",Arial,sans-serif;font-weight:500;font-size:0.52em;margin-left:18px;color:var(--brand-blue);letter-spacing:2px;text-transform:uppercase;align-self:center}
             .nav-links{display:flex;gap:2.5rem}
             .nav-links a{text-decoration:none;color:var(--text-dark);font-size:0.9rem;font-weight:500;transition:var(--transition)}
             .nav-links a:hover{color:var(--brand-blue)}
@@ -66,7 +66,7 @@
             @media(max-width:768px){.slideshow-container{height:30vh!important}.menu-toggle{display:flex}.nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;width:100%;background:white;padding:20px 5%;border-bottom:1px solid #eee;gap:0.8rem}.nav-links.active{display:flex}.hero-content{left:20px!important;bottom:20px!important;padding:0!important}}
         </style>
         <!-- Full stylesheet — small enough (4KB) to load normally without meaningful blocking -->
-        <link rel="stylesheet" href="styles/main.css?v=2.4">
+        <link rel="stylesheet" href="styles/main.css?v=2.5">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
@@ -78,7 +78,7 @@
     <div class="page-wrapper">
     <nav class="main-nav">
         <!-- 160. nav标签：导航栏容器，用于包裹网站的导航链接，提升页面语义化（搜索引擎更易识别） -->
-        <a href="index.html" class="logo">SHAN YUE TEXTILE</a>
+        <a href="index.html" class="logo"><span class="logo-shan">SHAN</span><span class="logo-icon"></span><span class="logo-yue">YUE</span><span class="logo-textile">TEXTILE</span></a>
         <!-- 161. 企业logo文本，class="logo"对应CSS中的.logo样式，显示品牌名称 -->
         <div class="menu-toggle" id="mobile-menu">
             <!-- 162. 汉堡菜单按钮，class="menu-toggle"对应CSS中的样式，id="mobile-menu"用于JavaScript获取该元素 -->

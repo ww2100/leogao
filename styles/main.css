@@ -78,17 +78,43 @@
         }
 
         .logo {
-
-            font-size: 1.2rem;
-
+            display: inline-flex;
+            align-items: center;
+            font-family: "Futura-Bold", Futura, "Trebuchet MS", Arial, sans-serif;
+            font-size: 1.35rem;
             font-weight: 800;
-
             color: var(--brand-blue);
-
             text-transform: uppercase;
             text-decoration: none;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
+        }
 
+        .logo-shan, .logo-yue {
+            font-weight: 800;
+            color: var(--brand-blue);
+        }
+
+        .logo-icon {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background-image: url('../images/sy-textile-logo-icon-only.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0 8px;
+            flex-shrink: 0;
+        }
+
+        .logo-textile {
+            font-family: "Futura-Medium", Futura, "Trebuchet MS", Arial, sans-serif;
+            font-weight: 500;
+            font-size: 0.52em;
+            margin-left: 18px;
+            color: var(--brand-blue);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            align-self: center;
         }
 
         .nav-links {
