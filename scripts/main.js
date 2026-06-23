@@ -30,7 +30,7 @@ function startHeroSlideshow() {
 
     function startTimer() {
         if (!timer) {
-            timer = setInterval(next, 3000);
+            timer = setInterval(next, 4500);
         }
     }
 
