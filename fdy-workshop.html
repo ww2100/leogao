@@ -238,69 +238,6 @@
             line-height: 1.4;
         }
 
-        /* --- Stat Bar --- */
-        .stat-bar {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin: 2rem 0;
-        }
-
-        .stat-item {
-            flex: 1;
-            min-width: 160px;
-            background: linear-gradient(135deg, #f5f7fa 0%, #eef2f8 100%);
-            border: 1px solid #e1e5ef;
-            border-radius: 10px;
-            padding: 1.4rem 1.2rem;
-            text-align: center;
-        }
-
-        .stat-value {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--brand-blue);
-            line-height: 1.1;
-        }
-
-        .stat-label {
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            margin-top: 6px;
-            letter-spacing: 0.04em;
-        }
-
-        /* --- Info Ribbon --- */
-        .info-ribbon {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin: 2rem 0;
-        }
-
-        .info-ribbon-card {
-            background: #fff;
-            border: 1px solid #edf0f5;
-            border-radius: 12px;
-            padding: 1.6rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-        }
-
-        .info-ribbon-card h4 {
-            margin: 0 0 12px 0;
-            color: var(--brand-blue);
-            font-size: 1.05rem;
-            font-weight: 600;
-        }
-
-        .info-ribbon-card ul {
-            margin: 0;
-            padding-left: 18px;
-            color: var(--text-muted);
-            font-size: 0.88rem;
-            line-height: 1.7;
-        }
-
         /* --- Responsive --- */
         @media (max-width: 992px) {
             .workshop-hero h1 { font-size: 1.6rem; }
@@ -315,7 +252,6 @@
                 padding: 4px 0;
                 transform: rotate(90deg);
             }
-            .stat-value { font-size: 1.5rem; }
         }
     </style>
     <!-- Favicon -->
@@ -666,21 +602,6 @@
             </div>
         </section>
 
-        <!-- Contact -->
-        <section class="workshop-section">
-            <h2 class="workshop-section-title">Inquire About FDY Yarns</h2>
-            <p class="workshop-section-sub">Need a custom denier, specific luster, or technical consultation? Reach out to our filament yarn team.</p>
-
-            <div class="info-ribbon" style="margin-top:1rem;">
-                <div class="info-ribbon-card" style="text-align:center;">
-                    <h4 style="font-size:1.1rem;">Contact: Leo Gao</h4>
-                    <p style="margin:8px 0 4px; color: var(--text-muted);">Business Manager — Filament Yarn Division</p>
-                    <p style="margin:4px 0; font-weight:600; color: var(--brand-blue);">Phone / WhatsApp: +86 18605755007</p>
-                    <p style="margin:4px 0; color: var(--text-muted);">Email: leogao@yarnsvc.com</p>
-                    <p style="margin:4px 0; color: var(--text-muted);">General: gaofei@yarnsvc.com</p>
-                </div>
-            </div>
-        </section>
 
     </main>
 
