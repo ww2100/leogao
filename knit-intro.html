@@ -120,17 +120,18 @@
             overflow: hidden;
             border: 1px solid #edf2f7;
         }
-        .showcase-img svg {
-            width: 80px;
-            height: 80px;
-            color: #cbd5e1;
+        .showcase-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         .showcase-content h3 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--brand-blue);
             margin: 0 0 15px 0;
             position: relative;
             padding-bottom: 15px;
+            line-height: 1.3;
         }
         .showcase-content h3::after {
             content: '';
@@ -147,7 +148,7 @@
             right: 0;
         }
         .showcase-content p {
-            font-size: 1.05rem;
+            font-size: 1rem;
             line-height: 1.7;
             color: var(--text-dark);
             margin-top: 20px;
@@ -191,7 +192,7 @@
                 direction: ltr;
             }
             .showcase-img {
-                height: 250px;
+                height: 280px;
             }
             .showcase-content h3 {
                 font-size: 1.6rem;
@@ -246,12 +247,9 @@
                 <!-- Overlapping wave curves mimicking knit structure -->
                 <path d="M -50 140 Q 100 40 250 140 T 550 140 T 850 140 T 1150 140 T 1250 140" stroke="#f6f0db" stroke-opacity="0.18" stroke-width="1.5"/>
                 <path d="M -50 100 Q 100 200 250 100 T 550 100 T 850 100 T 1150 100 T 1250 100" stroke="#f6f0db" stroke-opacity="0.15" stroke-width="1.5"/>
-                <path d="M -50 60 Q 100 -40 250 60 T 550 60 T 850 60 T 1150 60 T 1250 60" stroke="#f6f0db" stroke-opacity="0.12" stroke-width="1.2"/>
                 <ellipse cx="200" cy="110" rx="300" ry="100" stroke="#f6f0db" stroke-opacity="0.18" stroke-width="1.2" transform="rotate(-5 200 110)"/>
                 <ellipse cx="950" cy="110" rx="280" ry="90" stroke="#f6f0db" stroke-opacity="0.15" stroke-width="1.2" transform="rotate(15 950 110)"/>
-                <!-- Vertical stitch columns -->
                 <path d="M 300 -20 Q 250 50 300 110 T 300 240" stroke="#f6f0db" stroke-opacity="0.18" stroke-width="1.2"/>
-                <path d="M 600 -20 Q 550 50 600 110 T 600 240" stroke="#f6f0db" stroke-opacity="0.18" stroke-width="1.2"/>
             </svg>
             <h1>Product Introduction</h1>
             <p>Exploring the craftsmanship, tech-driven structures, and applications of our knitted textiles.</p>
@@ -260,7 +258,7 @@
         <main class="align-line" style="margin-top: 3.5rem; margin-bottom: 5rem;">
             
             <p class="intro-hero-text">
-                [Product Introduction Overview Placeholder] Shanyue Textile integrates advanced German circular knitting machines with eco-friendly raw materials to supply fashion brands, sportswear suppliers, and performance apparel designers globally. We offer high customization options in weight, density, composition, and functional finishing.
+                Shanyue Textile integrates advanced German circular knitting machines with premium eco-friendly raw materials to supply sportswear brands, undergarment designers, and functional fashion makers worldwide. Explore our specialized performance fabrics below.
             </p>
 
             <!-- Features Grid -->
@@ -299,58 +297,118 @@
             </section>
 
             <!-- Detailed Showcase Rows -->
-            <h3 class="section-title">Featured Knit Products</h3>
+            <h3 class="section-title">Functional & Performance Fabrics</h3>
 
+            <!-- Product 1 -->
             <div class="showcase-row">
                 <div class="showcase-img">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" stroke-dasharray="3 3"/><path d="M9 12h6M12 9v6"/></svg>
+                    <img src="images/product-deodorizing-v2.jpg" alt="Deodorizing Spandex Jersey">
                 </div>
                 <div class="showcase-content">
-                    <h3>Fabric Product A (Placeholder)</h3>
+                    <h3>Deodorizing Spandex Jersey <br><span style="font-size: 1.1rem; color: var(--text-muted);">消臭氨纶平纹 (单向导湿)</span></h3>
                     <p>
-                        This is a placeholder for fabric type A details. Once you provide the finalized fabric descriptions, features, and target applications, it will be updated here.
+                        Engineered using a premium viscose carrier embedded with advanced active deodorizing agents, this fabric provides permanent, wash-resistant odor neutralization. The specialized spandex single-jersey knit structure is optimized for high mobility, comfort, and wear resistance.
                     </p>
                     <ul>
-                        <li><strong>Composition:</strong> [e.g., 100% Organic Cotton / Poly-Cotton Blends]</li>
-                        <li><strong>Weight Range:</strong> [e.g., 140 gsm - 200 gsm]</li>
-                        <li><strong>Common Uses:</strong> [e.g., T-shirts, Loungewear, Inner linings]</li>
-                        <li><strong>Key Advantage:</strong> [e.g., Soft touch, breathable structure, low shrinkage]</li>
+                        <li><strong>Composition:</strong> Deodorizing Viscose / Spandex Blend.</li>
+                        <li><strong>Moisture Control:</strong> Unidirectional moisture-wicking technology that rapidly forces perspiration to the outer surface, keeping the skin side dry and fresh.</li>
+                        <li><strong>Common Uses:</strong> High-performance athletic undergarments, sports underwear, daily activewear.</li>
+                        <li><strong>Key Advantage:</strong> Permanent antibacterial and deodorizing protection combined with fast-drying comfort.</li>
                     </ul>
                 </div>
             </div>
 
+            <!-- Product 2 -->
             <div class="showcase-row">
                 <div class="showcase-img">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" stroke-dasharray="3 3"/><path d="M9 12h6M12 9v6"/></svg>
+                    <img src="images/product-vitamin-e-v2.jpg" alt="Vitamin E Cotton Jersey">
                 </div>
                 <div class="showcase-content">
-                    <h3>Fabric Product B (Placeholder)</h3>
+                    <h3>Vitamin E Cotton Jersey <br><span style="font-size: 1.1rem; color: var(--text-muted);">维他命E平纹布 (单向导湿)</span></h3>
                     <p>
-                        This is a placeholder for fabric type B details. Once you provide the finalized fabric descriptions, features, and target applications, it will be updated here.
+                        A specialized skin-care textile infused with natural Vitamin E oils extracted from rapeseed flowers. Vitamin E is a powerful natural antioxidant that shields cell membranes from free radicals. This fabric offers skin-friendly moisturization, actively nourishing your skin while you wear it.
                     </p>
                     <ul>
-                        <li><strong>Composition:</strong> [e.g., Combed Cotton, Rayon-Spandex, Nylon-Spandex Blends]</li>
-                        <li><strong>Weight Range:</strong> [e.g., 200 gsm - 280 gsm]</li>
-                        <li><strong>Common Uses:</strong> [e.g., Sportswear, Leggings, Tailored Hoodies]</li>
-                        <li><strong>Key Advantage:</strong> [e.g., Double-faced smooth texture, structural stability]</li>
+                        <li><strong>Composition:</strong> Natural Cotton blended with Vitamin E functional fibers.</li>
+                        <li><strong>Skin Affinity:</strong> Mildly acidic pH rating matching the skin's natural pH level, reducing skin irritation.</li>
+                        <li><strong>Common Uses:</strong> Maternity wear, infant garments, premium sleepwear, nourishing base layers.</li>
+                        <li><strong>Key Advantage:</strong> Excellent skin moisturization, anti-aging benefits, and high bio-compatibility.</li>
                     </ul>
                 </div>
             </div>
 
+            <!-- Product 3 -->
             <div class="showcase-row">
                 <div class="showcase-img">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" stroke-dasharray="3 3"/><path d="M9 12h6M12 9v6"/></svg>
+                    <img src="images/product-pearl-v2.jpg" alt="Pearl Spandex Jersey">
                 </div>
                 <div class="showcase-content">
-                    <h3>Fabric Product C (Placeholder)</h3>
+                    <h3>Pearl Fiber Spandex Jersey <br><span style="font-size: 1.1rem; color: var(--text-muted);">珍珠氨纶平纹 (远红外 & 消臭)</span></h3>
                     <p>
-                        This is a placeholder for fabric type C details. Once you provide the finalized fabric descriptions, features, and target applications, it will be updated here.
+                        Crafted by embedding micronized natural pearl powders into the fibers, this luxury knit boasts an outstanding far-infrared emissivity coefficient of 0.88. Clinically verified testing indicates it raises skin surface temperature by up to 1.59°C in 30 minutes, actively promoting blood circulation.
                     </p>
                     <ul>
-                        <li><strong>Composition:</strong> [e.g., Cotton-Elastane, Polyester-Elastane, Viscose-Elastane]</li>
-                        <li><strong>Weight Range:</strong> [e.g., 180 gsm - 260 gsm]</li>
-                        <li><strong>Common Uses:</strong> [e.g., Collar bands, Cuffs, Body-contouring wear]</li>
-                        <li><strong>Key Advantage:</strong> [e.g., High elasticity, excellent rib rebound]</li>
+                        <li><strong>Composition:</strong> 20%–30% Pearl functional fibers / Spandex Blend.</li>
+                        <li><strong>Micro-circulation:</strong> Increases wearer's blood flow volume by 27.8% and skin blood velocity by 23.7%.</li>
+                        <li><strong>Common Uses:</strong> Thermal wellness garments, high-end base layers, recovery activewear.</li>
+                        <li><strong>Key Advantage:</strong> Promotes circulation, retains heat, and provides natural deodorization with a smooth, pearl-like sheen.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="showcase-row">
+                <div class="showcase-img">
+                    <img src="images/product-hyaluronic-v2.jpg" alt="Hyaluronic Acid Spandex Jersey">
+                </div>
+                <div class="showcase-content">
+                    <h3>Hyaluronic Acid Hydration Jersey <br><span style="font-size: 1.1rem; color: var(--text-muted);">玻尿酸氨纶平纹</span></h3>
+                    <p>
+                        Nicknamed the "wearable hydrating mask," this fabric incorporates active hyaluronic acid (HA) molecules—one of nature's most hydrophilic molecules. It continuously releases moisture to the skin, helping lock in hydration, boost skin elasticity, and prevent dryness and roughness.
+                    </p>
+                    <ul>
+                        <li><strong>Composition:</strong> Hyaluronic Acid treated Micro-modal / Spandex.</li>
+                        <li><strong>Laundering Durability:</strong> Tested to retain substantial skin-moisturizing performance even after 20+ domestic wash cycles.</li>
+                        <li><strong>Common Uses:</strong> Luxury sleepwear, dry-season base layers, anti-chafing yoga apparel.</li>
+                        <li><strong>Key Advantage:</strong> Active skin hydration, silk-like drape, and anti-static defense.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="showcase-row">
+                <div class="showcase-img">
+                    <img src="images/product-cooling-v2.jpg" alt="Cool-Touch Ice Fabric">
+                </div>
+                <div class="showcase-content">
+                    <h3>Cool-Touch Ice Fabric <br><span style="font-size: 1.1rem; color: var(--text-muted);">（凉霸）冰感面料</span></h3>
+                    <p>
+                        Woven from natural cotton linter cellulose fibers, this fabric offers immediate contact cooling. Unlike synthetic cool fabrics containing mineral powders that heat up quickly, our botanical cool-touch technology ensures prolonged heat dissipation, high moisture absorbency, and static control.
+                    </p>
+                    <ul>
+                        <li><strong>Composition:</strong> Cotton linter derived natural cellulose filaments.</li>
+                        <li><strong>Eco-Sustainability:</strong> 100% biodegradable in soil and water, returning to the nature cycle without chemical waste.</li>
+                        <li><strong>Common Uses:</strong> Summer activewear, sports T-shirts, lightweight active jerseys, hot-weather loungewear.</li>
+                        <li><strong>Key Advantage:</strong> High-performance instant Q-max cooling combined with silky drape and eco-friendly GRS certification.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="showcase-row">
+                <div class="showcase-img">
+                    <img src="images/product-graphene-v2.jpg" alt="Graphene Modal Wicking Jersey">
+                </div>
+                <div class="showcase-content">
+                    <h3>Graphene Modal Wicking Jersey <br><span style="font-size: 1.1rem; color: var(--text-muted);">石墨烯木代尔氨纶平纹 (面单向导湿)</span></h3>
+                    <p>
+                        A high-tech hybrid fabric combining graphene's multi-functional properties with modal's natural softness. Graphene provides advanced low-temperature far-infrared warmth, >99% antibacterial protection, and anti-static control, while the bio-mimetic honeycomb wicking backing forces sweat away from the body.
+                    </p>
+                    <ul>
+                        <li><strong>Composition:</strong> Graphene Polyester / Modal / Spandex.</li>
+                        <li><strong>Visual Customization:</strong> Outer surface can be printed with hidden designs that reveal themselves dynamically when the fabric gets wet.</li>
+                        <li><strong>Common Uses:</strong> Infants apparel, sports activewear, outdoor base layers, maternity clothing.</li>
+                        <li><strong>Key Advantage:</strong> 99% antibacterial rate, static protection, and dynamic moisture management.</li>
                     </ul>
                 </div>
             </div>
