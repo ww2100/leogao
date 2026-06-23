@@ -41,6 +41,10 @@
     <priority>0.80</priority>
   </url>
   <url>
+    <loc>https://www.yarnsvc.com/knitting-workshop.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
     <loc>https://www.yarnsvc.com/news.html</loc>
     <priority>0.80</priority>
   </url>
