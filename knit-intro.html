@@ -27,6 +27,8 @@
     <title>Product Introduction - Knit Fabric | Shanyue Textile</title>
     <link rel="stylesheet" href="styles/common.css?v=2.4">
     <link rel="stylesheet" href="styles/product.css?v=1.1">
+    <!-- Font Awesome for category icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
@@ -101,10 +103,10 @@
             align-items: center;
             margin-bottom: 5rem;
         }
-        .showcase-row:nth-child(even) {
+        .showcase-row:nth-child(even), .showcase-row.alternate {
             direction: rtl;
         }
-        .showcase-row:nth-child(even) .showcase-content {
+        .showcase-row:nth-child(even) .showcase-content, .showcase-row.alternate .showcase-content {
             direction: ltr;
         }
         .showcase-img {
@@ -182,13 +184,90 @@
             border-radius: 2px;
         }
 
+        /* Product Tab Navigation */
+        .product-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            margin-bottom: 3rem;
+            background: #f1f5f9;
+            border-radius: 12px;
+            padding: 5px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .product-tab-btn {
+            flex: 1;
+            padding: 14px 20px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            position: relative;
+            white-space: nowrap;
+        }
+        .product-tab-btn:hover {
+            color: var(--brand-blue);
+            background: rgba(0, 64, 152, 0.05);
+        }
+        .product-tab-btn.active {
+            background: var(--brand-blue);
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 64, 152, 0.25);
+        }
+        .product-tab-btn .tab-count {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            background: rgba(0, 64, 152, 0.1);
+            color: var(--brand-blue);
+            padding: 2px 8px;
+            border-radius: 20px;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
+        .product-tab-btn.active .tab-count {
+            background: rgba(255,255,255,0.25);
+            color: white;
+        }
+
+        /* Tab Panels */
+        .tab-panel {
+            display: none;
+            animation: tabFadeIn 0.4s ease;
+        }
+        .tab-panel.active {
+            display: block;
+        }
+        @keyframes tabFadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Section Subtitle */
+        .section-subtitle {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+
+
+
         @media (max-width: 768px) {
             .showcase-row {
                 grid-template-columns: 1fr;
                 gap: 30px;
                 margin-bottom: 3.5rem;
             }
-            .showcase-row:nth-child(even) {
+            .showcase-row:nth-child(even), .showcase-row.alternate {
                 direction: ltr;
             }
             .showcase-img {
@@ -197,9 +276,19 @@
             .showcase-content h3 {
                 font-size: 1.6rem;
             }
-            .showcase-row:nth-child(even) .showcase-content h3::after {
+            .showcase-row:nth-child(even) .showcase-content h3::after,
+            .showcase-row.alternate .showcase-content h3::after {
                 right: auto;
                 left: 0;
+            }
+
+            .product-tabs {
+                flex-direction: column;
+                max-width: 100%;
+            }
+            .product-tab-btn {
+                font-size: 0.85rem;
+                padding: 12px 16px;
             }
         }
     </style>
@@ -296,8 +385,17 @@
                 </div>
             </section>
 
-            <!-- Detailed Showcase Rows -->
-            <h3 class="section-title">Functional & Performance Fabrics</h3>
+            <!-- Product Category Tabs -->
+            <div class="product-tabs">
+                <button class="product-tab-btn active" data-tab="tab-functional" onclick="switchTab('tab-functional', this)">Functional & Skincare <span class="tab-count">6</span></button>
+                <button class="product-tab-btn" data-tab="tab-eco" onclick="switchTab('tab-eco', this)">Eco & High-Tech <span class="tab-count">11</span></button>
+                <button class="product-tab-btn" data-tab="tab-classic" onclick="switchTab('tab-classic', this)">Classic Knit <span class="tab-count">15</span></button>
+            </div>
+
+            <!-- Tab Panel 1: Functional & Skincare Fabrics -->
+            <div class="tab-panel active" id="tab-functional">
+                <h3 class="section-title">Functional & Skincare Fabrics</h3>
+                <p class="section-subtitle">Advanced skincare-infused and performance-driven textiles featuring deodorizing, hydrating, warming, and cooling functionalities for next-to-skin comfort.</p>
 
             <!-- Product 1 -->
             <div class="showcase-row">
@@ -412,6 +510,515 @@
                     </ul>
                 </div>
             </div>
+            </div><!-- end tab-panel-1 -->
+
+            <!-- Tab Panel 2: Eco & High-Tech Fabrics -->
+            <div class="tab-panel" id="tab-eco">
+            <h3 class="section-title">Eco & High-Tech Fabrics</h3>
+            <p class="section-subtitle">Pioneering sustainable textiles that blend bio-based, biodegradable, and natural materials with advanced performance engineering for the next generation of eco-conscious fashion.</p>
+
+            <!-- Eco Product 1 -->
+            <div class="showcase-row">
+                <div class="showcase-img">
+                    <img src="images/product-eco-pla.jpg" alt="PLA Corn Fiber Fabric">
+                </div>
+                <div class="showcase-content">
+                    <h3>PLA Corn Fiber Fabric <br><span style="font-size: 1.1rem; color: var(--text-muted);">聚乳酸系列面料 (PLA)</span></h3>
+                    <p>
+                        Derived from 100% renewable corn starch, this bio-based fiber offers a complete circular lifecycle. It is fully biodegradable under industrial composting conditions, making it one of the most environmentally responsible textiles available today.
+                    </p>
+                    <ul>
+                        <li><strong>Composition:</strong> 100% PLA (Polylactic Acid) Corn Fiber.</li>
+                        <li><strong>Performance:</strong> Natural breathability, excellent moisture-wicking properties, and inherent flame retardancy.</li>
+                        <li><strong>Common Uses:</strong> Eco-friendly activewear, green lifestyle apparel, infant clothing, casual wear.</li>
+                        <li><strong>Key Advantage:</strong> Carbon-neutral raw material sourcing and fully compostable at end-of-life.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Eco Product 2 (Alternate) -->
+            <div class="showcase-row alternate">
+                <div class="showcase-img">
+                    <img src="images/product-eco-sailis.jpg" alt="Sailis Biodegradable Polyester">
+                </div>
+                <div class="showcase-content">
+                    <h3>Sailis Biodegradable Polyester <br><span style="font-size: 1.1rem; color: var(--text-muted);">赛丽丝系列面料</span></h3>
+                    <p>
+                        A breakthrough in synthetic fiber technology, Sailis® features active biodegradable polyester compounds. Certified by TÜV Rheinland, it achieves a 95.4% degradation rate in landfill environments within 179 days, addressing the global microplastics crisis.
+                    </p>
+                    <ul>
+                        <li><strong>Composition:</strong> Sailis® Biodegradable Polyester / Cotton Blend.</li>
+                        <li><strong>Durability:</strong> Retains all the strength, stretch, and colorfastness of traditional polyester during consumer use.</li>
+                        <li><strong>Common Uses:</strong> Outdoor performance wear, uniform shirts, athletic jerseys.</li>
+                        <li><strong>Key Advantage:</strong> Traditional polyester durability with next-generation eco-responsibility.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Eco Product 3 -->
+            <div class="showcase-row">
+                <div class="showcase-img">
+                    <img src="images/product-eco-plant-dye.jpg" alt="Plant-Dyed Spandex Jersey">
+                </div>
+                <div class="showcase-content">
+                    <h3>Plant-Dyed Spandex Jersey <br><span style="font-size: 1.1rem; color: var(--text-muted);">植物染氨纶平纹</span></h3>
+                    <p>
+                        Dyed using pure organic pigments extracted from roots, leaves, and barks of plants. Free from heavy metals, synthetic fixing agents, and formaldehyde, this fabric is processed using closed-loop water systems.
+                    </p>
+                    <ul>
+                        <li><strong>Composition:</strong> Organic Cotton / Spandex Blend, Plant-Dyed.</li>
+                        <li><strong>Skin Safety:</strong> Dermatologically safe, non-irritating, and naturally anti-microbial.</li>
+                        <li><strong>Common Uses:</strong> Premium underwear, lounge wear, children's clothing, sensitive skin apparel.</li>
+                        <li><strong>Key Advantage:</strong> 100% chemical-free dye process with soft, natural, earthy color tones.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Eco Product 4 (Alternate) -->
+            <div class="showcase-row alternate">
+                <div class="showcase-img">
+                    <img src="images/product-eco-silk.jpg" alt="Mulberry Silk Amino Acid Jersey">
+                </div>
+                <div class="showcase-content">
+                    <h3>Mulberry Silk Amino Acid Jersey <br><span style="font-size: 1.1rem; color: var(--text-muted);">蚕丝拉架平纹布 (底单导 & 面单导)</span></h3>
+                    <p>
+                        A luxurious hybrid knit that combines the skin-nourishing proteins of mulberry silk with high-performance dual-sided unidirectional moisture wicking. Silk contains 18 essential amino acids that naturally soothe and hydrate the skin.
+                    </p>
+                    <ul>
+                        <li><strong>Composition:</strong> Premium Mulberry Silk / Long-Staple Cotton / Spandex.</li>
+                        <li><strong>Active Care:</strong> Naturally regulates moisture levels to prevent dry, itchy skin during activity.</li>
+                        <li><strong>Common Uses:</strong> Luxury base layers, wellness sleepwear, premium athletic apparel.</li>
+                        <li><strong>Key Advantage:</strong> High-end silk luster and amino-acid hydration paired with advanced moisture transport.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Eco Product 5 -->
+            <div class="showcase-row">
+                <div class="showcase-img">
+                    <img src="images/product-eco-aqua-cotton.jpg" alt="Aqua-Comfort Cotton Jersey">
+                </div>
+                <div class="showcase-content">
+                    <h3>Aqua-Comfort Cotton Jersey <br><span style="font-size: 1.1rem; color: var(--text-muted);">水舒棉氨纶平纹 (单向导湿)</span></h3>
+                    <p>
+                        Crafted from hand-harvested long-staple cotton combined with a bio-mimetic honeycomb wicking backing. This structure rapidly pulls sweat from the skin to the outer surface, preventing the fabric from clinging even during intense activity.
+                    </p>
+                    <ul>
+                        <li><strong>Composition:</strong> Premium Long-Staple Cotton / Spandex.</li>
+                        <li><strong>Texture & Feel:</strong> Ultra-soft combed surface that feels like water against the skin.</li>
+                        <li><strong>Common Uses:</strong> Premium polo shirts, casual tees, high-grade sports underwear.</li>
+                        <li><strong>Key Advantage:</strong> The natural touch of pure cotton combined with professional synthetic-level drying speeds.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Eco Product 6 (Alternate) -->
+            <div class="showcase-row alternate">
+                <div class="showcase-img">
+                    <img src="images/product-eco-37-5.jpg" alt="37.5™ Micro-Core Wicking Fabric">
+                </div>
+                <div class="showcase-content">
+                    <h3>37.5™ Micro-Core Wicking Fabric <br><span style="font-size: 1.1rem; color: var(--text-muted);">37.5微芯吸管面料 (单导、控温、保暖)</span></h3>
+                    <p>
+                        Utilizing patented 37.5® technology with active particles embedded at the fiber level, this fabric works with your body's natural infrared energy to accelerate moisture evaporation. It actively helps you stay warm when you're cold and cool when you're hot.
+                    </p>
+                    <ul>
+                        <li><strong>Composition:</strong> 37.5™ Technology Polyester / Cotton / Spandex.</li>
+                        <li><strong>Thermal Management:</strong> Maintains relative humidity next to your skin at the ideal target of 37.5%.</li>
+                        <li><strong>Common Uses:</strong> Mountaineering base layers, training shirts, performance sleepwear.</li>
+                        <li><strong>Key Advantage:</strong> Permanent, wash-resistant dynamic temperature and humidity regulation.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Eco Product 7 -->
+            <div class="showcase-row">
+                <div class="showcase-img">
+                    <img src="images/product-eco-quick-dry.jpg" alt="Quick-Dry Cotton-Feel Series">
+                </div>
+                <div class="showcase-content">
+                    <h3>Quick-Dry Cotton-Feel Series <br><span style="font-size: 1.1rem; color: var(--text-muted);">速干系列面料</span></h3>
+                    <p>
+                        A performance-oriented knit utilizing a proprietary blend of cotton-feel polyester and Lenzing Tencel. The fabric leverages natural capillary action to disperse and evaporate sweat rapidly, maintaining a cool, dry microclimate.
+                    </p>
+                    <ul>
+                        <li><strong>Composition:</strong> Cotton-Feel Polyester / Tencel / Spandex.</li>
+                        <li><strong>Moisture Management:</strong> Diffuses moisture over a wide surface area for instant evaporation.</li>
+                        <li><strong>Common Uses:</strong> Running shirts, gym apparel, travel wear.</li>
+                        <li><strong>Key Advantage:</strong> Soft, natural cotton-like hand feel combined with rapid-dry sports performance.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Eco Product 8 (Alternate) -->
+            <div class="showcase-row alternate">
+                <div class="showcase-img">
+                    <img src="images/product-eco-wicking.jpg" alt="Unidirectional Moisture-Wicking Fabric">
+                </div>
+                <div class="showcase-content">
+                    <h3>Unidirectional Moisture-Wicking Fabric <br><span style="font-size: 1.1rem; color: var(--text-muted);">单向导湿系列面料</span></h3>
+                    <p>
+                        Features a double-layer knitted construction with a hydrophobic interior layer and a hydrophilic exterior layer. Perspiration is pushed outwards through custom micro-channels, preventing backflow and keeping the skin-facing side completely dry.
+                    </p>
+                    <ul>
+                        <li><strong>Composition:</strong> Micro-Fiber Polyester Inner / Combed Cotton Outer.</li>
+                        <li><strong>Dry Tech:</strong> Dry-skin contact even when the outer layer is saturated with sweat.</li>
+                        <li><strong>Common Uses:</strong> Intensive athletic training wear, cycle jerseys, soccer uniforms.</li>
+                        <li><strong>Key Advantage:</strong> Absolute prevention of wet-clinging, preventing chafing and post-exercise chills.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Eco Product 9 -->
+            <div class="showcase-row">
+                <div class="showcase-img">
+                    <img src="images/product-eco-warm-fleece.jpg" alt="Warm Soft Double Fleece">
+                </div>
+                <div class="showcase-content">
+                    <h3>Warm Soft Double Fleece <br><span style="font-size: 1.1rem; color: var(--text-muted);">2026新品 - 暖柔单导双重绒</span></h3>
+                    <p>
+                        Our newest winter-weight development. This fabric features a double-brushed soft fleece structure that traps air for high thermal insulation, combined with a one-way moisture transport system that prevents sweat accumulation during cold-weather activities.
+                    </p>
+                    <ul>
+                        <li><strong>Composition:</strong> Thermal Acrylic / Polyester / Spandex.</li>
+                        <li><strong>Insulation:</strong> Exceptional warmth-to-weight ratio with a pill-resistant face.</li>
+                        <li><strong>Common Uses:</strong> Winter hiking base layers, cold-weather training tops, thermal loungewear.</li>
+                        <li><strong>Key Advantage:</strong> Warmth without dampness; eliminates post-activity shivering in cold weather.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Eco Product 10 (Alternate) -->
+            <div class="showcase-row alternate">
+                <div class="showcase-img">
+                    <img src="images/product-eco-sorona-twill.jpg" alt="Sorona® Twill Double Sweatshirt Fabric">
+                </div>
+                <div class="showcase-content">
+                    <h3>Sorona® Twill Double Sweatshirt Fabric <br><span style="font-size: 1.1rem; color: var(--text-muted);">Sorona 舒弹丝斜纹双卫衣</span></h3>
+                    <p>
+                        Knitted with DuPont Sorona® bio-based fibers derived from industrial corn starch. This structured twill French Terry offers a smooth face, clean texture, and natural, long-lasting mechanical stretch without using polyurethane.
+                    </p>
+                    <ul>
+                        <li><strong>Composition:</strong> DuPont Sorona® Bio-Fiber / Cotton Blend.</li>
+                        <li><strong>Resilience:</strong> Superb shape retention, preventing baggy elbows and saggy hems.</li>
+                        <li><strong>Common Uses:</strong> Premium hoodies, heavy-duty crewnecks, modern sportswear.</li>
+                        <li><strong>Key Advantage:</strong> Highly durable, wrinkle-resistant, and significantly reduces greenhouse gas emissions.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Eco Product 11 -->
+            <div class="showcase-row">
+                <div class="showcase-img">
+                    <img src="images/product-eco-sorona-fleece.jpg" alt="Sorona® Triple-Protection Fleece">
+                </div>
+                <div class="showcase-content">
+                    <h3>Sorona® Triple-Protection Fleece <br><span style="font-size: 1.1rem; color: var(--text-muted);">SORONA 不抓毛双卫衣 (三防)</span></h3>
+                    <p>
+                        A premium heavyweight sweatshirt knit featuring Sorona® bio-based yarns. Upgraded with an eco-friendly fluorochemical-free protective shield that repels water, resists oils, and allows easy soil release.
+                    </p>
+                    <ul>
+                        <li><strong>Composition:</strong> DuPont Sorona® / Organic Cotton Blend with Eco-Shield.</li>
+                        <li><strong>Shield Tech:</strong> Water rolls off the surface while the fabric remains breathable and comfortable.</li>
+                        <li><strong>Common Uses:</strong> Luxury streetwear hoodies, outdoor lifestyle wear, children's outerwear.</li>
+                        <li><strong>Key Advantage:</strong> Water, oil, and stain resistance paired with bio-based sustainability.</li>
+                    </ul>
+                </div>
+            </div>
+
+            </div><!-- end tab-panel-2 -->
+
+            <!-- Tab Panel 3: Classic Knit Structures -->
+            <div class="tab-panel" id="tab-classic">
+                <h3 class="section-title">Classic Knit Structures</h3>
+                <p class="section-subtitle">Our comprehensive portfolio of classic knit structures, engineered for daily comfort, superior durability, and versatile apparel applications across casual, sports, and fashion segments.</p>
+
+                <!-- Classic Product 1 -->
+                <div class="showcase-row">
+                    <div class="showcase-img">
+                        <img src="images/product-classic-sorona-jacquard.jpg" alt="SORONA Organic Cotton Jacquard">
+                    </div>
+                    <div class="showcase-content">
+                        <h3>SORONA Organic Cotton Jacquard <br><span style="font-size: 1.1rem; color: var(--text-muted);">SORONA有机棉彩棉提花双面布</span></h3>
+                        <p>
+                            Combining DuPont's Sorona® bio-based fibers with organic colored cotton, this premium jacquard double-face fabric features an elegant knitted texture. The natural colored cotton provides a soft, unbleached organic look, while Sorona® adds excellent recovery, shape retention, and a soft, dry touch.
+                        </p>
+                        <ul>
+                            <li><strong>Composition:</strong> Sorona / Organic Cotton Blend.</li>
+                            <li><strong>Specification:</strong> Weight: ~210 gsm | Width: 175cm.</li>
+                            <li><strong>Common Uses:</strong> Premium loungewear, upscale casual sweatshirts, eco-friendly children's apparel.</li>
+                            <li><strong>Key Advantage:</strong> Sustainable bio-based elasticity combined with naturally grown colored organic cotton.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Classic Product 2 -->
+                <div class="showcase-row alternate">
+                    <div class="showcase-img">
+                        <img src="images/product-classic-twill-34.jpg" alt="Spandex Twill - Golden Yellow">
+                    </div>
+                    <div class="showcase-content">
+                        <h3>Spandex Twill - Golden Yellow <br><span style="font-size: 1.1rem; color: var(--text-muted);">拉架斜纹布(黄色)</span></h3>
+                        <p>
+                            A vibrant cotton-rich spandex twill fabric featuring a distinct, fine diagonal rib structure. The addition of high-grade spandex ensures excellent 4-way stretch and recovery, making it ideal for form-fitting garments that require structure and comfort.
+                        </p>
+                        <ul>
+                            <li><strong>Composition:</strong> Cotton / Spandex Blend.</li>
+                            <li><strong>Specification:</strong> Weight: ~190 gsm | Width: 165cm.</li>
+                            <li><strong>Common Uses:</strong> Casual T-shirts, premium polo shirts, fashion athleisure wear.</li>
+                            <li><strong>Key Advantage:</strong> Vibrant, long-lasting colorfastness combined with a soft, breathable twill texture.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Classic Product 3 -->
+                <div class="showcase-row">
+                    <div class="showcase-img">
+                        <img src="images/product-classic-twill-35.jpg" alt="Spandex Twill - Dark Brown">
+                    </div>
+                    <div class="showcase-content">
+                        <h3>Spandex Twill - Dark Brown <br><span style="font-size: 1.1rem; color: var(--text-muted);">拉架斜纹布(棕黑色)</span></h3>
+                        <p>
+                            This deep, earth-toned spandex twill fabric offers a sophisticated aesthetic with its subtle diagonal knit pattern. Designed for ultimate comfort and durability, the fabric retains its deep color and shape even after repeated washes.
+                        </p>
+                        <ul>
+                            <li><strong>Composition:</strong> Cotton / Spandex Blend.</li>
+                            <li><strong>Specification:</strong> Weight: ~190 gsm | Width: 165cm.</li>
+                            <li><strong>Common Uses:</strong> Urban streetwear, high-end casual wear, structured tees.</li>
+                            <li><strong>Key Advantage:</strong> Deep, rich color depth paired with premium cotton comfort and elastic performance.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Classic Product 4 -->
+                <div class="showcase-row alternate">
+                    <div class="showcase-img">
+                        <img src="images/product-classic-twill-36.jpg" alt="Spandex Twill - Classic Black">
+                    </div>
+                    <div class="showcase-content">
+                        <h3>Spandex Twill - Classic Black <br><span style="font-size: 1.1rem; color: var(--text-muted);">氨纶斜纹布(黑色)</span></h3>
+                        <p>
+                            An essential wardrobe classic, this black spandex twill fabric utilizes high-tenacity polyester blended with premium spandex. The diagonal twill weave provides a sleek, modern texture that is highly resistant to pilling, wrinkling, and fading.
+                        </p>
+                        <ul>
+                            <li><strong>Composition:</strong> Polyester / Spandex Blend.</li>
+                            <li><strong>Specification:</strong> Weight: ~200 gsm | Width: 170cm.</li>
+                            <li><strong>Common Uses:</strong> Sports activewear, structured casual jackets, everyday basics.</li>
+                            <li><strong>Key Advantage:</strong> High durability, wrinkle resistance, and intense, fade-resistant jet black finish.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Classic Product 5 -->
+                <div class="showcase-row">
+                    <div class="showcase-img">
+                        <img src="images/product-classic-twill-37.jpg" alt="Spandex Twill - Heather Grey">
+                    </div>
+                    <div class="showcase-content">
+                        <h3>Spandex Twill - Heather Grey <br><span style="font-size: 1.1rem; color: var(--text-muted);">拉架斜纹布(花灰)</span></h3>
+                        <p>
+                            A classic heathered grey spandex twill fabric offering a textured, melange visual effect. Crafted from premium combed cotton and elastane, it delivers outstanding softness against the skin while maintaining excellent structural stability.
+                        </p>
+                        <ul>
+                            <li><strong>Composition:</strong> Cotton / Spandex Blend.</li>
+                            <li><strong>Specification:</strong> Weight: ~195 gsm | Width: 165cm.</li>
+                            <li><strong>Common Uses:</strong> Premium loungewear, lifestyle activewear, casual sweaters.</li>
+                            <li><strong>Key Advantage:</strong> Classic sporty heathered aesthetic with luxurious softness and flexible stretch.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Classic Product 6 -->
+                <div class="showcase-row alternate">
+                    <div class="showcase-img">
+                        <img src="images/product-classic-pique.jpg" alt="Slub Yarn Piqué">
+                    </div>
+                    <div class="showcase-content">
+                        <h3>Slub Yarn Piqué <br><span style="font-size: 1.1rem; color: var(--text-muted);">竹节丝单珠地</span></h3>
+                        <p>
+                            Featuring a classic piqué mesh texture woven with premium slub yarns, this fabric exhibits a unique vintage look with subtle, irregular horizontal slubs. The breathable piqué structure promotes rapid air circulation, keeping the body cool and dry.
+                        </p>
+                        <ul>
+                            <li><strong>Composition:</strong> Cotton / Viscose Blend.</li>
+                            <li><strong>Specification:</strong> Weight: ~180 gsm | Width: 180cm.</li>
+                            <li><strong>Common Uses:</strong> Classic polo shirts, resort wear, retro-inspired casual apparel.</li>
+                            <li><strong>Key Advantage:</strong> Highly breathable, textured honeycomb structure that prevents the fabric from sticking to the skin.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Classic Product 7 -->
+                <div class="showcase-row">
+                    <div class="showcase-img">
+                        <img src="images/product-classic-pima-interlock.jpg" alt="Silky Pima Cotton Interlock">
+                    </div>
+                    <div class="showcase-content">
+                        <h3>Silky Pima Cotton Interlock <br><span style="font-size: 1.1rem; color: var(--text-muted);">PIMA双面(丝滑手感)</span></h3>
+                        <p>
+                            Crafted from 100% extra-long staple Pima cotton, this luxury interlock fabric undergoes a specialized finishing process to achieve an ultra-smooth, silky hand feel. The double-knit interlock structure provides identical smoothness on both sides, offering unparalleled next-to-skin comfort.
+                        </p>
+                        <ul>
+                            <li><strong>Composition:</strong> 100% Pima Cotton.</li>
+                            <li><strong>Specification:</strong> Weight: ~160 gsm | Width: 175cm.</li>
+                            <li><strong>Common Uses:</strong> Luxury base layers, high-end pajamas, premium baby garments, luxury T-shirts.</li>
+                            <li><strong>Key Advantage:</strong> Unmatched natural silkiness, brilliant luster, and exceptional durability of long-staple cotton.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Classic Product 8 -->
+                <div class="showcase-row alternate">
+                    <div class="showcase-img">
+                        <img src="images/product-classic-interlock-antibac.jpg" alt="Cool Antibacterial Interlock">
+                    </div>
+                    <div class="showcase-content">
+                        <h3>Cool Antibacterial Interlock <br><span style="font-size: 1.1rem; color: var(--text-muted);">双面(抗菌吸湿冰滑)</span></h3>
+                        <p>
+                            Engineered with advanced ice-silk polyester and spandex, this high-performance interlock fabric delivers a lasting cool-to-touch sensation. Embedded with permanent antibacterial agents, it inhibits odor-causing bacteria while promoting rapid sweat absorption and dispersion.
+                        </p>
+                        <ul>
+                            <li><strong>Composition:</strong> Ice Silk Polyester / Spandex.</li>
+                            <li><strong>Specification:</strong> Weight: ~170 gsm | Width: 170cm.</li>
+                            <li><strong>Common Uses:</strong> Performance sportswear, summer athletic shirts, fitness wear, cooling underwear.</li>
+                            <li><strong>Key Advantage:</strong> Combined cooling, antibacterial defense, and quick-dry comfort in a smooth double-face knit.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Classic Product 9 -->
+                <div class="showcase-row">
+                    <div class="showcase-img">
+                        <img src="images/product-classic-interlock-rib.jpg" alt="Ribbed Ottoman Interlock">
+                    </div>
+                    <div class="showcase-content">
+                        <h3>Ribbed Ottoman Interlock <br><span style="font-size: 1.1rem; color: var(--text-muted);">棉拉架排间谷波双面布</span></h3>
+                        <p>
+                            A beautifully structured double-knit fabric featuring horizontal ribbed (Ottoman) patterns interspersed with flat jersey lines. Blended with high-quality cotton and spandex, it offers excellent crosswise stretch and a clean, sculptural drape.
+                        </p>
+                        <ul>
+                            <li><strong>Composition:</strong> Cotton / Spandex Blend.</li>
+                            <li><strong>Specification:</strong> Weight: ~220 gsm | Width: 175cm.</li>
+                            <li><strong>Common Uses:</strong> Contemporary fashion pullovers, structured dresses, designer sportswear.</li>
+                            <li><strong>Key Advantage:</strong> Distinctive 3D rib texture with robust elasticity and structural shape retention.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Classic Product 10 -->
+                <div class="showcase-row alternate">
+                    <div class="showcase-img">
+                        <img src="images/product-classic-double-layer-mesh.jpg" alt="Space Dye Double-Layer Mesh">
+                    </div>
+                    <div class="showcase-content">
+                        <h3>Space Dye Double-Layer Mesh <br><span style="font-size: 1.1rem; color: var(--text-muted);">花灰双层(中网)</span></h3>
+                        <p>
+                            A multi-dimensional double-layer fabric featuring a space-dyed outer face and a breathable mesh inner face. The unique double-knit structure creates a micro-climate between the layers, enhancing thermal insulation while allowing moisture to escape easily.
+                        </p>
+                        <ul>
+                            <li><strong>Composition:</strong> Polyester / Spandex Blend.</li>
+                            <li><strong>Specification:</strong> Weight: ~180 gsm | Width: 175cm.</li>
+                            <li><strong>Common Uses:</strong> Athleisure hoodies, lightweight sports jackets, breathable lifestyle wear.</li>
+                            <li><strong>Key Advantage:</strong> Dynamic space-dye visual depth combined with excellent breathability and light insulation.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Classic Product 11 -->
+                <div class="showcase-row">
+                    <div class="showcase-img">
+                        <img src="images/product-classic-double-heather.jpg" alt="Heather Spandex Double-Layer">
+                    </div>
+                    <div class="showcase-content">
+                        <h3>Heather Spandex Double-Layer <br><span style="font-size: 1.1rem; color: var(--text-muted);">花灰氨纶双层布</span></h3>
+                        <p>
+                            A double-sided knit fabric that pairs a sporty heather grey appearance with a solid-colored back. Blended with cotton, polyester, and spandex, it provides a warm, dense feel without being heavy, along with comfortable 4-way flexibility.
+                        </p>
+                        <ul>
+                            <li><strong>Composition:</strong> Cotton / Polyester / Spandex Blend.</li>
+                            <li><strong>Specification:</strong> Weight: ~190 gsm | Width: 165cm.</li>
+                            <li><strong>Common Uses:</strong> Modern sweatshirts, warm loungewear, lifestyle sportswear.</li>
+                            <li><strong>Key Advantage:</strong> Dual-face aesthetics, high thermal efficiency, and soft spandex stretch.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Classic Product 12 -->
+                <div class="showcase-row alternate">
+                    <div class="showcase-img">
+                        <img src="images/product-classic-double-layer.jpg" alt="Double Layer Knit DXH1218">
+                    </div>
+                    <div class="showcase-content">
+                        <h3>Double Layer Knit DXH1218 <br><span style="font-size: 1.1rem; color: var(--text-muted);">双层布DXH1218</span></h3>
+                        <p>
+                            Made from 100% premium combed cotton, this double-layer knit fabric features two layers of fine jersey connected by microscopic binder threads. The trapped air layer between the fabric plies acts as a natural insulator, providing lightweight warmth and high breathability.
+                        </p>
+                        <ul>
+                            <li><strong>Composition:</strong> 100% Combed Cotton.</li>
+                            <li><strong>Specification:</strong> Weight: ~210 gsm | Width: 180cm.</li>
+                            <li><strong>Common Uses:</strong> Thermal sleepwear, baby blankets, premium loungewear, cozy casual tees.</li>
+                            <li><strong>Key Advantage:</strong> 100% natural cotton insulation with a soft, pillowy, non-bulky texture.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Classic Product 13 -->
+                <div class="showcase-row">
+                    <div class="showcase-img">
+                        <img src="images/product-classic-modal-jersey.jpg" alt="Modal Cotton Spandex Jersey">
+                    </div>
+                    <div class="showcase-content">
+                        <h3>Modal Cotton Spandex Jersey <br><span style="font-size: 1.1rem; color: var(--text-muted);">莫代尔棉拉架单位衣</span></h3>
+                        <p>
+                            A luxurious jersey blend that combines the silkiness of beechwood-derived modal with the breathability of fine cotton. Enhanced with spandex, this lightweight fabric drapes elegantly, offers supreme softness, and adapts comfortably to body movement.
+                        </p>
+                        <ul>
+                            <li><strong>Composition:</strong> Modal / Cotton / Spandex Blend.</li>
+                            <li><strong>Specification:</strong> Weight: ~150 gsm | Width: 175cm.</li>
+                            <li><strong>Common Uses:</strong> High-end T-shirts, next-to-skin underwear, premium sleepwear, draping tops.</li>
+                            <li><strong>Key Advantage:</strong> Exquisite modal softness, elegant drape, and comfortable elastic recovery.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Classic Product 14 -->
+                <div class="showcase-row alternate">
+                    <div class="showcase-img">
+                        <img src="images/product-classic-pineapple.jpg" alt="Cotton-Feel Pineapple Mesh">
+                    </div>
+                    <div class="showcase-content">
+                        <h3>Cotton-Feel Pineapple Mesh <br><span style="font-size: 1.1rem; color: var(--text-muted);">棉感菠萝布</span></h3>
+                        <p>
+                            Designed with a prominent 3D pineapple grid structure, this fabric is woven from specially textured polyester fibers that mimic the natural feel of cotton. The grid structure elevates the fabric off the skin, maximizing airflow and providing exceptional moisture transport.
+                        </p>
+                        <ul>
+                            <li><strong>Composition:</strong> 100% Cotton-Feel Polyester.</li>
+                            <li><strong>Specification:</strong> Weight: ~175 gsm | Width: 170cm.</li>
+                            <li><strong>Common Uses:</strong> Sports polo shirts, outdoor trail running gear, summer activewear.</li>
+                            <li><strong>Key Advantage:</strong> The look and feel of soft cotton combined with the high performance and quick-dry nature of polyester.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Classic Product 15 -->
+                <div class="showcase-row">
+                    <div class="showcase-img">
+                        <img src="images/product-classic-ottoman.jpg" alt="CVC Fine Ottoman Rib">
+                    </div>
+                    <div class="showcase-content">
+                        <h3>CVC Fine Ottoman Rib <br><span style="font-size: 1.1rem; color: var(--text-muted);">CVC细谷波布</span></h3>
+                        <p>
+                            A classic Chief Value Cotton (CVC) knit featuring a fine, horizontal Ottoman cord structure. The high cotton content ensures skin friendliness and breathability, while the polyester component enhances durability and resists wrinkling.
+                        </p>
+                        <ul>
+                            <li><strong>Composition:</strong> CVC (Cotton / Polyester Blend).</li>
+                            <li><strong>Specification:</strong> Weight: ~210 gsm | Width: 175cm.</li>
+                            <li><strong>Common Uses:</strong> Smart-casual shirts, lightweight pullovers, collar and cuff trims.</li>
+                            <li><strong>Key Advantage:</strong> Distinctive ribbed texture, high pill resistance, and excellent color retention.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div><!-- end tab-panel-3 -->
 
         </main>
 
@@ -426,5 +1033,26 @@
     </div>
 
     <script src="scripts/main.js" defer></script>
+    <script>
+        function switchTab(tabId, btn) {
+            // Hide all panels
+            document.querySelectorAll('.tab-panel').forEach(function(panel) {
+                panel.classList.remove('active');
+            });
+            // Deactivate all buttons
+            document.querySelectorAll('.product-tab-btn').forEach(function(b) {
+                b.classList.remove('active');
+            });
+            // Show selected panel
+            var target = document.getElementById(tabId);
+            if (target) {
+                target.classList.add('active');
+            }
+            // Activate clicked button
+            btn.classList.add('active');
+            // Scroll to tab bar smoothly
+            document.querySelector('.product-tabs').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    </script>
 </body>
 </html>
