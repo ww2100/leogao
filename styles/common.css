@@ -60,7 +60,7 @@ nav.main-nav {
 
 .logo {
     display: inline-flex;
-    align-items: baseline;
+    align-items: center;
     font-family: "Futura-Bold", Futura, "Trebuchet MS", Arial, sans-serif;
     font-size: 1.35rem;
     font-weight: 800;
@@ -85,8 +85,6 @@ nav.main-nav {
     background-position: center;
     margin: 0 8px;
     flex-shrink: 0;
-    align-self: center;
-    transform: translateY(2px);
 }
 
 .logo-textile {
@@ -97,6 +95,7 @@ nav.main-nav {
     color: var(--brand-blue);
     letter-spacing: 2px;
     text-transform: none;
+    transform: translateY(0.24em);
 }
 
 .nav-links {
