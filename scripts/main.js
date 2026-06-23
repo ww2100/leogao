@@ -18,12 +18,35 @@ function startHeroSlideshow() {
     const slides = document.querySelectorAll('.slide');
     if (!slides.length) return;
 
+    const hero = document.querySelector('.hero');
     let currentIndex = 0;
-    setInterval(() => {
+    let timer = null;
+
+    function next() {
         slides[currentIndex].classList.remove('active');
         currentIndex = (currentIndex + 1) % slides.length;
         slides[currentIndex].classList.add('active');
-    }, 3000);
+    }
+
+    function startTimer() {
+        if (!timer) {
+            timer = setInterval(next, 3000);
+        }
+    }
+
+    function stopTimer() {
+        if (timer) {
+            clearInterval(timer);
+            timer = null;
+        }
+    }
+
+    startTimer();
+
+    if (hero) {
+        hero.addEventListener('mouseenter', stopTimer);
+        hero.addEventListener('mouseleave', startTimer);
+    }
 }
 
 function startFactorySlideshow() {
@@ -60,6 +83,10 @@ function startFactorySlideshow() {
         timer = setInterval(next, 4000);
     }
 
+    function stopTimer() {
+        clearInterval(timer);
+    }
+
     // Bind dot clicks
     carousel.querySelectorAll('.carousel-dots .dot').forEach((dot) => {
         dot.addEventListener('click', () => {
@@ -70,6 +97,10 @@ function startFactorySlideshow() {
     });
 
     startTimer();
+
+    // Pause on hover
+    carousel.addEventListener('mouseenter', stopTimer);
+    carousel.addEventListener('mouseleave', startTimer);
 }
 
 function initDropdowns() {
