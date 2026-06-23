@@ -9,6 +9,10 @@
     <priority>0.80</priority>
   </url>
   <url>
+    <loc>https://www.yarnsvc.com/automated-packaging-workshop.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
     <loc>https://www.yarnsvc.com/cooling-yarn.html</loc>
     <priority>0.80</priority>
   </url>
@@ -41,7 +45,15 @@
     <priority>0.80</priority>
   </url>
   <url>
+    <loc>https://www.yarnsvc.com/spinning-winding-workshop.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
     <loc>https://www.yarnsvc.com/spun-yarn.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.yarnsvc.com/warehouse-logistics.html</loc>
     <priority>0.80</priority>
   </url>
   <url>

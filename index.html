@@ -87,9 +87,16 @@
         </div>
         <div class="nav-links" id="nav-list">
             <!-- 164. 导航链接容器，class="nav-links"对应CSS中的样式，id="nav-list"用于JavaScript获取该元素，实现切换显示 -->
-            <a href="about us.html">About Us</a><a href="knit.html">Knit Fabric</a><a href="spun-yarn.html">Spun Yarn</a><a href="filament-yarn.html">Filament Yarn</a><a href="dope-dyed-yarn.html">Dope-dyed Yarn</a><a href="functional-yarn.html">Functional Yarn</a><a href="cooling-yarn.html">Cooling Yarn</a><a href="#factory-tour">Factory Tour</a>
-            <!-- 165. 一系列<a>标签：网站导航链接，href="#"是占位符（表示暂时无跳转地址），分别对应产品、应用、可持续发展、创新、联系我们等栏目 -->
-        </div>
+            <a href="about us.html">About Us</a><a href="knit.html">Knit Fabric</a><a href="spun-yarn.html">Spun Yarn</a><a href="filament-yarn.html">Filament Yarn</a><a href="dope-dyed-yarn.html">Dope-dyed Yarn</a><a href="functional-yarn.html">Functional Yarn</a><a href="cooling-yarn.html">Cooling Yarn</a>
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle">Factory Tour <span class="arrow">▼</span></a>
+                <div class="dropdown-menu">
+                    <a href="spinning-winding-workshop.html">Spinning & Winding Workshop</a>
+                    <a href="automated-packaging-workshop.html">Automated Packaging Workshop</a>
+                    <a href="warehouse-logistics.html">Intelligent Warehouse & Logistics</a>
+                </div>
+            </div>
+        </div>    
     </nav>
 
     <main>
@@ -448,7 +455,7 @@
                             <p class="item-category">Spinning & Winding Workshop</p>
                             <h4>High-Speed Automatic Winding Line</h4>
                             <p class="item-desc">High-precision automated winding machines ensure uniform yarn tension and flawless cone packages.</p>
-                            <a href="#contact-line" class="item-link">Explore Machinery &rarr;</a>
+                            <a href="spinning-winding-workshop.html" class="item-link">Explore Machinery &rarr;</a>
                         </div>
                     </div>
                     
@@ -464,7 +471,7 @@
                             <p class="item-category">Automated Packaging Workshop</p>
                             <h4>Robotic Arm Palletizing & Packaging</h4>
                             <p class="item-desc">Heavy-duty industrial robotic arms handle automatic wrapping and palletizing for consistent, damage-free export packaging.</p>
-                            <a href="#contact-line" class="item-link">Explore Robotics &rarr;</a>
+                            <a href="automated-packaging-workshop.html" class="item-link">Explore Robotics &rarr;</a>
                         </div>
                     </div>
 
@@ -480,7 +487,7 @@
                             <p class="item-category">Intelligent Warehouse & Logistics</p>
                             <h4>ASRS Automatic Racking & Retrieval System</h4>
                             <p class="item-desc">Computerized storage tracks and automated warehousing crane systems enable real-time inventory tracking and rapid shipping logistics.</p>
-                            <a href="#contact-line" class="item-link">Explore Logistics &rarr;</a>
+                            <a href="warehouse-logistics.html" class="item-link">Explore Logistics &rarr;</a>
                         </div>
                     </div>
                 </div>

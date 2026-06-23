@@ -43,16 +43,17 @@
 			<div class="menu-toggle" id="mobile-menu">
 				<span></span><span></span><span></span>
 			</div>
-			<div class="nav-links" id="nav-list">
-				<a href="about us.html" style="color: var(--brand-blue); font-weight: bold;">About Us</a>
-				<a href="knit.html">Knit Fabric</a>
-				<a href="spun-yarn.html">Spun Yarn</a>
-				<a href="filament-yarn.html">Filament Yarn</a>
-				<a href="dope-dyed-yarn.html">Dope-dyed Yarn</a>
-				<a href="functional-yarn.html">Functional Yarn</a>
-				<a href="cooling-yarn.html">Cooling Yarn</a>
-				<a href="index.html#factory-tour">Factory Tour</a>
-			</div>
+			        <div class="nav-links" id="nav-list">
+            <a href="about us.html">About Us</a><a href="knit.html">Knit Fabric</a><a href="spun-yarn.html">Spun Yarn</a><a href="filament-yarn.html">Filament Yarn</a><a href="dope-dyed-yarn.html">Dope-dyed Yarn</a><a href="functional-yarn.html">Functional Yarn</a><a href="cooling-yarn.html">Cooling Yarn</a>
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle">Factory Tour <span class="arrow">▼</span></a>
+                <div class="dropdown-menu">
+                    <a href="spinning-winding-workshop.html">Spinning & Winding Workshop</a>
+                    <a href="automated-packaging-workshop.html">Automated Packaging Workshop</a>
+                    <a href="warehouse-logistics.html">Intelligent Warehouse & Logistics</a>
+                </div>
+            </div>
+        </div>
 		</nav>
 
 		<header class="sub-page-header align-line">
@@ -260,20 +261,7 @@
 	}
 	</script>
 
-	<script>
-		const btn = document.getElementById('mobile-menu');
-		const nav = document.getElementById('nav-list');
-		btn.addEventListener('click', (e) => {
-			e.stopPropagation();
-			nav.classList.toggle('active');
-		});
-
-		document.addEventListener('click', (e) => {
-			if (!btn.contains(e.target) && !nav.contains(e.target)) {
-				nav.classList.remove('active');
-			}
-		});
-	</script>
+	<script src="scripts/main.js" defer></script>
 
   <img src="https://track.yarnsvc.com:8443/track?source=yarnsvc.com&page=/about us.html" style="display:none" width="1" height="1">
 </body>

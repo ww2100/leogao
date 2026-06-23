@@ -72,8 +72,42 @@ function startFactorySlideshow() {
     startTimer();
 }
 
+function initDropdowns() {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+
+        if (toggle) {
+            toggle.addEventListener('click', (e) => {
+                const isMobile = window.innerWidth <= 992;
+                const isHash = toggle.getAttribute('href') === '#';
+                
+                if (isMobile || isHash) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    dropdowns.forEach(other => {
+                        if (other !== dropdown) {
+                            other.classList.remove('active');
+                        }
+                    });
+
+                    dropdown.classList.toggle('active');
+                }
+            });
+        }
+    });
+
+    document.addEventListener('click', () => {
+        dropdowns.forEach(dropdown => {
+            dropdown.classList.remove('active');
+        });
+    });
+}
+
 window.addEventListener('load', () => {
     startHeroSlideshow();
     startFactorySlideshow();
+    initDropdowns();
 });
 
