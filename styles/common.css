@@ -325,9 +325,26 @@ footer {
 
 .dropdown-toggle .arrow {
     display: inline-block;
-    font-size: 0.75rem;
+    position: relative;
+    width: 8px;
+    height: 8px;
+    font-size: 0;
+    line-height: 0;
     transition: transform 0.3s ease;
     vertical-align: middle;
+}
+
+.dropdown-toggle .arrow::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 6px;
+    height: 6px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg);
+    box-sizing: border-box;
 }
 
 .dropdown.active .dropdown-toggle .arrow {

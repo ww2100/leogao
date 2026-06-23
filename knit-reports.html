@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PDNTFLKER3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-PDNTFLKER3');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Access and download Shanyue Textile's fabric inspection reports. Verifications for antibacterial, contact cooling, far-infrared, and deodorization tests.">
+    <link rel="canonical" href="https://www.yarnsvc.com/knit-reports.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Fabric Inspection Reports | Shanyue Textile">
+    <meta property="og:description" content="Access and download Shanyue Textile's fabric inspection reports. Verifications for antibacterial, contact cooling, far-infrared, and deodorization tests.">
+    <meta property="og:url" content="https://www.yarnsvc.com/knit-reports.html">
+    <meta property="og:image" content="https://www.yarnsvc.com/images/hero1.png">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fabric Inspection Reports | Shanyue Textile">
+    <meta name="twitter:description" content="Access and download Shanyue Textile's fabric inspection reports. Verifications for antibacterial, contact cooling, far-infrared, and deodorization tests.">
+    <meta name="twitter:image" content="https://www.yarnsvc.com/images/hero1.png">
+    <title>Inspection Reports - Knit Fabric | Shanyue Textile</title>
+    <link rel="stylesheet" href="styles/common.css?v=2.3">
+    <link rel="stylesheet" href="styles/product.css?v=1.1">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
+    <style>
+        /* Search & Filter Controls */
+        .controls-wrapper {
+            margin: 3rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .search-box {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 12px 20px 12px 45px;
+            font-size: 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 30px;
+            outline: none;
+            transition: var(--transition);
+            box-sizing: border-box;
+        }
+        .search-box input:focus {
+            border-color: var(--brand-blue);
+            box-shadow: 0 0 0 3px rgba(0, 64, 152, 0.15);
+        }
+        .search-box svg {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            pointer-events: none;
+        }
+
+        .filter-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .filter-btn {
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            color: var(--text-dark);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .filter-btn:hover {
+            background: #e2e8f0;
+        }
+        .filter-btn.active {
+            background: var(--brand-blue);
+            border-color: var(--brand-blue);
+            color: white;
+        }
+
+        /* Reports Grid */
+        .reports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 5rem;
+        }
+        
+        .report-card {
+            background: white;
+            border: 1px solid #edf2f7;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 280px;
+            position: relative;
+            overflow: hidden;
+        }
+        .report-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 4px;
+            background: #cbd5e1;
+            transition: var(--transition);
+        }
+        .report-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+            border-color: #cbd5e1;
+        }
+        
+        /* Category Specific Accent Borders */
+        .report-card[data-tags*="graphene"]::before { background: #555555; }
+        .report-card[data-tags*="cooling"]::before { background: #0ea5e9; }
+        .report-card[data-tags*="dye"]::before { background: #16a34a; }
+        .report-card[data-tags*="quick-dry"]::before { background: #004098; }
+        .report-card[data-tags*="skin-care"]::before { background: #ec4899; }
+        
+        .card-top {
+            margin-bottom: 20px;
+        }
+        
+        .badge-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .report-badge {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Category badge colors */
+        .badge-graphene { background: #f3f4f6; color: #1f2937; }
+        .badge-cooling { background: #e0f2fe; color: #0369a1; }
+        .badge-dye { background: #dcfce7; color: #15803d; }
+        .badge-quick-dry { background: #dbeafe; color: #1d4ed8; }
+        .badge-skin-care { background: #fce7f3; color: #be185d; }
+        .badge-natural { background: #fef9c3; color: #a16207; }
+
+        .file-icon {
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .report-card h4 {
+            font-size: 1.15rem;
+            color: var(--deep-dark);
+            margin: 0 0 8px 0;
+            line-height: 1.4;
+            font-weight: 600;
+        }
+        
+        .chinese-filename {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin: 0 0 15px 0;
+            word-break: break-all;
+            display: block;
+        }
+
+        .bullet-details {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .bullet-details li {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+        .bullet-details li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--brand-blue);
+            font-weight: bold;
+        }
+
+        .card-bottom {
+            margin-top: 20px;
+        }
+        
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 600;
+            transition: var(--transition);
+            box-sizing: border-box;
+            background: rgba(0, 64, 152, 0.06);
+            color: var(--brand-blue);
+        }
+        .download-btn:hover {
+            background: var(--brand-blue);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+
+        <!-- 导航栏结构 -->
+        <nav class="main-nav">
+            <a href="index.html" class="logo">SHAN YUE TEXTILE</a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="nav-links" id="nav-list">
+                <a href="about us.html">About Us</a>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle">Knit Fabric <span class="arrow">▼</span></a>
+                    <div class="dropdown-menu">
+                        <a href="knit.html">Knit Fabric Overview</a>
+                        <a href="knit-intro.html">Product Introduction</a>
+                        <a href="knit-reports.html">Inspection Reports</a>
+                    </div>
+                </div>
+                <a href="spun-yarn.html">Spun Yarn</a>
+                <a href="filament-yarn.html">Filament Yarn</a>
+                <a href="dope-dyed-yarn.html">Dope-dyed Yarn</a>
+                <a href="functional-yarn.html">Functional Yarn</a>
+                <a href="cooling-yarn.html">Cooling Yarn</a>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle">Factory Tour <span class="arrow">▼</span></a>
+                    <div class="dropdown-menu">
+                        <a href="spinning-winding-workshop.html">Spinning & Winding Workshop</a>
+                        <a href="automated-packaging-workshop.html">Automated Packaging Workshop</a>
+                        <a href="warehouse-logistics.html">Intelligent Warehouse & Logistics</a>
+                        <a href="knitting-workshop.html">Knitting Workshop</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <header class="sub-page-header align-line">
+            <svg class="header-network-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;" viewBox="0 0 1200 220" preserveAspectRatio="xMinYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Overlapping wave curves mimicking knit structure -->
+                <path d="M -50 140 Q 100 40 250 140 T 550 140 T 850 140 T 1150 140 T 1250 140" stroke="#f6f0db" stroke-opacity="0.18" stroke-width="1.5"/>
+                <path d="M -50 100 Q 100 200 250 100 T 550 100 T 850 100 T 1150 100 T 1250 100" stroke="#f6f0db" stroke-opacity="0.15" stroke-width="1.5"/>
+                <ellipse cx="200" cy="110" rx="300" ry="100" stroke="#f6f0db" stroke-opacity="0.18" stroke-width="1.2" transform="rotate(-5 200 110)"/>
+                <ellipse cx="950" cy="110" rx="280" ry="90" stroke="#f6f0db" stroke-opacity="0.15" stroke-width="1.2" transform="rotate(15 950 110)"/>
+                <path d="M 300 -20 Q 250 50 300 110 T 300 240" stroke="#f6f0db" stroke-opacity="0.18" stroke-width="1.2"/>
+            </svg>
+            <h1>Inspection Reports</h1>
+            <p>Downloadable verification reports and standard test results for our functional fabrics.</p>
+        </header>
+
+        <main class="align-line">
+            
+            <!-- Controls (Search & Filter) -->
+            <div class="controls-wrapper">
+                <div class="search-box">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    <input type="text" id="search-input" placeholder="Search by fabric type, test criteria...">
+                </div>
+                <div class="filter-tags">
+                    <button class="filter-btn active" data-category="all">All Reports</button>
+                    <button class="filter-btn" data-category="graphene">Graphene</button>
+                    <button class="filter-btn" data-category="cooling">Cooling</button>
+                    <button class="filter-btn" data-category="quick-dry">One-way Wicking</button>
+                    <button class="filter-btn" data-category="skin-care">Skin Care / HA</button>
+                    <button class="filter-btn" data-category="dye">Botanical Dyes</button>
+                </div>
+            </div>
+
+            <!-- Grid of Cards (Placeholders) -->
+            <div class="reports-grid" id="reports-container">
+                
+                <!-- Card 1 -->
+                <div class="report-card" data-tags="graphene antibacterial">
+                    <div class="card-top">
+                        <div class="badge-row">
+                            <span class="report-badge badge-graphene">Graphene</span>
+                            <span class="file-icon">
+                                <svg width="14" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                                PDF
+                            </span>
+                        </div>
+                        <h4 class="report-title">Antibacterial Test Report (Placeholder)</h4>
+                        <span class="chinese-filename">[石墨烯抗菌检测报告占位.pdf]</span>
+                        <ul class="bullet-details">
+                            <li>[Placeholder] Verifies antibacterial rates against E. coli and S. aureus.</li>
+                            <li>[Placeholder] Demonstrates wash durability after multiple home wash cycles.</li>
+                            <li>[Placeholder] Confirms non-irritating, body-friendly safety ratings.</li>
+                        </ul>
+                    </div>
+                    <div class="card-bottom">
+                        <a href="#" class="download-btn">
+                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                            Download Report
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="report-card" data-tags="cooling activewear">
+                    <div class="card-top">
+                        <div class="badge-row">
+                            <span class="report-badge badge-cooling">Cooling</span>
+                            <span class="file-icon">
+                                <svg width="14" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                                PDF
+                            </span>
+                        </div>
+                        <h4 class="report-title">Contact Cooling Test Report (Placeholder)</h4>
+                        <span class="chinese-filename">[冰感面料检测报告占位.pdf]</span>
+                        <ul class="bullet-details">
+                            <li>[Placeholder] Evaluates the Q-max cooling coefficient standard.</li>
+                            <li>[Placeholder] Measures immediate thermal dispersion on contact.</li>
+                            <li>[Placeholder] Standard test parameters under warm climates.</li>
+                        </ul>
+                    </div>
+                    <div class="card-bottom">
+                        <a href="#" class="download-btn">
+                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                            Download Report
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="report-card" data-tags="quick-dry wicking">
+                    <div class="card-top">
+                        <div class="badge-row">
+                            <span class="report-badge badge-quick-dry">One-way Wicking</span>
+                            <span class="file-icon">
+                                <svg width="14" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                                PDF
+                            </span>
+                        </div>
+                        <h4 class="report-title">One-Way Wicking Test Report (Placeholder)</h4>
+                        <span class="chinese-filename">[单向导湿及排汗检测报告占位.pdf]</span>
+                        <ul class="bullet-details">
+                            <li>[Placeholder] Unidirectional liquid transport index test.</li>
+                            <li>[Placeholder] Evaporation speed and drying rate metrics.</li>
+                            <li>[Placeholder] Skin dry-touch index under high sweat conditions.</li>
+                        </ul>
+                    </div>
+                    <div class="card-bottom">
+                        <a href="#" class="download-btn">
+                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                            Download Report
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="report-card" data-tags="skin-care hyaluronic">
+                    <div class="card-top">
+                        <div class="badge-row">
+                            <span class="report-badge badge-skin-care">Skin Care / HA</span>
+                            <span class="file-icon">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                Image
+                            </span>
+                        </div>
+                        <h4 class="report-title">Hyaluronic Acid / Vitamin E Active Content (Placeholder)</h4>
+                        <span class="chinese-filename">[玻尿酸/维他命E活性检测占位.jpg]</span>
+                        <ul class="bullet-details">
+                            <li>[Placeholder] Active ingredients concentration test in fibers.</li>
+                            <li>[Placeholder] 20-wash and 50-wash durability test results.</li>
+                            <li>[Placeholder] Moisturization indexes for everyday next-to-skin touch.</li>
+                        </ul>
+                    </div>
+                    <div class="card-bottom">
+                        <a href="#" class="download-btn">
+                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                            Preview Image
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+        <footer>
+            <div class="align-line">
+                <div style="color:white; margin-bottom:15px; font-weight:bold;">Shaoxing Shanyue Textile Co., Ltd.</div>
+                <p>&copy; 2026 Shanyue Textile. All Rights Reserved.</p>
+                <p>Email: gaofei@yarnsvc.com</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="scripts/main.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('search-input');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const reportCards = document.querySelectorAll('.report-card');
+
+            function filterReports() {
+                const query = searchInput.value.toLowerCase().trim();
+                const activeCategory = document.querySelector('.filter-btn.active').getAttribute('data-category');
+
+                reportCards.forEach(card => {
+                    const title = card.querySelector('.report-title').textContent.toLowerCase();
+                    const chinese = card.querySelector('.chinese-filename').textContent.toLowerCase();
+                    const tags = card.getAttribute('data-tags').toLowerCase();
+                    
+                    const matchesSearch = title.includes(query) || chinese.includes(query) || tags.includes(query);
+                    const matchesCategory = activeCategory === 'all' || tags.includes(activeCategory);
+
+                    if (matchesSearch && matchesCategory) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+
+            searchInput.addEventListener('input', filterReports);
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    filterReports();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
