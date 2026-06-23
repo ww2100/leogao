@@ -79,7 +79,7 @@
 
         .logo {
             display: inline-flex;
-            align-items: center;
+            align-items: baseline;
             font-family: "Futura-Bold", Futura, "Trebuchet MS", Arial, sans-serif;
             font-size: 1.35rem;
             font-weight: 800;
@@ -104,6 +104,8 @@
             background-position: center;
             margin: 0 8px;
             flex-shrink: 0;
+            align-self: center;
+            transform: translateY(2px);
         }
 
         .logo-textile {
@@ -113,8 +115,7 @@
             margin-left: 18px;
             color: var(--brand-blue);
             letter-spacing: 2px;
-            text-transform: uppercase;
-            align-self: center;
+            text-transform: none;
         }
 
         .nav-links {
